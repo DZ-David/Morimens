@@ -899,9 +899,9 @@
         "faction": "CHAOS",
         "type": "ATTACK",
         "stats": {
-            "CON": "33/124(+1.5)*",
-            "ATK": "39/148",
-            "DEF": "30/112",
+            "CON": "124(+1.5)*",
+            "ATK": "148",
+            "DEF": "112",
             "CritRate": "5.8%",
             "CritDamage": "52.4%",
             "AliemusRegen": "0",
