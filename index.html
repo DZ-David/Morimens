@@ -54,7 +54,7 @@
                 red: "bg-red-900/30 text-red-200 border-red-700",
                 blue: "bg-blue-900/30 text-blue-200 border-blue-700",
                 purple: "bg-purple-900/30 text-purple-200 border-purple-700",
-                gray: "bg-slate-700 text-slate-200 border-slate-600",
+                yellow: "bg-yellow-300 text-black border-slate-600",
             };
             return (
                 <span className={`px-2 py-1 rounded border text-xs font-bold uppercase tracking-wider ${colors[color] || colors.gray}`}>
@@ -130,10 +130,23 @@
                         <div>
                         <h2 className="text-2xl font-bold text-slate-100">{data.name}</h2>
                         <div className="flex gap-2 mt-2">
-                            <Badge color={data.faction === "CHAOS" ? "purple" : data.faction === "ORDER" ? "blue" : "red"}>
+                            <Badge
+                                color={
+                                    data.faction === "CHAOS" ? "yellow" : 
+                                    data.faction === "ULTRA" ? "purple" : 
+                                    data.faction === "CARO" ? "red" : 
+                                    "blue"
+                                }
+                            >
                                 {data.faction}
                             </Badge>
-                            <Badge color={data.type === "ATTACK" ? "red" : "blue"}>
+                            <Badge
+                                color={
+                                    data.type === "ATTACK" ? "red" : 
+                                    data.faction === "DEFENSE" ? "blue" : 
+                                    "yellow"
+                                }
+                            >
                                 {data.type}
                             </Badge>
                         </div>
@@ -153,9 +166,9 @@
                         </div>
                     </section>
 
-                    {/* Cards */}
+                    {/* Cards Column (Left Side) */}
                     <div className="grid md:grid-cols-2 gap-8">
-                        <section>
+                        <section className="space-y-8"> 
                         <SectionHeader icon={Sword} title="Cards" />
                         <div className="space-y-3">
                             {data.cards && Object.entries(data.cards).map(([key, value]) => (
@@ -169,8 +182,26 @@
                             </div>
                             ))}
                         </div>
+                        
+                        {/* Enlightens Section */}
+                        <div>
+                            <SectionHeader icon={Shield} title="Enlightens" />
+                            <div className="space-y-3">
+                            {data.enlightens && Object.entries(data.enlightens).map(([key, value]) => (
+                                <div key={key} className="bg-slate-800 p-3 rounded border border-slate-700">
+                                <div className="flex items-start gap-3">
+                                    <div className="bg-fuchsia-900/40 text-fuchsia-200 px-2 py-1 rounded text-xs font-bold shrink-0 mt-0.5 uppercase">
+                                    {key.replace('_', ' ')}
+                                    </div>
+                                    <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">{value}</p>
+                                </div>
+                                </div>
+                            ))}
+                            </div>
+                        </div>
                         </section>
 
+                        {/* Other Mechanics Column (Right Side) */}
                         <div className="space-y-8">
                         {/* Exalt */}
                         <section>
@@ -206,23 +237,6 @@
                             </div>
                         </section>
                         
-                        {/* Enlightens */}
-                        <section>
-                            <SectionHeader icon={Shield} title="Enlightens" />
-                            <div className="space-y-3">
-                            {data.enlightens && Object.entries(data.enlightens).map(([key, value]) => (
-                                <div key={key} className="bg-slate-800 p-3 rounded border border-slate-700">
-                                <div className="flex items-start gap-3">
-                                    <div className="bg-fuchsia-900/40 text-fuchsia-200 px-2 py-1 rounded text-xs font-bold shrink-0 mt-0.5 uppercase">
-                                    {key.replace('_', ' ')}
-                                    </div>
-                                    <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap">{value}</p>
-                                </div>
-                                </div>
-                            ))}
-                            </div>
-                        </section>
-
                         </div>
                     </div>
                     </div>
@@ -235,16 +249,16 @@
             const [isExpanded, setIsExpanded] = useState(false);
 
             const getFactionColor = (f) => {
-                if (f === "CHAOS") return "purple";
-                if (f === "ORDER") return "blue";
-                if (f === "DESTRUCTION") return "red";
-                return "gray";
+                if (f === "CHAOS") return "yellow";
+                if (f === "ULTRA") return "purple";
+                if (f === "CARO") return "red";
+                return "blue";
             };
 
             const getTypeColor = (t) => {
                 if (t === "ATTACK") return "red";
                 if (t === "DEFENSE") return "blue";
-                return "gray";
+                return "yellow";
             };
 
             return (
