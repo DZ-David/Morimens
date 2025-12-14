@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awakener Management App</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for dragging feedback and responsiveness */
+        body { font-family: 'Inter', sans-serif; }
+        .drag-source, .drag-clone {
+            transition: all 0.2s ease-in-out;
+            cursor: grab;
+        }
+        .drag-source:active, .drag-clone:active {
+            cursor: grabbing;
+        }
+        .drag-source:hover, .drag-clone:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+        .drag-over {
+            border: 2px dashed theme('colors.indigo.500');
+            background-color: theme('colors.indigo.50');
+        }
+        /* Custom scrollbar for groups */
+        .scroll-container::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: theme('colors.gray.400');
+            border-radius: 4px;
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background-color: theme('colors.gray.100');
+        }
+        
+        /* Style for the main Team Composition vertical scrollbar */
+        #rows-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        #rows-container::-webkit-scrollbar-thumb {
+            background-color: theme('colors.indigo.400');
+            border-radius: 4px;
+        }
+        #rows-container::-webkit-scrollbar-track {
+            background-color: theme('colors.indigo.800');
+        }
+        
+        /* Style for the Team Composition Rows horizontal scrollbar */
+        .team-row::-webkit-scrollbar {
+            height: 8px; /* Use height for horizontal scrollbar */
+        }
+        .team-row::-webkit-scrollbar-thumb {
+            background-color: theme('colors.indigo.400');
+            border-radius: 4px;
+        }
+        .team-row::-webkit-scrollbar-track {
+            background-color: theme('colors.indigo.800');
+        }
+
+        /* Classes to apply during resizing to prevent unwanted text selection and change cursor */
+        .no-select-col {
+            user-select: none;
+            cursor: col-resize;
+        }
+        .no-select-row {
+            user-select: none;
+            cursor: row-resize;
+        }
+    </style>
+</head>
+<!-- Use h-screen and flex flex-col to enable internal vertical flex growth and constraint -->
+<body class="bg-gray-50 h-screen flex flex-col p-4 md:p-8">
+
+    <!-- App container must also be a flex column and grow to fill remaining height -->
+    <div id="app" class="w-full mx-auto flex flex-col flex-grow overflow-hidden">
+        
+        <header class="mb-4 p-4 bg-white rounded-xl shadow-lg flex-shrink-0">
+            <h1 class="text-4xl font-extrabold text-gray-900">Awakener Roster Manager</h1>
+            <p class="text-gray-500 mt-1">Right-click a unit to toggle between Owned/Unowned. Drag units from the roster to move them into the team rows below.</p>
+        </header>
+
+        <!-- Main Content Layout: Roster (Left) and Team (Right) -->
+        <!-- flex-grow and min-h-0 are crucial here to utilize remaining vertical space -->
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-0 flex-grow min-h-0" id="main-layout">
+
+            <!-- LEFT COLUMN: Roster Groups (Owned & Unowned) -->
+            <div id="roster-column" class="space-y-4 w-full transition-all duration-100 ease-out flex flex-col lg:flex-grow lg:min-h-0">
+                
+                <!-- Search Filter Block -->
+                <div id="search-block" class="bg-white p-6 rounded-xl shadow-lg flex-shrink-0">
+                    <label for="awakener-search" class="block text-sm font-medium text-gray-700 mb-2">Filter Roster by Name or Faction</label>
+                    <input type="text" id="awakener-search" placeholder="Search by name (e.g., 'Awakener-05') or faction (e.g., 'CARO')"
+                           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 shadow-sm transition duration-150">
+                </div>
+
+                <!-- Owned Group - Uses flex-grow to share vertical space. -->
+                <div id="owned-group" class="bg-white p-6 rounded-xl shadow-xl flex flex-col lg:flex-grow lg:min-h-0">
+                    <h2 class="text-2xl font-semibold mb-4 text-green-700 border-b pb-2 flex-shrink-0">Owned Roster (Drop Target)</h2>
+                    <!-- scroll-container takes the remaining height in this flex column -->
+                    <div id="owned-list" class="scroll-container overflow-y-auto p-2 flex flex-wrap gap-3 content-start flex-grow">
+                        <!-- Cards will be rendered here -->
+                    </div>
+                </div>
+
+                <!-- RESIZEABLE VERTICAL SPLITTER (Only visible on large screens) -->
+                <div id="roster-splitter" 
+                     class="h-2 w-full bg-indigo-700 rounded-full cursor-row-resize hover:bg-indigo-500 transition-colors duration-200 flex-shrink-0 hidden lg:block"
+                     title="Drag to resize Owned/Unowned panels">
+                </div>
+
+                <!-- Unowned Group - Uses flex-grow to share vertical space. -->
+                <div id="unowned-group" class="bg-white p-6 rounded-xl shadow-xl flex flex-col lg:flex-grow lg:min-h-0">
+                    <h2 class="text-2xl font-semibold mb-4 text-red-700 border-b pb-2 flex-shrink-0">Unowned Roster (Drop Target)</h2>
+                    <!-- scroll-container takes the remaining height in this flex column -->
+                    <div id="unowned-list" class="scroll-container overflow-y-auto p-2 flex flex-wrap gap-3 content-start flex-grow">
+                        <!-- Cards will be rendered here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- DRAG HANDLE (Only visible on large screens) -->
+            <div id="drag-handle" 
+                 class="hidden lg:block w-2 bg-indigo-700 rounded-full cursor-col-resize hover:bg-indigo-500 transition-colors duration-200 flex-shrink-0"
+                 title="Drag to resize panels">
+            </div>
+
+            <!-- RIGHT COLUMN: Team Composition Rows -->
+            <!-- Removed the h2 title here to maximize space -->
+            <div id="team-column" class="bg-indigo-900 p-8 rounded-xl shadow-2xl flex flex-col lg:flex-grow lg:min-h-0">
+                
+                <!-- rows-container has overflow-y-auto and flex-grow, now properly constrained by parent height -->
+                <!-- space-y-0 removes all vertical space between rows -->
+                <div id="rows-container" class="space-y-0 overflow-y-auto pr-2 flex-grow">
+                    <!-- Rows are dynamically rendered here by JavaScript -->
+                </div>
+
+                <!-- Add Row Button moved to the bottom (flex-shrink-0) -->
+                <button id="add-row-btn" class="mt-4 p-2 bg-indigo-500 hover:bg-indigo-400 text-white font-bold rounded-lg transition duration-200 shadow-md flex-shrink-0">
+                    + Add Team Row (Max 10)
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- DATA AND STATE MANAGEMENT ---
+        
+        let awakenersData = [];
+        const TOTAL_UNITS = 52; // Max number of units supported by the two-digit index (00-51)
+        const MAX_ROWS = 10;
+        const MAX_ROW_CAPACITY = 4; 
+        const DATA_SOURCE_PATH = '../awakeners.json'; // External data source path
+        // Updated constant list for faction names
+        const FACTIONS = ["ULTRA", "CARO", "CHAOS", "AEQUOR"]; 
+
+        // State for the team rows (stores names of characters in each row) - Default 5 rows
+        let rowsState = [
+            [], [], [], [], []
+        ];
+        
+        // State for the search query
+        let searchQuery = '';
+        
+        // --- RESIZING STATE ---
+        let isResizing = false; // Horizontal resize flag (Roster vs Team)
+        let isVerticalResizing = false; // NEW: Vertical resize flag (Owned vs Unowned)
+        let rosterColumn;
+        let ownedGroup; 
+        let unownedGroup; 
+        
+        // Persistent state for vertical split: 50% is the default split
+        let ownedHeightPercentage = 50; 
+        
+        const MIN_WIDTH_PERCENT = 20; // Minimum width for horizontal resize
+        const MIN_PX_HEIGHT = 120; // NEW: Minimum pixel height for vertical panels (Owned/Unowned)
+
+        /**
+         * Generates mock Awakener data as a fallback.
+         */
+        function generateMockData() {
+            console.log("Could not load external data. Using mock data fallback.");
+            const mockData = [];
+            for (let i = 0; i < TOTAL_UNITS; i++) {
+                // Use padded index for distinct naming and easy visual confirmation
+                const name = `Awakener-${i.toString().padStart(2, '0')}`;
+                // Cycle through the defined factions instead of rarity
+                const faction = FACTIONS[i % FACTIONS.length]; 
+                mockData.push({ 
+                    name: name, 
+                    faction: faction, // Changed from rarity to faction
+                    group: 'owned', // Default to owned
+                    displayName: name // Set displayName for consistency
+                });
+            }
+            awakenersData = mockData;
+        }
+
+        /**
+         * Loads Awakener data from an external JSON file or falls back to mock data.
+         */
+        async function loadAwakenersData() {
+            try {
+                const response = await fetch(DATA_SOURCE_PATH);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const externalData = await response.json();
+                
+                if (!Array.isArray(externalData) || externalData.length === 0) {
+                    throw new Error("External data is empty or invalid.");
+                }
+
+                // Process external data: We map external properties to our fixed indexed names 
+                // to ensure the URL compression system (Awakener-XX) remains functional.
+                const processedData = externalData.slice(0, TOTAL_UNITS).map((item, i) => ({
+                    // Force the name format to match the indexer (00-51)
+                    name: `Awakener-${i.toString().padStart(2, '0')}`, 
+                    // Use faction from external data, default to AEQUOR if missing/invalid
+                    faction: FACTIONS.includes(item.faction) ? item.faction : "AEQUOR", 
+                    // Use the custom name if provided, otherwise default to the generated name for display
+                    displayName: item.name || `Awakener-${i.toString().padStart(2, '0')}`,
+                    // Initialize group status
+                    group: 'owned' 
+                }));
+                
+                awakenersData = processedData;
+                console.log(`Successfully loaded ${awakenersData.length} units from ${DATA_SOURCE_PATH}.`);
+
+            } catch (e) {
+                console.error(`Error loading data from ${DATA_SOURCE_PATH}:`, e);
+                generateMockData();
+            }
+        }
+
+        // --- LOOKUP HELPER ---
+
+        /**
+         * Finds an awakener object by name (Awakener-XX format).
+         * @param {string} name The Awakener name in "Awakener-XX" format.
+         * @returns {object | undefined} The Awakener object or undefined.
+         */
+        function getAwakenerByName(name) {
+            return awakenersData.find(a => a.name === name);
+        }
+
+        /**
+         * Extracts the two-digit index string from an Awakener name (e.g., "Awakener-05" -> "05").
+         * @param {string} name 
+         * @returns {string} The two-digit index string.
+         */
+        function getAwakenerIndexByName(name) {
+            return name.split('-')[1];
+        }
+        
+        /**
+         * Converts a two-digit index string back to an Awakener name (e.g., "05" -> "Awakener-05").
+         * @param {string} indexString 
+         * @returns {string} The Awakener name.
+         */
+        function getAwakenerNameByIndex(indexString) {
+            // Note: We rely on the indexString being correct (00-51)
+            return `Awakener-${indexString}`;
+        }
+
+
+        // --- URL STATE MANAGEMENT ---
+
+        /**
+         * Serializes the current application state into a plain text string using two-digit indices and delimiters.
+         * Format: [RowIndices],[RowIndices];...;[RowIndices]&[UnownedIndices]
+         * Example: 01,02;10&20,25
+         * @returns {string} The plain text state string (indices separated by delimiters).
+         */
+        function serializeState() {
+            // 1. Convert rows of NAMES into two-digit INDEXES, then join rows by ';'
+            const rowsString = rowsState.map(row => 
+                row.map(name => getAwakenerIndexByName(name)).join(',')
+            ).join(';');
+
+            // 2. Convert unowned NAMES into two-digit INDEXES
+            const unownedIndices = awakenersData
+                .filter(a => a.group === 'unowned')
+                .map(a => getAwakenerIndexByName(a.name));
+            const unownedString = unownedIndices.join(',');
+
+            // 3. Combine with '&' delimiter 
+            const rawState = `${rowsString}&${unownedString}`;
+            return rawState;
+        }
+
+        /**
+         * Deserializes the plain text state string (indices) and updates the application state.
+         * @param {string} rawState The raw state string from the URL.
+         */
+        function deserializeState(rawState) {
+            if (!rawState) return;
+            
+            try {
+                // 1. Split by the main delimiter '&'
+                const parts = rawState.split('&');
+                const rowsPart = parts[0]; 
+                const unownedPart = parts[1] || ''; 
+
+                // 2. Deserialize Rows State (Indices -> Names)
+                const newRowsState = rowsPart.split(';').map(rowString => {
+                    // Split indices by ',', filter out empty strings
+                    const indices = rowString.split(',').filter(index => index.length > 0);
+                    // Map indices back to names
+                    return indices.map(index => getAwakenerNameByIndex(index));
+                });
+                rowsState = newRowsState;
+
+                // 3. Deserialize Unowned Status (Indices -> Names)
+                // Reset all awakeners to default 'owned' first
+                awakenersData.forEach(a => a.group = 'owned'); 
+
+                if (unownedPart.length > 0) {
+                    const unownedIndices = unownedPart.split(',').filter(index => index.length > 0);
+                    
+                    unownedIndices.forEach(index => {
+                        const name = getAwakenerNameByIndex(index);
+                        const awakener = getAwakenerByName(name);
+                        
+                        // Only update if the awakener is actually in our data (for robustness)
+                        if (awakener) {
+                            awakener.group = 'unowned';
+                        }
+                    });
+                }
+            } catch (e) {
+                console.error("Failed to load state from URL:", e);
+            }
+        }
+
+        /**
+         * Updates the browser's URL with the current application state.
+         */
+        function updateUrlState() {
+            const rawState = serializeState();
+            const newUrl = `${window.location.pathname}?state=${rawState}`;
+            // Use history.replaceState to change the URL without adding a new entry to the browser history
+            history.replaceState(null, '', newUrl); 
+        }
+
+        /**
+         * Loads the state from the URL query parameter 'state'.
+         */
+        function loadStateFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const rawState = params.get('state');
+            if (rawState) {
+                deserializeState(rawState);
+                console.log("State loaded from URL.");
+            }
+        }
+
+        // --- UTILITY FUNCTIONS ---
+
+        /**
+         * Checks if an awakener is currently assigned to any team row.
+         * @param {string} name The Awakener name.
+         * @returns {boolean} True if the awakener is in any row, false otherwise.
+         */
+        function isAwakenerInTeam(name) {
+            return rowsState.some(row => row.includes(name));
+        }
+
+        /**
+         * Determines Tailwind classes based on faction.
+         * @param {string} faction
+         * @returns {string} Tailwind classes for border/text color.
+         */
+        function getFactionClasses(faction) {
+            switch (faction) {
+                case "ULTRA": return 'border-purple-400 text-purple-600 bg-purple-50'; // Purple
+                case "CARO": return 'border-red-500 text-red-700 bg-red-50';          // Red
+                case "CHAOS": return 'border-yellow-400 text-yellow-600 bg-yellow-50';  // Yellow
+                case "AEQUOR":
+                default: return 'border-blue-400 text-blue-600 bg-blue-50';            // Blue
+            }
+        }
+
+        /**
+         * Creates the HTML element for an Awakener card.
+         * @param {object} awakener The character data object.
+         * @param {boolean} isClone If true, the card is being rendered inside a row.
+         * @param {number | null} rowId The source row ID if it is a clone, otherwise null.
+         * @returns {HTMLElement} The created card element.
+         */
+        function createAwakenerCard(awakener, isClone = false, rowId = null) {
+            const card = document.createElement('div');
+            // Use faction for styling
+            const factionClasses = getFactionClasses(awakener.faction); 
+
+            // Base classes
+            // Reduced card height slightly since we are removing the faction text line
+            let classes = `flex flex-col items-center w-28 h-32 p-1 rounded-lg border-2 shadow-md hover:shadow-lg transition duration-200`;
+            
+            const awakenerName = awakener.name; // The internal Awakener-XX name
+            const displayName = awakener.displayName || awakenerName; // The name to show
+
+            if (!isClone) {
+                // Original cards (in Owned/Unowned groups)
+                classes += ` drag-source cursor-pointer ${factionClasses}`;
+                card.draggable = true;
+                // Pass name for drag data
+                card.ondragstart = (e) => handleDragStart(e, awakenerName, null); 
+                
+                // Roster toggle remains right-click (oncontextmenu)
+                card.oncontextmenu = (e) => {
+                    e.preventDefault(); // Prevent default browser context menu
+                    toggleAwakenerGroup(awakenerName); // Use name
+                };
+            } else {
+                // Cloned cards (in Team Rows)
+                classes += ` drag-clone cursor-pointer ${factionClasses}`;
+                card.draggable = true;
+                // Pass the source row ID (0-9)
+                card.ondragstart = (e) => handleDragStart(e, awakenerName, rowId); 
+            }
+            
+            // Apply visual filter if Unowned
+            if (awakener.group === 'unowned') {
+                classes += ' filter grayscale opacity-60 hover:opacity-100'; 
+            }
+            
+
+            card.className = classes;
+            // Use dataset.name as the unique identifier
+            card.dataset.name = awakenerName; 
+
+            // Image URL construction using the required file path format
+            const imageUrl = `../images/awakeners/${displayName}.png`;
+            
+            // Placeholder image URL for onerror fallback
+            const fallbackImageUrl = `https://placehold.co/100x100/A0A0FF/000?text=${displayName.replace(/[-\s]/g, '%20')}`;
+
+            card.innerHTML = `
+                <div class="text-xs font-semibold uppercase truncate w-full text-center">${displayName}</div>
+                <img 
+                    src="${imageUrl}" 
+                    alt="${displayName} image" 
+                    class="w-24 h-24 object-cover rounded-full mt-1 border-2 border-current shadow-inner"
+                    onerror="this.onerror=null; this.src='${fallbackImageUrl}';"
+                />
+            `;
+            return card;
+        }
+
+        /**
+         * Renders all awakeners into their respective groups, filtered by the current search query.
+         */
+        function renderAwakeners() {
+            const ownedList = document.getElementById('owned-list');
+            const unownedList = document.getElementById('unowned-list');
+
+            // Clear containers
+            ownedList.innerHTML = '';
+            unownedList.innerHTML = '';
+
+            const query = searchQuery.toLowerCase().trim();
+
+            // Filter data based on search query and team status
+            const filteredAwakeners = awakenersData.filter(awakener => {
+                // 1. Always filter out units already in a team row
+                if (isAwakenerInTeam(awakener.name)) {
+                    return false;
+                }
+
+                // 2. Apply text filter if query exists
+                if (query === '') {
+                    return true;
+                }
+
+                // Check display name, internal name, or faction
+                return awakener.displayName.toLowerCase().includes(query) ||
+                       awakener.name.toLowerCase().includes(query) ||
+                       awakener.faction.toLowerCase().includes(query);
+            });
+
+            // Render filtered cards
+            filteredAwakeners.forEach(awakener => {
+                const card = createAwakenerCard(awakener);
+                if (awakener.group === 'owned') {
+                    ownedList.appendChild(card);
+                } else {
+                    unownedList.appendChild(card);
+                }
+            });
+        }
+        
+        /**
+         * Updates the search query state and re-renders the roster.
+         * @param {Event} e 
+         */
+        function handleSearchInput(e) {
+            searchQuery = e.target.value;
+            renderAwakeners(); // Re-render the roster with the new filter
+        }
+
+
+        /**
+         * Renders the cards placed in the team composition rows, and creates the row containers dynamically.
+         */
+        function renderRows() {
+            const rowsContainer = document.getElementById('rows-container');
+            rowsContainer.innerHTML = ''; // Clear existing rows
+
+            rowsState.forEach((rowNames, index) => { // rowNames now contains names
+                // 1. Create the Row container
+                const rowElement = document.createElement('div');
+                rowElement.id = `row-${index}`;
+                
+                // *** p-2 reduces vertical padding; flex-nowrap prevents cards from wrapping ***
+                rowElement.className = 'team-row p-2 bg-indigo-700 rounded-lg shadow-inner flex flex-nowrap gap-2 overflow-x-auto transition duration-300 mb-0';
+                
+                // 2. Add the Row label and Delete Button 
+                
+                const labelContainer = document.createElement('div');
+                // The label container takes up enough space to stay on the left, but flex-shrink-0 ensures it doesn't compress
+                labelContainer.className = 'flex items-center justify-between w-full sm:w-auto flex-shrink-0 min-w-[70px]';
+                
+                const label = document.createElement('p');
+                label.className = 'row-label text-indigo-300 font-medium';
+                label.textContent = `Row ${index + 1}:`;
+                labelContainer.appendChild(label);
+
+                // Delete button
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'text-red-300 hover:text-red-500 font-bold p-1 leading-none text-xl ml-2';
+                deleteBtn.innerHTML = '&times;'; 
+                deleteBtn.title = `Delete Row ${index + 1}`;
+
+                // Only allow deletion if there is more than one row
+                if (rowsState.length > 1) {
+                    deleteBtn.onclick = (e) => {
+                        e.stopPropagation(); // Prevent drag events firing from the button
+                        deleteRow(index);
+                    };
+                } else {
+                    deleteBtn.disabled = true;
+                    deleteBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                }
+                
+                labelContainer.appendChild(deleteBtn);
+                rowElement.appendChild(labelContainer); // Add the header first
+                
+                // 3. Attach Drag & Drop listeners (MUST be done for dynamically created elements)
+                rowElement.addEventListener('dragover', handleDragOver);
+                rowElement.addEventListener('dragenter', handleDragEnter);
+                rowElement.addEventListener('dragleave', handleDragLeave);
+                rowElement.addEventListener('drop', handleDrop);
+
+                // 4. Populate the row with cards (These will flow after the labelContainer due to flex-wrap)
+                rowNames.forEach(name => {
+                    const awakener = getAwakenerByName(name);
+                    if (awakener) {
+                        const cardClone = createAwakenerCard(awakener, true, index); 
+                        rowElement.appendChild(cardClone);
+                    }
+                });
+                
+                rowsContainer.appendChild(rowElement);
+            });
+            
+            // 5. Update the button status
+            updateAddRowButtonStatus();
+        }
+
+        /**
+         * Adds a new empty row to the team state, up to MAX_ROWS.
+         */
+        function addRow() {
+            if (rowsState.length < MAX_ROWS) {
+                rowsState.push([]);
+                renderRows(); // Re-render everything
+                updateUrlState(); // Save state to URL
+                console.log(`Added new row. Total rows: ${rowsState.length}`);
+            } else {
+                console.warn(`Cannot add more rows. Maximum limit of ${MAX_ROWS} reached.`);
+            }
+        }
+        
+        /**
+         * Deletes a row and returns any assigned units back to the main roster.
+         * @param {number} rowIndex The index of the row to delete.
+         */
+        function deleteRow(rowIndex) {
+            if (rowsState.length <= 1) {
+                console.warn("Cannot delete the last remaining row.");
+                return;
+            }
+
+            // The units are implicitly returned to the roster since they are no longer in rowsState
+            const unitsInDeletedRow = rowsState[rowIndex];
+
+            // Remove the row from the state
+            rowsState.splice(rowIndex, 1);
+            
+            // Re-render everything
+            renderRows();
+            renderAwakeners();
+            updateUrlState(); // Save state to URL
+
+            console.log(`Deleted Row ${rowIndex + 1}. ${unitsInDeletedRow.length} units returned to Roster.`);
+        }
+
+        /**
+         * Disables/updates the Add Row button based on the current row count.
+         */
+        function updateAddRowButtonStatus() {
+            const btn = document.getElementById('add-row-btn');
+            if (btn) {
+                if (rowsState.length >= MAX_ROWS) {
+                    btn.disabled = true;
+                    btn.textContent = `Max Rows (${MAX_ROWS}) Reached`;
+                    btn.classList.replace('bg-indigo-500', 'bg-gray-500');
+                    btn.classList.replace('hover:bg-indigo-400', 'hover:bg-gray-500');
+                } else {
+                    btn.disabled = false;
+                    btn.textContent = `+ Add Team Row (Max ${MAX_ROWS})`;
+                    btn.classList.replace('bg-gray-500', 'bg-indigo-500');
+                    btn.classList.replace('hover:bg-gray-500', 'hover:bg-indigo-400');
+                }
+            }
+        }
+
+        // --- EVENT HANDLERS (Drag & Drop) ---
+
+        /**
+         * Handles the start of a drag operation on an Awakener card.
+         * @param {DragEvent} e
+         * @param {string} awakenerName The name of the dragged awakener.
+         * @param {number | null} sourceRowId The ID of the row the card originated from, or null if from Roster.
+         */
+        function handleDragStart(e, awakenerName, sourceRowId) {
+            const dragData = {
+                name: awakenerName, // Use name
+                sourceRowId: sourceRowId // null if from Roster, 0-9 if from a row
+            };
+            // Use 'application/json' for complex data transfer
+            e.dataTransfer.setData('application/json', JSON.stringify(dragData));
+            // Use 'move' since we are moving items either from Roster-to-Row or Row-to-Row/Roster
+            e.dataTransfer.effectAllowed = 'move';
+        }
+
+        /**
+         * Toggles the visual drag-over class on the team rows.
+         * @param {DragEvent} e
+         */
+        function handleDragEnter(e) {
+            e.target.closest('.team-row')?.classList.add('drag-over');
+        }
+
+        /**
+         * Toggles the visual drag-over class on the team rows.
+         * @param {DragEvent} e
+         */
+        function handleDragLeave(e) {
+            e.target.closest('.team-row')?.classList.remove('drag-over');
+        }
+        
+        /**
+         * Allows dropping by preventing the default behavior.
+         * @param {DragEvent} e
+         */
+        function handleDragOver(e) {
+            e.preventDefault(); // Necessary to allow drop
+            e.dataTransfer.dropEffect = 'move';
+        }
+
+        /**
+         * Handles the dropping of an Awakener card into a team row.
+         * @param {DragEvent} e
+         */
+        function handleDrop(e) {
+            e.preventDefault();
+            const rowElement = e.target.closest('.team-row');
+            if (!rowElement) return;
+
+            rowElement.classList.remove('drag-over');
+
+            try {
+                // Retrieve and parse drag data
+                const dragData = JSON.parse(e.dataTransfer.getData('application/json'));
+                const awakenerName = dragData.name; // Use name
+                const sourceRowId = dragData.sourceRowId; 
+                const targetRowId = parseInt(rowElement.id.split('-')[1]);
+                
+                // Check if the unit is already in the target row (e.g., Row A to Row A drop)
+                const isAlreadyInTarget = rowsState[targetRowId].includes(awakenerName);
+
+                // --- CONSTRAINT CHECKS ---
+                
+                // 1. ROW CAPACITY CHECK (Applies if adding a unit, and it's not a self-move)
+                // If the unit is NOT currently in the target row (meaning it's a true addition/move-in)
+                if (!isAlreadyInTarget) {
+                    if (rowsState[targetRowId].length >= MAX_ROW_CAPACITY) { 
+                        console.log(`Row ${targetRowId + 1} is full (Max ${MAX_ROW_CAPACITY} units per row).`);
+                        return; 
+                    }
+                }
+                
+                // --- STATE MODIFICATION ---
+
+                // 2. Handle removal from the source row (if applicable: Row-to-Row or Row-to-same-Row)
+                if (sourceRowId !== null) {
+                    rowsState[sourceRowId] = rowsState[sourceRowId].filter(name => name !== awakenerName);
+                }
+
+                // 3. Add to the target row (preventing duplicates within the target row)
+                if (!rowsState[targetRowId].includes(awakenerName)) {
+                    rowsState[targetRowId].push(awakenerName); // Use name
+                }
+
+                // 4. Re-render and save state
+                renderRows();
+                renderAwakeners();
+                updateUrlState();
+
+            } catch (error) {
+                console.error("Drop error or invalid data format:", error);
+            }
+        }
+
+        /**
+         * Handles dropping a card from a row back to a main roster group.
+         * This handles Row-to-Roster (Move out of team).
+         * @param {DragEvent} e
+         */
+        function handleRosterDrop(e) {
+            e.preventDefault();
+
+            try {
+                // Retrieve and parse drag data
+                const dragData = JSON.parse(e.dataTransfer.getData('application/json'));
+                const awakenerName = dragData.name; // Use name
+                const sourceRowId = dragData.sourceRowId;
+
+                // Only process if the card originated from a row (sourceRowId is a number)
+                if (sourceRowId !== null) {
+                    // 1. Remove the Awakener Name from the source row's state
+                    rowsState[sourceRowId] = rowsState[sourceRowId].filter(name => name !== awakenerName);
+
+                    // 2. Re-render the rows AND the main roster (to make the card reappear)
+                    renderRows();
+                    renderAwakeners();
+                    updateUrlState(); // Save state to URL
+                    console.log(`Awakener Name ${awakenerName} removed from row ${sourceRowId} and returned to the roster.`);
+                }
+            } catch (error) {
+                console.error("Roster Drop error or invalid data format:", error);
+            }
+        }
+
+
+        // --- GROUP TOGGLE LOGIC ---
+
+        /**
+         * Toggles an awakener's group between 'owned' and 'unowned'.
+         * @param {string} awakenerName The name of the awakener to toggle.
+         */
+        function toggleAwakenerGroup(awakenerName) {
+            const index = awakenersData.findIndex(a => a.name === awakenerName);
+            if (index > -1) {
+                const currentGroup = awakenersData[index].group;
+                awakenersData[index].group = currentGroup === 'owned' ? 'unowned' : 'owned';
+
+                // Re-render the main groups
+                renderAwakeners();
+                updateUrlState(); // Save state to URL
+
+                console.log(`Awakener ${awakenerName} moved to ${awakenersData[index].group}.`);
+            }
+        }
+        
+        // --- RESIZING LOGIC ---
+        
+        /**
+         * Applies the stored ownedHeightPercentage to set the pixel heights of the owned/unowned panels.
+         * Should be called on load and window resize.
+         */
+        function applyVerticalRosterSplit() {
+            // Check for large screen only
+            if (window.innerWidth < 1024) {
+                // On mobile, ensure they revert to flex-grow: 1 and auto height
+                ownedGroup.style.flexGrow = '1';
+                ownedGroup.style.height = ''; 
+                unownedGroup.style.flexGrow = '1';
+                unownedGroup.style.height = ''; 
+                return;
+            }
+
+            // Disable transition briefly while applying hard pixel size to avoid flicker
+            ownedGroup.style.transition = 'none';
+            unownedGroup.style.transition = 'none';
+
+            // Set flex-grow to 0 to respect the explicit height being set below
+            ownedGroup.style.flexGrow = '0';
+            unownedGroup.style.flexGrow = '0';
+
+            // Calculate the total flexible height
+            const rosterColumn = document.getElementById('roster-column');
+            const searchBlock = document.getElementById('search-block');
+            const splitter = document.getElementById('roster-splitter');
+            const gapSize = 16; // space-y-4 = 16px
+            
+            // Safety check for initialization
+            if (!rosterColumn || !searchBlock || !splitter) return; 
+
+            // totalFlexibleHeight = Total Column Height - (Search Block Height + Splitter Height + 3 Gaps)
+            // Note: offsetHeight includes padding/border/content, not margin. Gap accounts for margin/gap.
+            const totalFlexibleHeight = rosterColumn.offsetHeight - searchBlock.offsetHeight - splitter.offsetHeight - (gapSize * 3);
+            
+            // Calculate new pixel heights based on the stored percentage
+            let desiredOwnedHeight = totalFlexibleHeight * (ownedHeightPercentage / 100);
+
+            // Clamp the height using pixel minimums
+            const maxOwnedHeight = totalFlexibleHeight - MIN_PX_HEIGHT;
+            desiredOwnedHeight = Math.max(desiredOwnedHeight, MIN_PX_HEIGHT);
+            desiredOwnedHeight = Math.min(desiredOwnedHeight, maxOwnedHeight);
+            
+            // Apply the calculated heights
+            ownedGroup.style.height = `${desiredOwnedHeight}px`;
+            unownedGroup.style.height = `${totalFlexibleHeight - desiredOwnedHeight}px`;
+
+            // Restore transitions
+            setTimeout(() => {
+                ownedGroup.style.transition = '';
+                unownedGroup.style.transition = '';
+            }, 50);
+        }
+        
+        /**
+         * Starts the horizontal column resizing operation (Roster vs Team).
+         * @param {MouseEvent} e 
+         */
+        function startResize(e) {
+            // Only enable resizing on desktop (large screens)
+            if (window.innerWidth < 1024) return;
+            
+            isResizing = true;
+            document.body.classList.add('no-select-col');
+            // Disable transition during drag
+            rosterColumn.style.transition = 'none'; 
+            e.preventDefault();
+        }
+        
+        /**
+         * Starts the vertical column resizing operation (Owned vs Unowned).
+         * @param {MouseEvent} e 
+         */
+        function startVerticalResize(e) {
+            if (window.innerWidth < 1024) return;
+            
+            isVerticalResizing = true;
+            document.body.classList.add('no-select-row');
+            
+            // We rely on applyVerticalRosterSplit to set up the initial heights.
+            // Now, we just ensure no transition during drag
+            ownedGroup.style.transition = 'none';
+            unownedGroup.style.transition = 'none';
+            
+            e.preventDefault();
+        }
+
+        /**
+         * Handles both horizontal and vertical mouse movements during resizing.
+         * @param {MouseEvent} e 
+         */
+        function handleMouseMove(e) {
+            if (isResizing) {
+                // Horizontal Resize Logic (Roster vs Team)
+                const mainLayout = document.getElementById('main-layout');
+                const containerRect = mainLayout.getBoundingClientRect();
+
+                // Calculate the new width based on mouse X position relative to container
+                const newWidth = e.clientX - containerRect.left; 
+                let newWidthPercent = (newWidth / containerRect.width) * 100;
+
+                // Clamp the percentage
+                newWidthPercent = Math.max(newWidthPercent, MIN_WIDTH_PERCENT);
+                newWidthPercent = Math.min(newWidthPercent, 100 - MIN_WIDTH_PERCENT);
+
+                // Apply the new width
+                rosterColumn.style.width = `${newWidthPercent}%`;
+                
+            } else if (isVerticalResizing) {
+                // Vertical Resize Logic (Owned vs Unowned)
+                
+                const rosterColumn = document.getElementById('roster-column');
+                const containerRect = rosterColumn.getBoundingClientRect();
+                const searchBlock = document.getElementById('search-block');
+                const splitter = document.getElementById('roster-splitter');
+                const gapSize = 16; 
+                
+                // Calculate the total height available for flexible panels (Owned + Unowned)
+                const ownedGroupTop = containerRect.top + searchBlock.offsetHeight + gapSize;
+                const totalFlexibleHeight = rosterColumn.offsetHeight - searchBlock.offsetHeight - splitter.offsetHeight - (gapSize * 3);
+                
+                // 1. Determine the desired height for the owned group based on mouse position
+                let desiredOwnedHeight = e.clientY - ownedGroupTop;
+
+                // 2. Clamp the desired height
+                const maxOwnedHeight = totalFlexibleHeight - MIN_PX_HEIGHT;
+                desiredOwnedHeight = Math.max(desiredOwnedHeight, MIN_PX_HEIGHT);
+                desiredOwnedHeight = Math.min(desiredOwnedHeight, maxOwnedHeight);
+                
+                // 3. Apply the heights (these are temporary until mouseup)
+                ownedGroup.style.height = `${desiredOwnedHeight}px`;
+                unownedGroup.style.height = `${totalFlexibleHeight - desiredOwnedHeight}px`;
+
+                // 4. Update the persistent state (percentage)
+                ownedHeightPercentage = (desiredOwnedHeight / totalFlexibleHeight) * 100;
+            }
+        }
+
+
+        /**
+         * Ends the resizing operation (both horizontal and vertical cleanup).
+         */
+        function stopResize() {
+            if (isResizing) {
+                isResizing = false;
+                rosterColumn.style.transition = ''; // Restore horizontal transition
+                document.body.classList.remove('no-select-col');
+            }
+            
+            if (isVerticalResizing) {
+                isVerticalResizing = false;
+                
+                // Restore transitions
+                ownedGroup.style.transition = '';
+                unownedGroup.style.transition = '';
+                document.body.classList.remove('no-select-row');
+                
+                // CRITICAL FIX: Re-apply the pixel sizes one last time using the stored percentage.
+                // This forces the panels to respect the final clamped size consistently.
+                applyVerticalRosterSplit(); 
+            }
+        }
+
+
+        // --- INITIALIZATION ---
+
+        window.onload = async function() {
+            // 0. Load or generate Awakener data BEFORE loading state
+            await loadAwakenersData(); 
+            
+            // 1. Load state from URL (this updates rowsState and awakenersData if a state exists)
+            loadStateFromUrl();
+
+            // 2. Initial Render
+            renderAwakeners();
+            renderRows();
+
+            // 3. Setup Add Row Button Listener
+            const addRowBtn = document.getElementById('add-row-btn');
+            if (addRowBtn) {
+                addRowBtn.addEventListener('click', addRow);
+            }
+            
+            // 4. Setup Drop Listeners for Main Roster Groups (to remove cards from rows)
+            const ownedList = document.getElementById('owned-list');
+            const unownedList = document.getElementById('unowned-list');
+
+            [ownedList, unownedList].forEach(list => {
+                // Use a generic drag over handler
+                list.addEventListener('dragover', handleDragOver); 
+                // Use the roster drop handler
+                list.addEventListener('drop', handleRosterDrop);
+            });
+
+            // 5. Setup Search Input Listener
+            const searchInput = document.getElementById('awakener-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', handleSearchInput);
+            }
+
+            // 6. Setup Resizing Handlers
+            rosterColumn = document.getElementById('roster-column');
+            ownedGroup = document.getElementById('owned-group'); 
+            unownedGroup = document.getElementById('unowned-group'); 
+
+            const dragHandle = document.getElementById('drag-handle'); // Horizontal splitter
+            const rosterSplitter = document.getElementById('roster-splitter'); // Vertical splitter
+            
+            if (dragHandle) {
+                dragHandle.addEventListener('mousedown', startResize);
+            }
+            
+            if (rosterSplitter) {
+                rosterSplitter.addEventListener('mousedown', startVerticalResize);
+            }
+            
+            // Unified mouse move/up listeners
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', stopResize);
+            
+            // Set initial width for the left panel on large screens
+            if (window.innerWidth >= 1024) {
+                // Setting initial horizontal width
+                rosterColumn.style.width = '60%';
+                rosterColumn.style.flexGrow = '0';
+                
+                // Apply the initial vertical split ratio
+                applyVerticalRosterSplit();
+            }
+            
+            // Listen for window resize to maintain the vertical split ratio
+            window.addEventListener('resize', applyVerticalRosterSplit);
+
+
+            // 7. Ensure URL is updated even if the initial state was default
+            updateUrlState();
+        };
+    </script>
+</body>
+</html>
