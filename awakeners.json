@@ -223,7 +223,7 @@
             "over_exalt": "[Unbending Resolve] Cause one Tentacle to attack 5 times. Gain Counter equal to 25% of the damage dealt by this effect."
         },
         "talents": {
-            "T1": "Innate: Rebellious Spikes Talent For every 1% Sigil Yield Caecus has, his [Strike] gains an additional 1% counter damage bonus.",
+            "T1": "Innate: Rebellious Spikes Talent For every 1% Sigil Yield Caecus and his equipped WoD & Covenant have, his [Strike] gains an additional 1% counter damage bonus.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
             "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Caecus's CON, ATK, and DEF stats increase by (3% per talent level).After using Caecus's Rouse, gain (50 per talent level) Keyflare.Caecus heals 15% (+2% per talent level) of his CON each time he plays his first Command Card per turn. The Tentacle Damage from the Counter effects of Bloodline of Heresy is boosted by 50% (+10% per talent level)."
         },
