@@ -510,11 +510,41 @@
             e.target.closest('.team-row, #owned-list, #unowned-list')?.classList.remove('drag-over');
         }
         
+        // MODIFIED: Simplified to not rely on visual cues on the row itself for reordering
         function handleDragOver(e) {
             e.preventDefault(); 
             e.dataTransfer.dropEffect = 'move';
         }
 
+        // NEW HELPER FUNCTION for reordering logic
+        function getDropIndex(e, rowElement) {
+            const children = Array.from(rowElement.children);
+            // Skip the first child (the label container)
+            const cards = children.slice(1).filter(el => el.classList.contains('drag-clone'));
+            
+            const dropX = e.clientX;
+
+            if (cards.length === 0) return 0;
+
+            let insertIndex = 0;
+
+            for (let i = 0; i < cards.length; i++) {
+                const cardRect = cards[i].getBoundingClientRect();
+                const cardMidX = cardRect.left + cardRect.width / 2;
+                
+                // If drop is before the middle of a card, insert before this card.
+                if (dropX < cardMidX) {
+                    insertIndex = i;
+                    return insertIndex;
+                }
+            }
+
+            // If drop is after the middle of the last card, insert after the last card.
+            return cards.length;
+        }
+
+
+        // MODIFIED: Implementation of reordering logic
         function handleDrop(e) {
             e.preventDefault();
             const rowElement = e.target.closest('.team-row');
@@ -528,23 +558,51 @@
                 const sourceRowId = dragData.sourceRowId; 
                 const targetRowId = parseInt(rowElement.id.split('-')[1]);
                 
-                const isAlreadyInTarget = rowsState[targetRowId].includes(awakenerName);
+                let dropIndex = getDropIndex(e, rowElement);
+                let existingIndex = rowsState[targetRowId].indexOf(awakenerName);
 
-                if (!isAlreadyInTarget) {
+                const isMoveBetweenRows = (sourceRowId !== null && parseInt(sourceRowId) !== targetRowId);
+                const isDragFromRoster = (sourceRowId === null);
+                
+                // 1. CAPACITY CHECK & REJECTION
+                // Check capacity only if the unit is not already in the row 
+                // AND it's a drag from the roster or another row.
+                if (existingIndex === -1 && (isMoveBetweenRows || isDragFromRoster)) {
                     if (rowsState[targetRowId].length >= MAX_ROW_CAPACITY) { 
-                        console.log(`Row ${targetRowId + 1} is full.`);
-                        return; 
+                        console.log(`Row ${targetRowId + 1} is full. Drop rejected.`);
+                        // Ensure UI consistency (no state changes occurred yet)
+                        renderRows();
+                        return; // REJECT DROP
                     }
                 }
                 
+                // 2. REMOVAL FROM SOURCE ROW (if dragging from a row)
                 if (sourceRowId !== null) {
                     const rowId = parseInt(sourceRowId);
+                    
+                    // Remove from source row
                     rowsState[rowId] = rowsState[rowId].filter(name => name !== awakenerName);
+                    
+                    // Adjust dropIndex for reorder within the same row, as the array length decreased.
+                    if (rowId === targetRowId) {
+                        if (existingIndex !== -1 && existingIndex < dropIndex) {
+                            dropIndex--;
+                        }
+                    }
                 }
 
-                if (!isAlreadyInTarget) {
-                    rowsState[targetRowId].push(awakenerName); 
-                } 
+                // 3. REORDER CLEANUP (Remove existing instance if dragged from roster)
+                // If the unit was dragged from the roster (sourceRowId === null) but was already present in the target row,
+                // remove the existing instance before re-inserting it.
+                if (existingIndex !== -1 && sourceRowId === null) {
+                    rowsState[targetRowId].splice(existingIndex, 1);
+                    if (existingIndex < dropIndex) {
+                        dropIndex--;
+                    }
+                }
+
+                // 4. INSERTION 
+                rowsState[targetRowId].splice(dropIndex, 0, awakenerName);
 
                 renderRows();
                 renderAwakeners(); 
@@ -552,6 +610,8 @@
 
             } catch (e) {
                 console.error("Failed to process drop:", e);
+                // Fallback render in case of error
+                renderRows(); 
             }
         }
 
