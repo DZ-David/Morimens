@@ -184,7 +184,7 @@
             "over_exalt": "[Jellyfish Congregation] Gain Tentacle DMG equal to 24% of ATK.The next 5 times [Gland Division] is played, draw 1 card."
         },
         "talents": {
-            "T1": "Innate: Happy Little Fairy Talent For every point of Aliemus Regen Aurita has, gain Tentacle DMG equal to 1% of Aurita's ATK at the start of battle.",
+            "T1": "Innate: Happy Little Fairy Talent For every point of Aliemus Regen Aurita and her equipped WoD & Covenant have, gain Tentacle DMG equal to 1% of Aurita's ATK at the start of battle.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
             "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Aurita's CON, ATK, and DEF stats increase by (3% per talent level).After using Aurita's Rouse, gain (50 per talent level) Keyflare.For every [Gland Division] consumed by [Clamorous Ocean], Aurita's DMG increases by 2.5% (+0.5% per talent level) ATK. When at least 20 [Gland Division] cards are consumed in a Boss Battle, [Gland Division] deals an additional instance of DMG when played or consumed."
         },
