@@ -160,9 +160,9 @@
         "faction": "AEQUOR",
         "type": "ATTACK",
         "stats": {
-            "CON": "96(+12)*",
-            "ATK": "104(+1.3)*",
-            "DEF": "92(+1.15)*",
+            "CON": "96",
+            "ATK": "104",
+            "DEF": "92",
             "CritRate": "14.6%(+1.6%)*",
             "CritDamage": "50%",
             "AliemusRegen": "2.4(+0.4)*",
@@ -199,9 +199,9 @@
         "faction": "AEQUOR",
         "type": "DEFENSE",
         "stats": {
-            "CON": "156(+1.95)*",
-            "ATK": "124(+1.55)*",
-            "DEF": "136(+1.7)*",
+            "CON": "156",
+            "ATK": "124",
+            "DEF": "136",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -317,9 +317,9 @@
         "faction": "AEQUOR",
         "type": "ASSIST",
         "stats": {
-            "CON": "80(1)*",
-            "ATK": "76(0.95)*",
-            "DEF": "80(1)*",
+            "CON": "80",
+            "ATK": "76",
+            "DEF": "80",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -341,9 +341,9 @@
             "over_exalt": "[Divine Vigil Add 3 [Tintless Dream] to your hand. They restore 50% more HP but have Exhaust."
         },
         "talents": {
-            "T1": "Innate: Voyage Horn Talent For every 1 point of Realm Mastery Celeste has, there is a 0.3% chance to trigger one tentacle attack when playing her Command Cards.",
+            "T1": "Innate: Voyage Horn Talent When Celeste play a card, a Tentacle attack the front-row enemy, the damage is equal to 0.5% of Tentacle DMG per point of Realm Mastery Celeste and her equipped WoD & Covenant have",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Celeste's CON, ATK, and DEF stats increase by (3% per talent level).After using Celeste's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Celeste's CON, ATK, and DEF stats increase by (3% per talent level).After using Celeste's Rouse, gain (50 per talent level) Keyflare.Celeste's Tentacle DMG Generation is increased by 20% (+3% per talent level). After Celeste plays her first Command Card each turn, she additionally triggers the Talent Voyage Horn 4 extra times"
         },
         "enlightens": {
             "E1": "[Solitary Mast Enlighten 1 [Everlasting Phantasm]: Gains Retain. Healing effect increased by 20%.",
@@ -395,9 +395,9 @@
         "faction": "AEQUOR",
         "type": "DEFENSE",
         "stats": {
-            "CON": "128(1.6)*",
-            "ATK": "112(1.4)*",
-            "DEF": "132(1.65)*",
+            "CON": "144*",
+            "ATK": "126*",
+            "DEF": "149*",
             "CritRate": "9.8%(+0.8%)*",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -632,9 +632,9 @@
         "faction": "AEQUOR",
         "type": "ASSIST",
         "stats": {
-            "CON": "96(1.2)*",
-            "ATK": "104(1.3)*",
-            "DEF": "120(1.5)*",
+            "CON": "96",
+            "ATK": "104",
+            "DEF": "120",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -646,8 +646,8 @@
         },
         "cards": {
             "C1": "[Abyssal Obsession] Card Cost: 2 Faros gains (25/30/35/40/45/50) Aliemus.Rouse: Gain 1 Tentacle.Each time you play a Faros Command Card, draw 1 card and trigger 5% of all enemies Poison. This effect can trigger up to 3 times per turn. Retain.",
-            "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.E2: Command 1 Tentacle to attack.",
-            "C3": "[Defend] Card Cost: 1 Gains (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.E2: Command 1 Tentacle to attack.",
+            "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.E2: Command 1 Tentacle to attack 2 times at 50% DMG.",
+            "C3": "[Defend] Card Cost: 1 Gains (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.E2: Command 1 Tentacle to attack 2 times at 50% DMG.",
             "C4": "[Ocean of Elation] Card Cost: 2 Deal (16/19.2/22.4/25.6/28.8/32% ATK) DMG. Inflict Poison equal to the damage dealt.Gain one Temporary Tentacle, ignoring the tentacle limit. Tentacle DMG + (2.5/3/3.5/4/4.5/5% ATK).",
             "C5": "[Deep Currents] Card Cost: 1 For the rest of this turn, Tentacle DMG inflicts (9/10.8/12.6/14.4/16.2/18% ATK) stacks of Poison to all enemies. Retain."
         },
@@ -656,14 +656,14 @@
             "over_exalt": "[Light of the Lost] Temporary Hand Limit +2.At the end of the turn, choose one card in hand to Retain and reduces its Arithmetica Cost by 1.This effect lasts 3 turns."
         },
         "talents": {
-            "T1": "Innate: Homesick Talent For every 1% DMG Amplification Faros has, the Shield gained from [Lost City of Lemuria] is increased by 0.3%",
+            "T1": "Innate: Homesick Talent For every 1% DMG Amplification Faros and her equipped WoD & Covenant have, the Shield gained from [Lost City of Lemuria] is increased by 0.4%",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Faros's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Faros's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Faros's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Faros's Rouse, gain (50 per talent level) Keyflare.When there are 1/2/3 other Lemurian Awakeners in the team, DMG Amplification +20%/50%/100%.Faros's Poison increased by 5%~15%. At the end of the Lost City of Lemuria round, command all Tentacles to attack once, but these attacks deal only 25% DMG"
         },
         "enlightens": {
             "E1": "[Jagged Shore] Enlighten 1 [Ocean of Elation] gains bonus DMG equal to 100% of Tentacle DMG.",
-            "E2": "[Congealed Ambergris] Enlighten 2 Faros' [Strike] and [Defend] Command Cards commands 1 Tentacle to attack once.",
-            "E3": "[Flickering Candle] Enlighten 3 At the end of each turn, for each card in hand, trigger 2% Poison on all enemies and gain 2 Aliemus."
+            "E2": "[Congealed Ambergris] Enlighten 2 Faros' [Strike] and [Defend] Command Cards commands 1 Tentacle to attack 2 times at 50% DMG.",
+            "E3": "[Flickering Candle] Enlighten 3 At the end of each turn, for each card in hand, trigger 3% Poison on all enemies and gain 3 Aliemus."
         }
     },
     {
