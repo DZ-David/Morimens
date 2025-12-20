@@ -160,9 +160,9 @@
         "faction": "AEQUOR",
         "type": "ATTACK",
         "stats": {
-            "CON": "96(+12)*",
-            "ATK": "104(+1.3)*",
-            "DEF": "92(+1.15)*",
+            "CON": "96",
+            "ATK": "104",
+            "DEF": "92",
             "CritRate": "14.6%(+1.6%)*",
             "CritDamage": "50%",
             "AliemusRegen": "2.4(+0.4)*",
@@ -184,7 +184,7 @@
             "over_exalt": "[Jellyfish Congregation] Gain Tentacle DMG equal to 24% of ATK.The next 5 times [Gland Division] is played, draw 1 card."
         },
         "talents": {
-            "T1": "Innate: Happy Little Fairy Talent For every point of Aliemus Regen Aurita has, gain Tentacle DMG equal to 1% of Aurita's ATK at the start of battle.",
+            "T1": "Innate: Happy Little Fairy Talent For every point of Aliemus Regen Aurita and her equipped WoD & Covenant have, gain Tentacle DMG equal to 1% of Aurita's ATK at the start of battle.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
             "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Aurita's CON, ATK, and DEF stats increase by (3% per talent level).After using Aurita's Rouse, gain (50 per talent level) Keyflare.For every [Gland Division] consumed by [Clamorous Ocean], Aurita's DMG increases by 2.5% (+0.5% per talent level) ATK. When at least 20 [Gland Division] cards are consumed in a Boss Battle, [Gland Division] deals an additional instance of DMG when played or consumed."
         },
@@ -199,9 +199,9 @@
         "faction": "AEQUOR",
         "type": "DEFENSE",
         "stats": {
-            "CON": "156(+1.95)*",
-            "ATK": "124(+1.55)*",
-            "DEF": "136(+1.7)*",
+            "CON": "156",
+            "ATK": "124",
+            "DEF": "136",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -212,7 +212,7 @@
             "DeathResistance": "0%"
         },
         "cards": {
-            "C1": "[Metamorphosed Body] Card Cost: 2 Caecus gains (25/30/35/40/45/50) Aliemus.Rouse: Gain 1 Tentacle. Whenever a Caecus Command Card is played, heal (3.5/4.2/4.9/5.6/6.3/7% CON) HP and gain (3.5/4.2/4.9/5.6/6.3/7% ATK) stacks of Counter.Retain.",
+            "C1": "[Metamorphosed Body] Card Cost: 2 Caecus gains (25/30/35/40/45/50) Aliemus.Rouse: Gain 1 Tentacle. Whenever a Caecus Command Card is played, heal (7/8.4/9.8/11.2/12.6/14% CON) HP and gain (7/8.4/9.8/11.2/12.6/14% ATK) stacks of Counter.Retain.",
             "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.",
             "C3": "[Defend] Card Cost: 1 Gain (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.",
             "C4": "[Protective Scales] Card Cost: 3 Gain (25/30/35/40/45/50% DEF) Shield.Until the start of the next turn, Counter and Tentacle Counter trigger an additional time for 50% DMG.Gain (2.5/3/3.5/4/4.5/5% ATK) STR.",
@@ -223,9 +223,9 @@
             "over_exalt": "[Unbending Resolve] Cause one Tentacle to attack 5 times. Gain Counter equal to 25% of the damage dealt by this effect."
         },
         "talents": {
-            "T1": "Innate: Rebellious Spikes Talent For every 1% Sigil Yield Caecus has, his [Strike] gains an additional 1% counter damage bonus.",
+            "T1": "Innate: Rebellious Spikes Talent For every 1% Sigil Yield Caecus and his equipped WoD & Covenant have, his [Strike] gains an additional 1% counter damage bonus.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Caecus's CON, ATK, and DEF stats increase by (3% per talent level).After using Caecus's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Caecus's CON, ATK, and DEF stats increase by (3% per talent level).After using Caecus's Rouse, gain (50 per talent level) Keyflare.Caecus heals 15% (+2% per talent level) of his CON each time he plays his first Command Card per turn. The Tentacle Damage from the Counter effects of Bloodline of Heresy is boosted by 50% (+10% per talent level)."
         },
         "enlightens": {
             "E1": "[Bloodline Awaken] Enlighten 1 [Shattered Halberd]: Caecus gains (15/16/17/18/19/20) Aliemus (effect scales with skill level of [Shattered Halberd]).",
@@ -317,9 +317,9 @@
         "faction": "AEQUOR",
         "type": "ASSIST",
         "stats": {
-            "CON": "80(1)*",
-            "ATK": "76(0.95)*",
-            "DEF": "80(1)*",
+            "CON": "80",
+            "ATK": "76",
+            "DEF": "80",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -341,9 +341,9 @@
             "over_exalt": "[Divine Vigil Add 3 [Tintless Dream] to your hand. They restore 50% more HP but have Exhaust."
         },
         "talents": {
-            "T1": "Innate: Voyage Horn Talent For every 1 point of Realm Mastery Celeste has, there is a 0.3% chance to trigger one tentacle attack when playing her Command Cards.",
+            "T1": "Innate: Voyage Horn Talent When Celeste play a card, a Tentacle attack the front-row enemy, the damage is equal to 0.5% of Tentacle DMG per point of Realm Mastery Celeste and her equipped WoD & Covenant have",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Celeste's CON, ATK, and DEF stats increase by (3% per talent level).After using Celeste's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Celeste's CON, ATK, and DEF stats increase by (3% per talent level).After using Celeste's Rouse, gain (50 per talent level) Keyflare.Celeste's Tentacle DMG Generation is increased by 20% (+3% per talent level). After Celeste plays her first Command Card each turn, she additionally triggers the Talent Voyage Horn 4 extra times"
         },
         "enlightens": {
             "E1": "[Solitary Mast Enlighten 1 [Everlasting Phantasm]: Gains Retain. Healing effect increased by 20%.",
@@ -395,9 +395,9 @@
         "faction": "AEQUOR",
         "type": "DEFENSE",
         "stats": {
-            "CON": "128(1.6)*",
-            "ATK": "112(1.4)*",
-            "DEF": "132(1.65)*",
+            "CON": "144*",
+            "ATK": "126*",
+            "DEF": "149*",
             "CritRate": "9.8%(+0.8%)*",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -632,9 +632,9 @@
         "faction": "AEQUOR",
         "type": "ASSIST",
         "stats": {
-            "CON": "96(1.2)*",
-            "ATK": "104(1.3)*",
-            "DEF": "120(1.5)*",
+            "CON": "96",
+            "ATK": "104",
+            "DEF": "120",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -646,8 +646,8 @@
         },
         "cards": {
             "C1": "[Abyssal Obsession] Card Cost: 2 Faros gains (25/30/35/40/45/50) Aliemus.Rouse: Gain 1 Tentacle.Each time you play a Faros Command Card, draw 1 card and trigger 5% of all enemies Poison. This effect can trigger up to 3 times per turn. Retain.",
-            "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.E2: Command 1 Tentacle to attack.",
-            "C3": "[Defend] Card Cost: 1 Gains (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.E2: Command 1 Tentacle to attack.",
+            "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.E2: Command 1 Tentacle to attack 2 times at 50% DMG.",
+            "C3": "[Defend] Card Cost: 1 Gains (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.E2: Command 1 Tentacle to attack 2 times at 50% DMG.",
             "C4": "[Ocean of Elation] Card Cost: 2 Deal (16/19.2/22.4/25.6/28.8/32% ATK) DMG. Inflict Poison equal to the damage dealt.Gain one Temporary Tentacle, ignoring the tentacle limit. Tentacle DMG + (2.5/3/3.5/4/4.5/5% ATK).",
             "C5": "[Deep Currents] Card Cost: 1 For the rest of this turn, Tentacle DMG inflicts (9/10.8/12.6/14.4/16.2/18% ATK) stacks of Poison to all enemies. Retain."
         },
@@ -656,14 +656,14 @@
             "over_exalt": "[Light of the Lost] Temporary Hand Limit +2.At the end of the turn, choose one card in hand to Retain and reduces its Arithmetica Cost by 1.This effect lasts 3 turns."
         },
         "talents": {
-            "T1": "Innate: Homesick Talent For every 1% DMG Amplification Faros has, the Shield gained from [Lost City of Lemuria] is increased by 0.3%",
+            "T1": "Innate: Homesick Talent For every 1% DMG Amplification Faros and her equipped WoD & Covenant have, the Shield gained from [Lost City of Lemuria] is increased by 0.4%",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Faros's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Faros's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Faros's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Faros's Rouse, gain (50 per talent level) Keyflare.When there are 1/2/3 other Lemurian Awakeners in the team, DMG Amplification +20%/50%/100%.Faros's Poison increased by 5%~15%. At the end of the Lost City of Lemuria round, command all Tentacles to attack once, but these attacks deal only 25% DMG"
         },
         "enlightens": {
             "E1": "[Jagged Shore] Enlighten 1 [Ocean of Elation] gains bonus DMG equal to 100% of Tentacle DMG.",
-            "E2": "[Congealed Ambergris] Enlighten 2 Faros' [Strike] and [Defend] Command Cards commands 1 Tentacle to attack once.",
-            "E3": "[Flickering Candle] Enlighten 3 At the end of each turn, for each card in hand, trigger 2% Poison on all enemies and gain 2 Aliemus."
+            "E2": "[Congealed Ambergris] Enlighten 2 Faros' [Strike] and [Defend] Command Cards commands 1 Tentacle to attack 2 times at 50% DMG.",
+            "E3": "[Flickering Candle] Enlighten 3 At the end of each turn, for each card in hand, trigger 3% Poison on all enemies and gain 3 Aliemus."
         }
     },
     {
@@ -791,9 +791,9 @@
         "faction": "AEQUOR",
         "type": "ATTACK",
         "stats": {
-            "CON": "164(+2.05)*",
-            "ATK": "160(+2)*",
-            "DEF": "132(+1.65)*",
+            "CON": "164",
+            "ATK": "160",
+            "DEF": "132",
             "CritRate": "14.6%(+1.6%)*",
             "CritDamage": "57.2%(+1.2%)*",
             "AliemusRegen": "0",
@@ -804,7 +804,7 @@
             "DeathResistance": "0%"
         },
         "cards": {
-            "C1": "[Preemptive Revenge] Card Cost: 3 Goliath gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Count +1. When Goliath deals damage gain (1.25/1.5/1.75/2/2.25/2.5% ATK) STR and Tentacle DMG. Retain.",
+            "C1": "[Preemptive Revenge] Card Cost: 3 Goliath gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Count +1. When Goliath deals damage gain (2/2.4/2.8/3.2/3.6/4% ATK) STR and Tentacle DMG. Retain.",
             "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.",
             "C3": "[Defend] Card Cost: 1 Gains (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.",
             "C4": "[Decapitation Damage] Card Cost: 3 Deal (60/72/84/96/108/120% ATK) DMG. If the target's HP is below 25% or the target is killed, refund Arithmetica Cost. STR has 3 times effectiveness on this card.E1: For each Tentacle, STR has an additional 1x effectiveness.",
@@ -818,10 +818,10 @@
         "talents": {
             "T1": "Innate: None Talent",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Goliath's CON, ATK, and DEF stats increase by (3% per talent level).After using Goliath's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Goliath's CON, ATK, and DEF stats increase by (3% per talent level).After using Goliath's Rouse, gain (50 per talent level) Keyflare.Increase the Base DMG dealt by Goliath by 20%~50%.Blade's Dominion temporarily increases the Final DMG dealt by Goliath by 5~%(+0.5% per talent level). When there are 1/2/3 other Lemurian Awakeners in the team, all Awakeners' STR Generation is increased by 6/15/30%."
         },
         "enlightens": {
-            "E1": "[Death is Rebirth] Enlighten 1 \"Decapitation Damage\" gains a STR buff that doubles for each Tentacle.",
+            "E1": "[Death is Rebirth] Enlighten 1 \"Decapitation Damage\" enjoy an additional 1xSTR scaling, that increase by a further x1 for each Tentacle present.",
             "E2": "[Rule by the Strongest] Enlighten 2 \"Law of the Strongest\" now steals all enemy STR buffs until the the start of your next turn.",
             "E3": "[Boundless Ambition] Enlighten 3 \"Abyssal Deapths' Power\" grants Goliath 25% Temporary Crit Rate when choosing \"Usurp\", or 25 Aliemus when choosing \"Dormancy\"."
         }
@@ -1227,9 +1227,9 @@
         "faction": "AEQUOR",
         "type": "ASSIST",
         "stats": {
-            "CON": "84",
-            "ATK": "132",
-            "DEF": "72",
+            "CON": "95",
+            "ATK": "149",
+            "DEF": "81",
             "CritRate": "5%",
             "CritDamage": "65%(+2.4%)*",
             "AliemusRegen": "0",
@@ -1240,9 +1240,9 @@
             "DeathResistance": "0%"
         },
         "cards": {
-            "C1": "Rouse: [Testament of Faith] Card Cost: 3 Miryam gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Limit and Tentacle Count +1.\"Strike\" and \"Exalted Pyre\" Crit Rate increased by 100%.Add 1 [Heretical Faith] into your hand.Prepare 3. Retain.",
-            "C2": "Rouse-Derivative: [Heretical Faith] Card Cost: 6 Miryam gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Limit and Tentacle Count +1.Choose \"Iron Resolve\" or \"Revelate Devotion\":\"Iron Resolve\": Gain 5 Strength and Tentacle DMG at the start of every turn.\"Revelate Devotion\": Gain (?% DEF) shield at the start of every turn.Add 1 [The End of Belief] into your hand.Prepare 3. Retain.",
-            "C3": "Rouse-Derivative: [The End of Belief] Card Cost: 9 Miryam gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Limit and Tentacle Count +1.At the end of your turn, add 1 random [God's Realm Phantasm] card into your hand.God's Realm Phantasm Cards:\"Call of the God's Realm\": Choose 1 Awakener to gain 25 Aliemus. Draw 2 cards. Retain. Exhaust.\"Arrival of the God's Realm\": Choose 1 Awakener to gain 25 Aliemus. Gain 2 Arithmetica. Retain. Exhaust.\"Devotion to the God's Realm\": Choose 1 Awakener to gain 25 Aliemus. Apply 1 Vulnerable and Weakness to all enemies. Retain. Exhaust.Prepare 3. Retain.",
+            "C1": "Rouse: [Testament of Faith] Card Cost: 3 Miryam gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Limit and Tentacle Count +1.\"Strike\" and \"Exalted Pyre\" Crit Rate increased by 100%.Add 1 [Heretical Faith] into your hand.Prepare 3.",
+            "C2": "Rouse-Derivative: [Heretical Faith] Card Cost: 6 Miryam gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Limit and Tentacle Count +1.Apply 1 stack of Weakness and Vulnerable to all enemies.Choose \"Iron Resolve\" or \"Revelate Devotion\":\"Iron Resolve\": Gain 5 Strength and Tentacle DMG at the start of every turn.\"Revelate Devotion\": Gain (?% DEF) shield at the start of every turn.Add 1 [The End of Belief] into your hand.Prepare 3. Retain.",
+            "C3": "Rouse-Derivative: [The End of Belief] Card Cost: 9 Miryam gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Limit and Tentacle Count +1.Apply 1 stack of Weakness and Vulnerable to all enemies.At the end of your turn, add 1 random [God's Realm Phantasm] card into your hand.God's Realm Phantasm Cards:\"Call of the God's Realm\": Choose 1 Awakener to gain 25 Aliemus. Draw 2 cards. Retain. Exhaust.\"Arrival of the God's Realm\": Choose 1 Awakener to gain 25 Aliemus. Gain 2 Arithmetica. Retain. Exhaust.\"Devotion to the God's Realm\": Choose 1 Awakener to gain 25 Aliemus. Apply 1 Vulnerable and Weakness to all enemies. Retain. Exhaust.Prepare 3. Retain.",
             "C4": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.Ritual: Final DMG increased by 100%/250%/500%.",
             "C5": "[Defend] Card Cost: 1 Gain (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.Ritual: Reduce all enemies Power by (5/6/7/8/9/10% ATK) / (12.5/15/17.5/20/22.5/25% ATK) / (25/30/35/40/45/50% ATK) for 1 turn.",
             "C6": "[Exalted Pyre] Card Cost: 2 Deal (45/54/63/72/81/90% ATK) Pierce DMG and apply stacks of Poison equal to the damage dealt. (E1) Temporarily increases Critical DMG by 15% of Miryam's Base Crit DMG.Ritual: Strength and Tentacle DMG +(1/1.2/1.4/1.6/1.8/2% ATK) / (2.5/3/3.5/4/4.5/5% ATK) / (5/6/7/8/9/10% ATK).",
@@ -1257,7 +1257,7 @@
         "talents": {
             "T1": "Innate: Undying Piety Talent At the start of battle, add 1 \"Obesssion\" to your hand.\"Strike\" deals extra damage equal to 50% of Tentacle DMG.For every 1% of Critical DMG Miryam has, \"Pray to the Abyss\" Strength and Tentacle DMG gain, Aliemus generated, and application and triggering of Poison effects are increased by 0.2%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Miryam's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Miryam's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Miryam's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Miryam's Rouse, gain (50 per talent level) Keyflare.Increase Tentacle DMG Generation of all Awakeners by 10%~(+1% for every talent level).When there are 1/2/3 other Lemurian Awakeners in the team, the Tentacle DMG Generation of all Awakeners is additionally increased by 6%/15%/30%"
         },
         "enlightens": {
             "E1": "[Solitary Pilgrimage] Enlighten 1 \"Exalted Pyre\" temporarily increases Crit DMG by 15% of Miryam's Base Crit DMG.",
@@ -1309,9 +1309,9 @@
         "faction": "AEQUOR",
         "type": "DEFENSE",
         "stats": {
-            "CON": "116",
-            "ATK": "124",
-            "DEF": "140",
+            "CON": "131",
+            "ATK": "140",
+            "DEF": "158",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "5(+0.8)*",
@@ -1713,10 +1713,10 @@
             "DeathResistance": "34%(+5.6%)*"
         },
         "cards": {
-            "C1": "Rouse: [Realm of Oblivion] Card Cost: 2 Sanga gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Count Limit +1.When Sanga grants a shield, gain Tentacle Damage +(2.5/3/3.5/4/4.5/5% ATK).",
+            "C1": "Rouse: [Realm of Oblivion] Card Cost: 2 Sanga gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Count Limit +1.Shields generated by Sanga are increased by 10%.When Sanga grants a shield, gain Tentacle Damage +(2.5/3/3.5/4/4.5/5% ATK).",
             "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.",
             "C3": "[Defend] Card Cost: 1 Gain (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.",
-            "C4": "[Beauty's Mercy] Card Cost: 4 Gain (24/28.8/33.6/38.4/43.2/48% DEF) Shield. (E2) Gain an additional (3/3.6/4.2/4.8/5.4/6% DEF) Shield for each tentacle.Gain 1 Tentacle.",
+            "C4": "[Beauty's Mercy] Card Cost: 4 Gain (24/28.8/33.6/38.4/43.2/48% DEF) Shield. (E2) Gain an additional (3/3.6/4.2/4.8/5.4/6% DEF) Shield for each tentacle.Gain 1 Tentacle.Aftershock effect: Gain Aliemus equal to the current Tentacle Count",
             "C5": "[Opus of Isolation] Card Cost: 2 (E1) Gain (8/9.6/11.2/12.8/14.4/16% DEF) Shield.At the start of your next turn, remove Fragile from self and gain (28/33.6/39.2/44.8/50.4/56% DEF) Shield."
         },
         "exalt": {
@@ -1731,7 +1731,7 @@
         "enlightens": {
             "E1": "[Melodic Scultping] Enlighten 1 \"Opus of Isolation\" immediately grants a shield equal to (8/9.6/11.2/12.8/14.4/16)% of DEF (effect increases as the level of \"Opus of Isolation\" increases).",
             "E2": "[Kneel Before Beauty] Enlighten 2 \"Beauty's Mercy\" gains an additional shield equal to (3/3.6/4.2/4.8/5.4/6)% of DEF for each Tentacle present (effect increases with the level of \"Beauty's Mercy\").",
-            "E3": "[Artistic Dionysia] Enlighten 3 \"The Lost Art\" increases Base DMG and Shield Generation by 25%. Gains an additional 25% Crit Rate and Crit DMG."
+            "E3": "[Artistic Dionysia] Enlighten 3 \"The Lost Art\" increases Base DMG and Shield Generation by 25%. Gains an additional 25% Crit Rate and Crit DMG.When Sanga generates a Shield, gain Tentacle DMG equal to 3%(+0.3% per talent level) of the Shield"
         }
     },
     {
@@ -1898,9 +1898,9 @@
         "faction": "AEQUOR",
         "type": "ATTACK",
         "stats": {
-            "CON": "136",
-            "ATK": "152",
-            "DEF": "120",
+            "CON": "153",
+            "ATK": "171",
+            "DEF": "135",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "3(+0.4)*",
@@ -1922,9 +1922,9 @@
             "over_exalt": "[The Promised Day] Commands all Tentacles to attack all enemies twice"
         },
         "talents": {
-            "T1": "Innate: Divine King's Power Talent For every point of Aliemus Regen Level Tulu has, [Strike] deals (5% of Tentacle DMG and Strength) more DMG. [Abyss Order] deals (15% of Tentacle DMG and Strength) more DMG.",
+            "T1": "Innate: Divine King's Power Talent For every point of Aliemus Regen Level Tulu and his equipped WoD & Covenant have, [Strike] deals (5% of Tentacle DMG and Strength) more DMG and [Abyss Order] deals (15% of Tentacle DMG and Strength) more DMG.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Tulu's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Tulu's Rouse, gain (50 per talent level) Keyflare.Every Tentacle's attack increases Temporary Tentacle DMG by 2.5% of Tulu's ATK, up to 15 (+1 per talent level) times per turn."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Tulu's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Tulu's Rouse, gain (50 per talent level) Keyflare.Every Tentacle's attack increases Temporary Tentacle DMG by 2.5% of Tulu's ATK, up to 15 (+1 per talent level) times per turn.When there are 1/2/3 other Lemurian Awakeners in the team, all enemies receive 10%/25%/50% more Tentacle DMG"
         },
         "enlightens": {
             "E1": "[Nocturnal Murmurs] Enlighten 1 \"Abyss Order\" orders all Tentacles to attack all enemies.If the current pose is \"Tranquil Sea\", Arithmetica cost is reduced by 2.",
