@@ -791,9 +791,9 @@
         "faction": "AEQUOR",
         "type": "ATTACK",
         "stats": {
-            "CON": "164(+2.05)*",
-            "ATK": "160(+2)*",
-            "DEF": "132(+1.65)*",
+            "CON": "164",
+            "ATK": "160",
+            "DEF": "132",
             "CritRate": "14.6%(+1.6%)*",
             "CritDamage": "57.2%(+1.2%)*",
             "AliemusRegen": "0",
@@ -804,7 +804,7 @@
             "DeathResistance": "0%"
         },
         "cards": {
-            "C1": "[Preemptive Revenge] Card Cost: 3 Goliath gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Count +1. When Goliath deals damage gain (1.25/1.5/1.75/2/2.25/2.5% ATK) STR and Tentacle DMG. Retain.",
+            "C1": "[Preemptive Revenge] Card Cost: 3 Goliath gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Count +1. When Goliath deals damage gain (2/2.4/2.8/3.2/3.6/4% ATK) STR and Tentacle DMG. Retain.",
             "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.",
             "C3": "[Defend] Card Cost: 1 Gains (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.",
             "C4": "[Decapitation Damage] Card Cost: 3 Deal (60/72/84/96/108/120% ATK) DMG. If the target's HP is below 25% or the target is killed, refund Arithmetica Cost. STR has 3 times effectiveness on this card.E1: For each Tentacle, STR has an additional 1x effectiveness.",
@@ -818,10 +818,10 @@
         "talents": {
             "T1": "Innate: None Talent",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Goliath's CON, ATK, and DEF stats increase by (3% per talent level).After using Goliath's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Goliath's CON, ATK, and DEF stats increase by (3% per talent level).After using Goliath's Rouse, gain (50 per talent level) Keyflare.Increase the Base DMG dealt by Goliath by 20%~50%.Blade's Dominion temporarily increases the Final DMG dealt by Goliath by 5~%(+0.5% per talent level). When there are 1/2/3 other Lemurian Awakeners in the team, all Awakeners' STR Generation is increased by 6/15/30%."
         },
         "enlightens": {
-            "E1": "[Death is Rebirth] Enlighten 1 \"Decapitation Damage\" gains a STR buff that doubles for each Tentacle.",
+            "E1": "[Death is Rebirth] Enlighten 1 \"Decapitation Damage\" enjoy an additional 1xSTR scaling, that increase by a further x1 for each Tentacle present.",
             "E2": "[Rule by the Strongest] Enlighten 2 \"Law of the Strongest\" now steals all enemy STR buffs until the the start of your next turn.",
             "E3": "[Boundless Ambition] Enlighten 3 \"Abyssal Deapths' Power\" grants Goliath 25% Temporary Crit Rate when choosing \"Usurp\", or 25 Aliemus when choosing \"Dormancy\"."
         }
@@ -1227,9 +1227,9 @@
         "faction": "AEQUOR",
         "type": "ASSIST",
         "stats": {
-            "CON": "84",
-            "ATK": "132",
-            "DEF": "72",
+            "CON": "95",
+            "ATK": "149",
+            "DEF": "81",
             "CritRate": "5%",
             "CritDamage": "65%(+2.4%)*",
             "AliemusRegen": "0",
@@ -1240,9 +1240,9 @@
             "DeathResistance": "0%"
         },
         "cards": {
-            "C1": "Rouse: [Testament of Faith] Card Cost: 3 Miryam gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Limit and Tentacle Count +1.\"Strike\" and \"Exalted Pyre\" Crit Rate increased by 100%.Add 1 [Heretical Faith] into your hand.Prepare 3. Retain.",
-            "C2": "Rouse-Derivative: [Heretical Faith] Card Cost: 6 Miryam gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Limit and Tentacle Count +1.Choose \"Iron Resolve\" or \"Revelate Devotion\":\"Iron Resolve\": Gain 5 Strength and Tentacle DMG at the start of every turn.\"Revelate Devotion\": Gain (?% DEF) shield at the start of every turn.Add 1 [The End of Belief] into your hand.Prepare 3. Retain.",
-            "C3": "Rouse-Derivative: [The End of Belief] Card Cost: 9 Miryam gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Limit and Tentacle Count +1.At the end of your turn, add 1 random [God's Realm Phantasm] card into your hand.God's Realm Phantasm Cards:\"Call of the God's Realm\": Choose 1 Awakener to gain 25 Aliemus. Draw 2 cards. Retain. Exhaust.\"Arrival of the God's Realm\": Choose 1 Awakener to gain 25 Aliemus. Gain 2 Arithmetica. Retain. Exhaust.\"Devotion to the God's Realm\": Choose 1 Awakener to gain 25 Aliemus. Apply 1 Vulnerable and Weakness to all enemies. Retain. Exhaust.Prepare 3. Retain.",
+            "C1": "Rouse: [Testament of Faith] Card Cost: 3 Miryam gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Limit and Tentacle Count +1.\"Strike\" and \"Exalted Pyre\" Crit Rate increased by 100%.Add 1 [Heretical Faith] into your hand.Prepare 3.",
+            "C2": "Rouse-Derivative: [Heretical Faith] Card Cost: 6 Miryam gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Limit and Tentacle Count +1.Apply 1 stack of Weakness and Vulnerable to all enemies.Choose \"Iron Resolve\" or \"Revelate Devotion\":\"Iron Resolve\": Gain 5 Strength and Tentacle DMG at the start of every turn.\"Revelate Devotion\": Gain (?% DEF) shield at the start of every turn.Add 1 [The End of Belief] into your hand.Prepare 3. Retain.",
+            "C3": "Rouse-Derivative: [The End of Belief] Card Cost: 9 Miryam gains (25/30/35/40/45/50) Aliemus.Rouse: Tentacle Limit and Tentacle Count +1.Apply 1 stack of Weakness and Vulnerable to all enemies.At the end of your turn, add 1 random [God's Realm Phantasm] card into your hand.God's Realm Phantasm Cards:\"Call of the God's Realm\": Choose 1 Awakener to gain 25 Aliemus. Draw 2 cards. Retain. Exhaust.\"Arrival of the God's Realm\": Choose 1 Awakener to gain 25 Aliemus. Gain 2 Arithmetica. Retain. Exhaust.\"Devotion to the God's Realm\": Choose 1 Awakener to gain 25 Aliemus. Apply 1 Vulnerable and Weakness to all enemies. Retain. Exhaust.Prepare 3. Retain.",
             "C4": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.Ritual: Final DMG increased by 100%/250%/500%.",
             "C5": "[Defend] Card Cost: 1 Gain (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.Ritual: Reduce all enemies Power by (5/6/7/8/9/10% ATK) / (12.5/15/17.5/20/22.5/25% ATK) / (25/30/35/40/45/50% ATK) for 1 turn.",
             "C6": "[Exalted Pyre] Card Cost: 2 Deal (45/54/63/72/81/90% ATK) Pierce DMG and apply stacks of Poison equal to the damage dealt. (E1) Temporarily increases Critical DMG by 15% of Miryam's Base Crit DMG.Ritual: Strength and Tentacle DMG +(1/1.2/1.4/1.6/1.8/2% ATK) / (2.5/3/3.5/4/4.5/5% ATK) / (5/6/7/8/9/10% ATK).",
@@ -1257,7 +1257,7 @@
         "talents": {
             "T1": "Innate: Undying Piety Talent At the start of battle, add 1 \"Obesssion\" to your hand.\"Strike\" deals extra damage equal to 50% of Tentacle DMG.For every 1% of Critical DMG Miryam has, \"Pray to the Abyss\" Strength and Tentacle DMG gain, Aliemus generated, and application and triggering of Poison effects are increased by 0.2%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Miryam's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Miryam's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Miryam's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Miryam's Rouse, gain (50 per talent level) Keyflare.Increase Tentacle DMG Generation of all Awakeners by 10%~(+1% for every talent level).When there are 1/2/3 other Lemurian Awakeners in the team, the Tentacle DMG Generation of all Awakeners is additionally increased by 6%/15%/30%"
         },
         "enlightens": {
             "E1": "[Solitary Pilgrimage] Enlighten 1 \"Exalted Pyre\" temporarily increases Crit DMG by 15% of Miryam's Base Crit DMG.",
@@ -1309,9 +1309,9 @@
         "faction": "AEQUOR",
         "type": "DEFENSE",
         "stats": {
-            "CON": "116",
-            "ATK": "124",
-            "DEF": "140",
+            "CON": "131",
+            "ATK": "140",
+            "DEF": "158",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "5(+0.8)*",
