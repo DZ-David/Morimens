@@ -1608,7 +1608,7 @@
         "talents": {
             "T1": "Innate: Silverheart Resonance Talent Ramona gains an additional 2.5 points of Keyflare. Ramona gains an additional 0.5 points of Keyflare for every affinity level gained.For each point of Keyflare Regen, increase the Base DMG of [Queen's Sword] by 1% and the temporary Realm Mastery gained from the card by 0.75.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ramona's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ramona's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ramona's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ramona's Rouse, gain (50 per talent level) Keyflare.Ramona's Keyflare Regen is increased by 5%(+1% per talent level). Obtain 50%(+10% per talent level) of Ramona's Keyflare Regen as Keyflare at the start of battle"
         },
         "enlightens": {
             "E1": "[Innocent Departure] Enlighten 1 \"Queen's Sword\" deals +1 instance of DMG and gains Temporary Strength equal to (2.5%/3%/3.5%/4%/4.5%/5%) of Ramona's ATK for each instance of DMG (effect increases with the level of \"Queen's Sword\").When discarded, gain Keyflare equivalent to the amount gained if the card was instead played.",
@@ -1621,9 +1621,9 @@
         "faction": "CHAOS",
         "type": "ASSIST",
         "stats": {
-            "CON": "160",
-            "ATK": "132",
-            "DEF": "128",
+            "CON": "180",
+            "ATK": "149",
+            "DEF": "144",
             "CritRate": "10%(+0.8%)*",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -1641,13 +1641,13 @@
             "C5": "[Showdown] Card Cost: 2 Deal (15/18/21/24/27/30% ATK) DMG 1-6 times and gain (10/11/12/13/14/15) Aliemus.If 6 or more instances of damage are dealt, place a 0 Arithmetica Cost [Unexpected Gain] with Exhaust into your hand."
         },
         "exalt": {
-            "exalt": "[All-In!] Deal (60/72/84/96/108/120% ATK) DMG to all enemies.Randomly draw 1-6 cards; for each card drawn, gain (1.5/1.8/2.1/2.4/2.7/3% ATK) Strength.",
+            "exalt": "[All-In!] Deal (75/90/105/120/135/150% ATK) DMG to all enemies.Randomly draw 1-6 cards; for each card drawn, gain (1.5/1.8/2.1/2.4/2.7/3% ATK) Strength.",
             "over_exalt": "[Jackpot!] \"All-In!\" deals 3 instances of DMG and reduces the Arithmetica Cost of drawn Cards by 1."
         },
         "talents": {
             "T1": "Innate: Winner Takes All Talent Ryker gains 5 Black Sigils upon killing an enemy, up to 5 times per exploration. For every 1% Sigil Yield Ryker has, the amount gained increases by 1%.After gaining 75/150/300 Black Sigils through battle, increase Relic capacity by 1 and select a \"Chaos Legacy\" relic to obtain at the end of the battle.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ryker's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ryker's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ryker's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ryker's Rouse, gain (50 per talent level) Keyflare.Ryker gains 10%(+1% per talent level) Crit. Rate and 40%(+4% per talent level) Black Sigil Yield for his Innate talent. If at least 500 Black Sigils are obtained through battle, upgrade 1 Chaotic Legacy at the start of the battle"
         },
         "enlightens": {
             "E1": "[Fortune's Boon] Enlighten 1 \"Unexpected Gain\" now reduces the Arithmetica Cost of the chosen Card by 2 on a critical hit. \"Showdown\" grants Ryker an additional 3 Aliemus for every critical hit.",
@@ -1778,9 +1778,9 @@
         "faction": "CHAOS",
         "type": "ASSIST",
         "stats": {
-            "CON": "120",
-            "ATK": "120",
-            "DEF": "120",
+            "CON": "135",
+            "ATK": "135",
+            "DEF": "135",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -1807,7 +1807,7 @@
         "talents": {
             "T1": "Innate: None Talent",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Tawil's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Tawil's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Tawil's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Tawil's Rouse, gain (50 per talent level) Keyflare.When Tawil plays a card originally belonging to other Awakeners in the team (from Exalt or Verity), the corresponding Awakener's Final DMG, Shield, and Healing for this turn are increased by 15%~(+1% per talent level), this effect cannot be stacked"
         },
         "enlightens": {
             "E1": "[Boundless Sagacity] Enlighten 1 \"Master of Omniscient Verity\" reduces the Arithmetica Cost of changing Command Cards by 1. \"Timestrung Pinions Unfurled\" draws an additional \"Insight\" into your hand.",
