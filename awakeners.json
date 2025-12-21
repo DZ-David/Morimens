@@ -145,7 +145,7 @@
             "over_exalt": "[Justice and Truth] Add 1 [Combat Stance] and [Precision Slash] with Exhaust to your hand. Alva's Crit DMG +25% this battle."
         },
         "talents": {
-            "T1": "Innate: Dynamic Vision Talent For every 1% of Death Resistance Alva has, the Base DMG of [Strike] and [Precision Slash] is increased by 0.5%.",
+            "T1": "Innate: Dynamic Vision Talent For every 1% of Death Resistance Alva and her equipped WoD & Covenant have, the Base DMG of [Strike] and [Precision Slash] is increased by 0.5%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
             "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Alva's CON, ATK, and DEF stats increase by (3% per talent level).After using Alva's Rouse, gain (50 per talent level) Keyflare.The Base DMG of Strike and Precision Slash is increased by 10%~(+1% per talent level) of the Shield gained this turn. Alva deals 20%~(+3% per talent level) more Final DMG to Caro enemies."
         },
@@ -498,7 +498,7 @@
             "over_exalt": "[Psyche Dissection] At the start of each turn, heal (40/48/56/64/72/80% CON) HP. Lasts 3 turns."
         },
         "talents": {
-            "T1": "Innate: Gnosis Reconstruction Talent For every 1 point of Aliemus Regen Doll has, the HP Recovery of [Outer Surgery] and [Equivalent Exchange] is increased by 0.5%.",
+            "T1": "Innate: Gnosis Reconstruction Talent For every 1 point of Aliemus Regen Doll and her equipped WoD & Covenant have, the HP Recovery of [Outer Surgery] and [Equivalent Exchange] is increased by 0.5%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
             "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Doll's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Doll's Rouse, gain (50 per talent level) Keyflare.The Heal and Aliemus generation effect from Doll's Exalt is increased by 5%(+1% per talent level). For each additional Chaos Awakener in the team, this effect increases by an additional 5%"
         },
@@ -701,7 +701,7 @@
             "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Doll: Inferno's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Doll: Inferno's Rouse, gain (50 per talent level) S-Energy.After Exploration begins, all Awakener's Poison, Counter, and Base DMG increases by 5%(+1% per talent level)."
         },
         "enlightens": {
-            "E1": "[Borealis Visitor] Enlighten 1 [Self-Destruct Transformation] applies 1 turn of Vulnerable to all enemies when \"Elation\" is chosen, and applies 1 turn of Weakness to all enemies when \"Curse\" is chosen.",
+            "E1": "[Borealis Visitor] Enlighten 1 [Self-Destruct] applies 1 turn of Vulnerable to all enemies when \"Elation\" is chosen, and applies 1 turn of Weakness to all enemies when \"Curse\" is chosen.",
             "E2": "[Resonant Mycelium] Enlighten 2 [Terminal, Gateway of Truth and Abyss] and [Fate's Descent] inflict 50% increased Base Poison, with an additional 15% for each stack of \"Finale\".\"Finale\" stack limit removed.",
             "E3": "[Envoy of Extinction] Enlighten 3 [Strike] and [Defend] grant additional Aliemus equal to 5% of max Aliemus.[Illusion's End] fixed DMG increased from 25% to 30%. Additionally, it heals 30% of your missing HP."
         }
@@ -776,7 +776,7 @@
             "over_exalt": "[Reach into Yesterday] Gain 3 Negentropy, ignoring the stack limit. Cards copied by Exalt have their Arithmetica cost reduced to 0."
         },
         "talents": {
-            "T1": "Innate: Silverheart Resonance Talent Ramona gains an additional 2.5 points of Keyflare Regen. Each Affinity level grants an additional 0.5 Keyflare Regen.For each point of Keyflare Regen, the Loop effect of \"Strike\" grants Ramona: Timeworn an additional 0.2% critical rate and the Loop effect of [Defend] grants Ramona: Timeworn an additional 0.2 Aliemus.",
+            "T1": "Innate: Silverheart Resonance Talent Ramona gains an additional 2.5 points of Keyflare Regen. Each Affinity level grants an additional 0.5 Keyflare Regen.For each point of Keyflare Regen Ramona and her equipped WoD & Covenant have, the Loop effect of \"Strike\" grants Ramona: Timeworn an additional 0.2% critical rate and the Loop effect of [Defend] grants Ramona: Timeworn an additional 0.2 Aliemus.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
             "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ramona: Timeworn's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ramona: Timeworn's Rouse, gain (50 per talent level) Keyflare.Ramona's Keyflare Regen is increased by 5%(+1% per talent level). Obtain 50%(+10% per talent level) of Ramona's Keyflare Regen as Keyflare at the start of battle"
         },
@@ -1372,7 +1372,7 @@
             "over_exalt": "[Vroom Vroom!] Increase the current shield's effect by 50%; this can bypass the maximum shield limit.Now deals Fixed DMG equal to 500% of current stacks of Counter to all enemies."
         },
         "talents": {
-            "T1": "Innate: Daily Maintenance Talent For every point of Realm Mastery Nautila has, the Counter DMG from \"Ready and Set\" is increased by 0.25%.",
+            "T1": "Innate: Daily Maintenance Talent For every point of Realm Mastery Nautila and her equipped WoD & Covenant have, the Counter DMG from \"Ready and Set\" is increased by 0.25%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
             "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Nautila's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Nautila's Rouse, gain (50 per talent level) Keyflare.The Counter generated by Nautila is increased by 15%~(+1.5% per talent level). Gain temporary Counter equal to 20%~(+3% per talent level) of permanent Counter before unleashing Ready and Set"
         },
@@ -1411,7 +1411,7 @@
             "over_exalt": "[Abyssal Funeral Rites] Nymphaea applies 50% more Poison for 3 turns."
         },
         "talents": {
-            "T1": "Innate: Immerse Talent For every 1% of DMG Amplification Nymphaea has, the base Poison inflicted by [Knell of Death] and [Passage of the Ego] is increased by 0.5%.",
+            "T1": "Innate: Immerse Talent For every 1% of DMG Amplification Nymphaea and her equipped WoD & Covenant have, the base Poison inflicted by [Knell of Death] and [Passage of the Ego] is increased by 0.5%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
             "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Nymphaea's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Nymphaea's Rouse, gain (50 per talent level) Keyflare.Increases the triggered Poison effect of Nymphaea by 15%~(+2% per talent level), and increases the Poison caused by all Awakeners by 10%"
         },
@@ -1606,7 +1606,7 @@
             "over_exalt": "[Labyrinth of Thought] Apply 1 Weakness and Vulnerable to all enemies for 1 turn. The next Posse used will activate twice."
         },
         "talents": {
-            "T1": "Innate: Silverheart Resonance Talent Ramona gains an additional 2.5 points of Keyflare. Ramona gains an additional 0.5 points of Keyflare for every affinity level gained.For each point of Keyflare Regen, increase the Base DMG of [Queen's Sword] by 1% and the temporary Realm Mastery gained from the card by 0.75.",
+            "T1": "Innate: Silverheart Resonance Talent Ramona gains an additional 2.5 points of Keyflare. Ramona gains an additional 0.5 points of Keyflare for every affinity level gained.For each point of Keyflare Regen Ramona and her equipped WoD & Covenant have, increase the Base DMG of [Queen's Sword] by 1% and the temporary Realm Mastery gained from the card by 0.75.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
             "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ramona's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ramona's Rouse, gain (50 per talent level) Keyflare.Ramona's Keyflare Regen is increased by 5%(+1% per talent level). Obtain 50%(+10% per talent level) of Ramona's Keyflare Regen as Keyflare at the start of battle"
         },
