@@ -4,9 +4,9 @@
         "faction": "CHAOS",
         "type": "ATTACK",
         "stats": {
-            "CON": "132(1.65)*",
-            "ATK": "168(2.1)*",
-            "DEF": "76(0.95)*",
+            "CON": "149",
+            "ATK": "189",
+            "DEF": "86",
             "CritRate": "14.6%(+1.6%)*",
             "CritDamage": "50%",
             "AliemusRegen": "2.4(+0.4)*",
@@ -121,9 +121,9 @@
         "faction": "CHAOS",
         "type": "DEFENSE",
         "stats": {
-            "CON": "120(+1.5)*",
-            "ATK": "128(+1.6)*",
-            "DEF": "140(+1.75)*",
+            "CON": "120",
+            "ATK": "128",
+            "DEF": "140",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -134,25 +134,25 @@
             "DeathResistance": "33.6%(+5.6%)*"
         },
         "cards": {
-            "C1": "[Battle Insight] Card Cost: 2 Alva gains (25/30/35/40/45/50) Aliemus.Rouse: Gain (3/3.6/4.2/4.8/5.4/6% DEF) Alert. Alva's Command Cards deal additional DMG equal to your current Shield.Retain.",
+            "C1": "[Battle Insight] Card Cost: 2 Alva gains (25/30/35/40/45/50) Aliemus.Rouse: Gain (3/3.6/4.2/4.8/5.4/6% DEF) Alert. Alva's Command Cards deal additional DMG equal to 2 times your current Shield.Retain.",
             "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.",
             "C3": "[Defend] Card Cost: 1 Gain (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.",
-            "C4": "[Combat Stance] Card Cost: 0 Gain (10/12/14/16/18/20% DEF) Shield. At the end of the turn, if this card is in hand, increase this amount by (5/6/7/8/9/10% DEF).Dispel all Awakener Sealed states.Retain.",
-            "C5": "[Precision Blade] Card Cost: 3 Deal (30/36/42/48/54/60% ATK) DMG. Deals additional DMG equal to 2x your current Shield.For every [Defend] played this turn, reduce the Arithmetica Cost of this card by 1.This card is considered a [Strike] card."
+            "C4": "[Combat Stance] Card Cost: 0 Gain (10/12/14/16/18/20% DEF) Shield. At the end of the turn, if this card is in hand, increase the number of generated shields by 1.Dispel all Awakener Sealed states.Retain.",
+            "C5": "[Precision Blade] Card Cost: 3 Deal (60/72/84/96/108/120% ATK) DMG. Deals additional DMG equal to 2x your current Shield.For every [Defend] played this turn, reduce the Arithmetica Cost of this card by 1.This card is considered a [Strike] card."
         },
         "exalt": {
             "exalt": "[Endless Justice] Gain (50/60/70/80/90/100% DEF) Shield.Discard all State and Symptom cards from hand, then draw cards equal to the amount discarded.Inflict 1 stack of Vulnerable to all enemies.",
             "over_exalt": "[Justice and Truth] Add 1 [Combat Stance] and [Precision Slash] with Exhaust to your hand. Alva's Crit DMG +25% this battle."
         },
         "talents": {
-            "T1": "Innate: Dynamic Vision Talent For every 1% of Death Resistance Alva has, the Base DMG of [Strike] and [Precision Slash] is increased by 0.5%.",
+            "T1": "Innate: Dynamic Vision Talent For every 1% of Death Resistance Alva and her equipped WoD & Covenant have, the Base DMG of [Strike] and [Precision Slash] is increased by 0.5%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Alva's CON, ATK, and DEF stats increase by (3% per talent level).After using Alva's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Alva's CON, ATK, and DEF stats increase by (3% per talent level).After using Alva's Rouse, gain (50 per talent level) Keyflare.The Base DMG of Strike and Precision Slash is increased by 10%~(+1% per talent level) of the Shield gained this turn. Alva deals 20%~(+3% per talent level) more Final DMG to Caro enemies."
         },
         "enlightens": {
-            "E1": "[Unyielding Bastion] Enlighten 1 [Combat Stance]: Is now considered a [Defend] card. Shield amount gained from being retained is doubled.",
+            "E1": "[Unyielding Bastion] Enlighten 1 [Combat Stance]: Is now considered a [Defend] card.",
             "E2": "[Relentless Fighter] Enlighten 2 [Endless Justice]: Draws an additional card.",
-            "E3": "[All for Justice] Enlighten 3 [Endless Justice]: Increases Alva's Crit Rate and Crit DMG +50% for her next attack this battle."
+            "E3": "[All for Justice] Enlighten 3 [Endless Justice]: Increases Alva's Crit Rate and Crit DMG +50% for the turn."
         }
     },
     {
@@ -474,9 +474,9 @@
         "faction": "CHAOS",
         "type": "ASSIST",
         "stats": {
-            "CON": "88(1.1)*",
-            "ATK": "72(0.9)*",
-            "DEF": "96(1.2)*",
+            "CON": "88",
+            "ATK": "72",
+            "DEF": "96",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "4.8(+0.8)*",
@@ -498,9 +498,9 @@
             "over_exalt": "[Psyche Dissection] At the start of each turn, heal (40/48/56/64/72/80% CON) HP. Lasts 3 turns."
         },
         "talents": {
-            "T1": "Innate: Gnosis Reconstruction Talent For every 1 point of Aliemus Regen Doll has, the HP Recovery of [Outer Surgery] and [Equivalent Exchange] is increased by 0.5%.",
+            "T1": "Innate: Gnosis Reconstruction Talent For every 1 point of Aliemus Regen Doll and her equipped WoD & Covenant have, the HP Recovery of [Outer Surgery] and [Equivalent Exchange] is increased by 0.5%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Doll's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Doll's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Doll's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Doll's Rouse, gain (50 per talent level) Keyflare.The Heal and Aliemus generation effect from Doll's Exalt is increased by 5%(+1% per talent level). For each additional Chaos Awakener in the team, this effect increases by an additional 5%"
         },
         "enlightens": {
             "E1": "[Pure Rationality] Enlighten 1 [Outer Surgery]: Weakness applied lasts 2 turns instead of 1. Healing increased by 33%.",
@@ -671,9 +671,9 @@
         "faction": "CHAOS",
         "type": "ASSIST",
         "stats": {
-            "CON": "88(+1.1)*",
-            "ATK": "72(+1.5)*",
-            "DEF": "96(+1)*",
+            "CON": "99",
+            "ATK": "81",
+            "DEF": "108",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "5(+0.8)*",
@@ -701,7 +701,7 @@
             "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Doll: Inferno's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Doll: Inferno's Rouse, gain (50 per talent level) S-Energy.After Exploration begins, all Awakener's Poison, Counter, and Base DMG increases by 5%(+1% per talent level)."
         },
         "enlightens": {
-            "E1": "[Borealis Visitor] Enlighten 1 [Self-Destruct Transformation] applies 1 turn of Vulnerable to all enemies when \"Elation\" is chosen, and applies 1 turn of Weakness to all enemies when \"Curse\" is chosen.",
+            "E1": "[Borealis Visitor] Enlighten 1 [Self-Destruct] applies 1 turn of Vulnerable to all enemies when \"Elation\" is chosen, and applies 1 turn of Weakness to all enemies when \"Curse\" is chosen.",
             "E2": "[Resonant Mycelium] Enlighten 2 [Terminal, Gateway of Truth and Abyss] and [Fate's Descent] inflict 50% increased Base Poison, with an additional 15% for each stack of \"Finale\".\"Finale\" stack limit removed.",
             "E3": "[Envoy of Extinction] Enlighten 3 [Strike] and [Defend] grant additional Aliemus equal to 5% of max Aliemus.[Illusion's End] fixed DMG increased from 25% to 30%. Additionally, it heals 30% of your missing HP."
         }
@@ -752,9 +752,9 @@
         "faction": "CHAOS",
         "type": "ASSIST",
         "stats": {
-            "CON": "120(+1.5)*",
-            "ATK": "120(1.5)*",
-            "DEF": "120(1.5)*",
+            "CON": "120",
+            "ATK": "120",
+            "DEF": "120",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -776,9 +776,9 @@
             "over_exalt": "[Reach into Yesterday] Gain 3 Negentropy, ignoring the stack limit. Cards copied by Exalt have their Arithmetica cost reduced to 0."
         },
         "talents": {
-            "T1": "Innate: Silverheart Resonance Talent Ramona gains an additional 2.5 points of Keyflare Regen. Each Affinity level grants an additional 0.5 Keyflare Regen.For each point of Keyflare Regen, the Loop effect of \"Strike\" grants Ramona: Timeworn an additional 0.2% critical rate and the Loop effect of [Defend] grants Ramona: Timeworn an additional 0.2 Aliemus.",
+            "T1": "Innate: Silverheart Resonance Talent Ramona gains an additional 2.5 points of Keyflare Regen. Each Affinity level grants an additional 0.5 Keyflare Regen.For each point of Keyflare Regen Ramona and her equipped WoD & Covenant have, the Loop effect of \"Strike\" grants Ramona: Timeworn an additional 0.2% critical rate and the Loop effect of [Defend] grants Ramona: Timeworn an additional 0.2 Aliemus.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ramona: Timeworn's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ramona: Timeworn's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ramona: Timeworn's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ramona: Timeworn's Rouse, gain (50 per talent level) Keyflare.Ramona's Keyflare Regen is increased by 5%(+1% per talent level). Obtain 50%(+10% per talent level) of Ramona's Keyflare Regen as Keyflare at the start of battle"
         },
         "enlightens": {
             "E1": "[Penrose Pilgrim] Enlighten 1 Gain 1 Negentropy at the end of your turn.",
@@ -831,9 +831,9 @@
         "faction": "CHAOS",
         "type": "ASSIST",
         "stats": {
-            "CON": "120(+1.5)*",
-            "ATK": "124(+1.55)*",
-            "DEF": "116(+1.45)*",
+            "CON": "135",
+            "ATK": "140",
+            "DEF": "131",
             "CritRate": "9.8%(+0.8%)*",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -858,7 +858,7 @@
         "talents": {
             "T1": "Innate: None Talent",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Hameln's CON, ATK, and DEF stats increase by (3% per talent level).After using Hameln's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Hameln's CON, ATK, and DEF stats increase by (3% per talent level).After using Hameln's Rouse, gain (50 per talent level) Keyflare.After Playing Insight, gain Temporary STR equal to 5%(+0.5% per talent level) of ATK, and trigger Crescendo once. This effect can trigger up to 5 times per turn"
         },
         "enlightens": {
             "E1": "[Mind Concerto] Enlighten 1 Hameln's \"Strike\" and \"Defend\" cards grant Temporary STR equal to 10% of ATK.If the card triggers one of Hameln's \"Melody\" effects, the Temporary STR gained is doubled.",
@@ -1010,13 +1010,13 @@
             "C6": "[Marvelous Cuisine] Card Cost: 0 Obtain 1 Arithmetica. Can be used 3 times. (E3) 50% chance to trigger a Marvelous Buff. Retain. Exhaust."
         },
         "exalt": {
-            "exalt": "[Here's Your Meal!] Remove Stagnation state from all cards in hand.Restore (20/24/28/32/36/40% CON) HP.Inflict (30/36/42/48/54/60% ATK) stacks of Poison to all enemies.Add 1 \"Marvelous Cuisine\" to your hand.",
+            "exalt": "[Here's Your Meal!] Remove Stagnation state from all cards in hand.Restore (30/34/38/42/46/50% CON) HP.Inflict (30/36/42/48/54/60% ATK) stacks of Poison to all enemies.Add 1 \"Marvelous Cuisine\" to your hand.",
             "over_exalt": "[Bounteous Feast] Shuffles 1 \"Marvelous Cuisine\" into the Draw and Discard pile."
         },
         "talents": {
             "T1": "Innate: None Talent",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Karen's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Karen's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Karen's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Karen's Rouse, gain (50 per talent level) Keyflare.For each Marvelous Cuisine in hand, Karen's Healing effect increases by 5%~(+1% per talent level), stacking up to 3. Each time Marvelous Cuisine is played, the Poison dealt by Karen in this battle increases by 10%~(+2% per talent level), stacking up to 20 times."
         },
         "enlightens": {
             "E1": "[Maid's Decree] Enlighten 1 \"Silent Fealty\" maximum stack count increased to 3.",
@@ -1029,11 +1029,11 @@
         "faction": "CHAOS",
         "type": "ATTACK",
         "stats": {
-            "CON": "33/124(+1.5)*",
-            "ATK": "39/148",
-            "DEF": "30/112",
-            "CritRate": "5.8%",
-            "CritDamage": "52.4%",
+            "CON": "140",
+            "ATK": "167",
+            "DEF": "126",
+            "CritRate": "5.8%(+0.8%)*",
+            "CritDamage": "52.4(+2.4)*%",
             "AliemusRegen": "0",
             "KeyflareRegen": "15",
             "RealmMastery": "0",
@@ -1108,9 +1108,9 @@
         "faction": "CHAOS",
         "type": "DEFENSE",
         "stats": {
-            "CON": "144",
-            "ATK": "104",
-            "DEF": "144",
+            "CON": "162",
+            "ATK": "117",
+            "DEF": "162",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -1124,8 +1124,8 @@
             "C1": "Rouse: [Slime Convergence] Card Cost: 2 Lily gains (25/30/35/40/45/50) Aliemus.Rouse: Gain Endure stacks equal to 10% of your Max HP at the start of your turn.Every time Lily grants a shield, inflict (33.75/40.5/47.25/54/60.75/67.5% ATK) stacks of Poison to the enemy with the highest HP. Retain.",
             "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.",
             "C3": "[Defend] Card Cost: 1 Gain (10/12/14/16/18/20% DEF) Shield. Shield increases by 0.25% for every 1% Death Resistance.Gain (5/6/7/8/9/10) Aliemus.",
-            "C4": "[Strike to Protect] Card Cost: 4 Deal (40/48/56/64/72/80% ATK) DMG and trigger 50% of the target's Poison. If a Crit Hit occurs, trigger 100% of the target's Poison instead. (E2) Base DMG and Crit Rate increased by 20%.Consume all stacks of Endure to increase its DMG by 2 per stack consumed. (E3) Only removes half of the Endure stacks consumed.Considered a \"Strike\" card.Retain. Prepare 1. (E2) Prepare 1 upgrades to Prepare 2.",
-            "C5": "[Forbidden Swamp] Card Cost: 2 Gain (12/14.4/16.8/19.2/21.6/24% DEF) Shield and inflict (40/48/56/64/72/80% ATK) stacks of Poison to all enemies. Shield increases by 0.25% for every 1% Death Resistance.Until the next turn, gain (12/14.4/16.8/19.2/21.6/24% DEF) stacks of Endure every time you are hit. (E1) When current HP is below 50%, applies its Shield and stacks of Poison twice."
+            "C4": "[Strike to Protect] Card Cost: 4 Deal (110/118/126/134/142/150% ATK) DMG and trigger 50% of the target's Poison. If a Crit Hit occurs, trigger 100% of the target's Poison instead. (E2) Base DMG and Crit Rate increased by 20%.Consume all stacks of Endure to increase its DMG by 2 per stack consumed. (E3) Only removes half of the Endure stacks consumed.Considered a \"Strike\" card.Retain. Prepare 1. (E2) Prepare 1 upgrades to Prepare 2.",
+            "C5": "[Forbidden Swamp] Card Cost: 2 Gain (12/14.4/16.8/19.2/21.6/24% DEF) Shield and inflict (40/48/56/64/72/80% ATK) stacks of Poison to all enemies. Shield increases by 0.25% for every 1% Death Resistance.Until the next turn, gain (28/30.4/32.8/34.2/36.6/40% DEF) stacks of Endure every time you are hit. (E1) When current HP is below 50%, applies its Shield and stacks of Poison twice."
         },
         "exalt": {
             "exalt": "[Undying Flower Upon Slime] Gain (36/43.2/50.4/57.6/64.8/72% DEF) Shield.Restore 10% of Endure stacks as HP and remove all Endure stacks. (E3) Only removes half of the Endure stacks consumed.Each time you are hit inflict (50/60/70/80/90/100% ATK) stacks of Poison to the attacker until the start of your next turn.",
@@ -1134,7 +1134,7 @@
         "talents": {
             "T1": "Innate: Surging Darkness Talent For every 1% of Death Resistance Lily has, increase the base shield of [Defend] and [Forbidden Swamp] by 0.25%, and increase the Endure stack limit in boss battles by 0.25%.When Lily is in the team, gain 1 Endure stack for every HP lost, with a maximum stack equal to 100% of your max HP.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Lily's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Lily's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Lily's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Lily's Rouse, gain (50 per talent level) Keyflare.Strike to Protect final DMG is increased by 15%~(+2% per talent level), the increase in Boss Battle is doubled. After being attacked by an Ultra enemy, gain a delayed healing effect of 5%~(+1% per talent level) of the HP lost from the attack"
         },
         "enlightens": {
             "E1": "[Blackened Nourishment] Enlighten 1 If HP is below 50%, \"Forbidden Swamp\" applies its Shield and stacks of Poison twice.",
@@ -1214,7 +1214,7 @@
         "talents": {
             "T1": "Innate: None Talent",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Lotan's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Lotan's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Lotan's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Lotan's Rouse, gain (50 per talent level) Keyflare.Lotan's Command Cards have 50%(+5% per talent level) increased Base DMG. For each instance of DMG dealt by Lotan, Temporarily increase her Final DMG by 2%, up to a maximum of 10%~(+1% per talent level)"
         },
         "enlightens": {
             "E1": "[Swords Unleashed] Enlighten 1 \"Blade of Defiance\" is considered as \"Strike\".Lotan's \"Strike\" base DMG increased by 30%.",
@@ -1372,9 +1372,9 @@
             "over_exalt": "[Vroom Vroom!] Increase the current shield's effect by 50%; this can bypass the maximum shield limit.Now deals Fixed DMG equal to 500% of current stacks of Counter to all enemies."
         },
         "talents": {
-            "T1": "Innate: Daily Maintenance Talent For every point of Realm Mastery Nautila has, the Counter DMG from \"Ready and Set\" is increased by 0.25%.",
+            "T1": "Innate: Daily Maintenance Talent For every point of Realm Mastery Nautila and her equipped WoD & Covenant have, the Counter DMG from \"Ready and Set\" is increased by 0.25%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Nautila's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Nautila's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Nautila's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Nautila's Rouse, gain (50 per talent level) Keyflare.The Counter generated by Nautila is increased by 15%~(+1.5% per talent level). Gain temporary Counter equal to 20%~(+3% per talent level) of permanent Counter before unleashing Ready and Set"
         },
         "enlightens": {
             "E1": "[Blank Recollection] Enlighten 1 \"Strike\" gains Counter equal to (10/12/14/16/18/20)% of ATK (effect scales with the level of \"Strike\").",
@@ -1400,25 +1400,25 @@
             "DeathResistance": "0%"
         },
         "cards": {
-            "C1": "Rouse: [Drowning in Sorrow] Card Cost: 1 Nymphaea gains (25/30/35/40/45/50) Aliemus.Rouse: After playing a Nymphaea card, she gains (5/6/7/8/9/10) Aliemus.",
+            "C1": "Rouse: [Drowning in Sorrow] Card Cost: 1 Nymphaea gains (25/30/35/40/45/50) Aliemus.Rouse: After playing a Nymphaea card, she gains (5/6/7/8/9/10) Aliemus.At turn end, Increase the Poison inflicted by Nymphaea by (5/6/7/8/9/10%)",
             "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.",
             "C3": "[Defend] Card Cost: 1 Gain (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.",
             "C4": "[Midnight Tide] Card Cost: 2 Deal (22.5/27/31.5/36%/40.5/45% ATK) DMG to the enemy with the highest HP. Benefits 2x from Strength. (E2) Deal (30/36/42/48/56/60% ATK) DMG instead.Apply stacks of Poison equal to the damage dealt.(E2) The first 3 Symphtom Cards played each turn increase the DMG dealt this battle by (5/6/7/8/9/10% ATK).",
             "C5": "[Knell of Death] Card Cost: 3 Apply (20/24/28/32/36/40% ATK) stacks of Poison to all enemies. (E1) Applies (30/36/42/48/54/60% ATK) stacks of Poison to all enemies instead.Apply 1 Weakness and 1 Vulnerable to all enemies for 1 turns. (E1) Gain (15/18/21/24/27/30% DEF) Shield."
         },
         "exalt": {
-            "exalt": "[Passage of the Ego] Inflict (45/54/63/72/81/90% ATK) stacks of Poison to all enemies and trigger their Poison effects.Gain (3/3.6/4.2/4.8/5.4/6% ATK) Strength. (E3) Subsequent uses of \"Passage of the Ego\" apply an additional (30/36/42/48/54/60% ATK) stacks of Poison.",
+            "exalt": "[Passage of the Ego] Inflict (45/54/63/72/81/90% ATK) stacks of Poison to all enemies and trigger their Poison effects.Gain (4.5/5.4/6.3/7.2/8.1/9% ATK) Strength. (E3) Subsequent uses of \"Passage of the Ego\" apply an additional (30/36/42/48/54/60% ATK) stacks of Poison.",
             "over_exalt": "[Abyssal Funeral Rites] Nymphaea applies 50% more Poison for 3 turns."
         },
         "talents": {
-            "T1": "Innate: Immerse Talent For every 1% of DMG Amplification Nymphaea has, the base Poison inflicted by [Knell of Death] and [Passage of the Ego] is increased by 0.5%.",
+            "T1": "Innate: Immerse Talent For every 1% of DMG Amplification Nymphaea and her equipped WoD & Covenant have, the base Poison inflicted by [Knell of Death] and [Passage of the Ego] is increased by 0.5%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Nymphaea's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Nymphaea's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Nymphaea's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Nymphaea's Rouse, gain (50 per talent level) Keyflare.Increases the triggered Poison effect of Nymphaea by 15%~(+2% per talent level), and increases the Poison caused by all Awakeners by 10%"
         },
         "enlightens": {
-            "E1": "[Ocean's Vessel] Enlighten 1 \"Knell of Death\" applies 50% more Poison. Gain a shield equal to (15/18/21/24/27/30)% of DEF (effect scales with the level of \"Knell of Death\").",
-            "E2": "[Silent Permeation] Enlighten 2 \"Midnight Tide\" DMG increases by 33%.The first 3 Symptom Cards played each turn increase \"Midnight Tide\" DMG by (5/6/7/8/9/10)% of ATK for the rest of the battle (effect scales with the level of \"Midnight Tide\").",
-            "E3": "[Frostbloom Tide] Enlighten 3 After releasing \"Passage of the Ego\" this battle, increase the Poison applied by \"Passage of the Ego\" by (30/36/42/48/54/60)% of ATK (effect scales with the level of \"Passage of the Ego\")."
+            "E1": "[Ocean's Vessel] Enlighten 1 \"Knell of Death\" applies 100% more Poison. Gain a shield equal to (22.5/27/31.5/36/40.5/45)% of DEF (effect scales with the level of \"Knell of Death\").",
+            "E2": "[Silent Permeation] Enlighten 2 \"Midnight Tide\" DMG increases by 33%.The first 3 Symptom Cards played each turn increase \"Midnight Tide\" DMG by (10)% of ATK for the rest of the battle.",
+            "E3": "[Frostbloom Tide] Enlighten 3 After releasing \"Passage of the Ego\" this battle, increase the Poison applied by \"Passage of the Ego\" by (45/54/63/72/81/90)% of ATK (effect scales with the level of \"Passage of the Ego\")."
         }
     },
     {
@@ -1452,7 +1452,7 @@
         "talents": {
             "T1": "Innate: Formless Refinement Talent For every 1% Sigil Yield Ogier has, the Temporary Strength gained from [Seven Arts and Virtues] increases by 3%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ogier's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ogier's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ogier's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ogier's Rouse, gain (50 per talent level) Keyflare.Ogier's Shield Generation is increased by 5%(+1% per talent level). Each time Exalt is released, the shield generated in this battle additionally increases by 1% of his DEF."
         },
         "enlightens": {
             "E1": "[Honesty Unto Thyself] Enlighten 1 \"Piercing Strike\" Vulnerable duration +1 turn.Base DMG +100%.DMG dealt increases by 3x Strength instead of 2x now.",
@@ -1485,13 +1485,13 @@
             "C5": "[Wax-Hot Desire] Card Cost: 2 Gain (6/7.2/8.4/9.6/10.8/12% ATK) stacks of Counter.Steal (4/4.8/5.6/6.4/7.2/8% ATK) Strength from all enemies for one turn. If there is only 1 enemy, the stolen Strength is doubled.Remove all enemies' Counter stacks.(E2) Gain 20 Aliemus.Retain."
         },
         "exalt": {
-            "exalt": "[Honey-Colored Tragedy] Deal (30/36/42/48/54/60% ATK) DMG to all enemies. Each stack of Counter increases DMG by 1. (E3) Deals (60/72/84/96/108/120% ATK) DMG instead.If only one enemy is present, deal damage twice.Gain (2.5/3/3.5/4/4.5/5% ATK) Strength. Gain (15/18/21/24/27/30% ATK) stacks of Counter.",
-            "over_exalt": "[Sweet Surrender] Gain Counter equal to 75% of ATK."
+            "exalt": "[Honey-Colored Tragedy] Deal (30/36/42/48/54/60% ATK) DMG to all enemies 2 times. Each stack of Counter increases DMG by 1. (E3) Deals (60/72/84/96/108/120% ATK) DMG instead.Gain (2.5/3/3.5/4/4.5/5% ATK) Strength. Gain (15/18/21/24/27/30% ATK) stacks of Counter.",
+            "over_exalt": "[Sweet Surrender] Apply 1 stack of Vulnerable to all enemies before dealing damage, gain Counter equal to 75% of ATK."
         },
         "talents": {
-            "T1": "Innate: None Talent",
+            "T1": "Innate: Punishment Time Talent Max level: 1 For every 1% critical rate Pandia and her Wheels and Covenat have, the permanent Counter she generate is increased by 0.2%",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Pandia's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Pandia's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Pandia's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Pandia's Rouse, gain (50 per talent level) Keyflare.Whip of Madness gains Retain and Prepare. Final DMG dealt by Pandia to the target with the intent to deal damage is increased by 5%(+1% per talent level). For each additional attack the target performs, the increase is boosted by 5%, up to a maximum additional increase of 20%"
         },
         "enlightens": {
             "E1": "[Embrace the Pain] Enlighten 1 [Strike] gains Temporary Counter equal to 50% of the damage.[Defend] gains Counter equal to (7.5/9/10.5/12/13.5/15)% of ATK (effect scales with level of \"Defense\").",
@@ -1606,9 +1606,9 @@
             "over_exalt": "[Labyrinth of Thought] Apply 1 Weakness and Vulnerable to all enemies for 1 turn. The next Posse used will activate twice."
         },
         "talents": {
-            "T1": "Innate: Silverheart Resonance Talent Ramona gains an additional 2.5 points of Keyflare. Ramona gains an additional 0.5 points of Keyflare for every affinity level gained.For each point of Keyflare Regen, increase the Base DMG of [Queen's Sword] by 1% and the temporary Realm Mastery gained from the card by 0.75.",
+            "T1": "Innate: Silverheart Resonance Talent Ramona gains an additional 2.5 points of Keyflare. Ramona gains an additional 0.5 points of Keyflare for every affinity level gained.For each point of Keyflare Regen Ramona and her equipped WoD & Covenant have, increase the Base DMG of [Queen's Sword] by 1% and the temporary Realm Mastery gained from the card by 0.75.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ramona's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ramona's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ramona's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ramona's Rouse, gain (50 per talent level) Keyflare.Ramona's Keyflare Regen is increased by 5%(+1% per talent level). Obtain 50%(+10% per talent level) of Ramona's Keyflare Regen as Keyflare at the start of battle"
         },
         "enlightens": {
             "E1": "[Innocent Departure] Enlighten 1 \"Queen's Sword\" deals +1 instance of DMG and gains Temporary Strength equal to (2.5%/3%/3.5%/4%/4.5%/5%) of Ramona's ATK for each instance of DMG (effect increases with the level of \"Queen's Sword\").When discarded, gain Keyflare equivalent to the amount gained if the card was instead played.",
@@ -1621,9 +1621,9 @@
         "faction": "CHAOS",
         "type": "ASSIST",
         "stats": {
-            "CON": "160",
-            "ATK": "132",
-            "DEF": "128",
+            "CON": "180",
+            "ATK": "149",
+            "DEF": "144",
             "CritRate": "10%(+0.8%)*",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -1641,13 +1641,13 @@
             "C5": "[Showdown] Card Cost: 2 Deal (15/18/21/24/27/30% ATK) DMG 1-6 times and gain (10/11/12/13/14/15) Aliemus.If 6 or more instances of damage are dealt, place a 0 Arithmetica Cost [Unexpected Gain] with Exhaust into your hand."
         },
         "exalt": {
-            "exalt": "[All-In!] Deal (60/72/84/96/108/120% ATK) DMG to all enemies.Randomly draw 1-6 cards; for each card drawn, gain (1.5/1.8/2.1/2.4/2.7/3% ATK) Strength.",
+            "exalt": "[All-In!] Deal (75/90/105/120/135/150% ATK) DMG to all enemies.Randomly draw 1-6 cards; for each card drawn, gain (1.5/1.8/2.1/2.4/2.7/3% ATK) Strength.",
             "over_exalt": "[Jackpot!] \"All-In!\" deals 3 instances of DMG and reduces the Arithmetica Cost of drawn Cards by 1."
         },
         "talents": {
             "T1": "Innate: Winner Takes All Talent Ryker gains 5 Black Sigils upon killing an enemy, up to 5 times per exploration. For every 1% Sigil Yield Ryker has, the amount gained increases by 1%.After gaining 75/150/300 Black Sigils through battle, increase Relic capacity by 1 and select a \"Chaos Legacy\" relic to obtain at the end of the battle.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ryker's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ryker's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Ryker's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Ryker's Rouse, gain (50 per talent level) Keyflare.Ryker gains 10%(+1% per talent level) Crit. Rate and 40%(+4% per talent level) Black Sigil Yield for his Innate talent. If at least 500 Black Sigils are obtained through battle, upgrade 1 Chaotic Legacy at the start of the battle"
         },
         "enlightens": {
             "E1": "[Fortune's Boon] Enlighten 1 \"Unexpected Gain\" now reduces the Arithmetica Cost of the chosen Card by 2 on a critical hit. \"Showdown\" grants Ryker an additional 3 Aliemus for every critical hit.",
@@ -1778,9 +1778,9 @@
         "faction": "CHAOS",
         "type": "ASSIST",
         "stats": {
-            "CON": "120",
-            "ATK": "120",
-            "DEF": "120",
+            "CON": "135",
+            "ATK": "135",
+            "DEF": "135",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -1807,7 +1807,7 @@
         "talents": {
             "T1": "Innate: None Talent",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Tawil's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Tawil's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Tawil's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Tawil's Rouse, gain (50 per talent level) Keyflare.When Tawil plays a card originally belonging to other Awakeners in the team (from Exalt or Verity), the corresponding Awakener's Final DMG, Shield, and Healing for this turn are increased by 15%~(+1% per talent level), this effect cannot be stacked"
         },
         "enlightens": {
             "E1": "[Boundless Sagacity] Enlighten 1 \"Master of Omniscient Verity\" reduces the Arithmetica Cost of changing Command Cards by 1. \"Timestrung Pinions Unfurled\" draws an additional \"Insight\" into your hand.",
