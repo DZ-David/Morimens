@@ -43,9 +43,9 @@
         "faction": "CARO",
         "type": "DEFENSE",
         "stats": {
-            "CON": "132(1.65)*",
-            "ATK": "112(1.4)*",
-            "DEF": "136(1.7)*",
+            "CON": "132",
+            "ATK": "112",
+            "DEF": "136",
             "CritRate": "14.6%(+1.6%)*",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -69,7 +69,7 @@
         "talents": {
             "T1": "Innate: Seal of the Pact Talent For every 1% Sigil Yield Agrippa has, [Pale Blessing] gains 0.5% increased Base Shield and inflicts 1% increased Base Poison.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Agrippa's CON, ATK, and DEF stats increase by (3% per talent level).After using Agrippa's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Agrippa's CON, ATK, and DEF stats increase by (3% per talent level).After using Agrippa's Rouse, gain (50 per talent level) Keyflare.The first Colorless Spiral played each turn icreases Embryo Fusion by 10%(+1% per talent level). After Devouring, reduce the Arithmetica Cost of 1 Colorless Spiral in hand by 1."
         },
         "enlightens": {
             "E1": "[The Usurper] Enlighten 1 [Reluctant Alms]: Reduces the Arithmetica Cost of the highest cost Command Card in hand by 1 until the end of this turn.",
@@ -82,9 +82,9 @@
         "faction": "CARO",
         "type": "ASSIST",
         "stats": {
-            "CON": "100(1.25)*",
-            "ATK": "120(1.5)*",
-            "DEF": "108(1.35)*",
+            "CON": "100",
+            "ATK": "120",
+            "DEF": "108",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -108,7 +108,7 @@
         "talents": {
             "T1": "Innate: None. Talent",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Aigis's CON, ATK, and DEF stats increase by (3% per talent level).After using Aigis's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Aigis's CON, ATK, and DEF stats increase by (3% per talent level).After using Aigis's Rouse, gain (50 per talent level) Keyflare.After playing the first Command Card each turn, obtain 50%(+5% per talent level) of Keyflare Regen as Keyflare"
         },
         "enlightens": {
             "E1": "[The Witness] Enlighten 1 [Strike]: For each stack of Vulnerable on the target, Embryo Fusion +5%, up to 30%.",
@@ -513,9 +513,9 @@
         "faction": "CARO",
         "type": "ATTACK",
         "stats": {
-            "CON": "132(+1.65)*",
-            "ATK": "140(+1.75)*",
-            "DEF": "116(+1.45)*",
+            "CON": "149",
+            "ATK": "158",
+            "DEF": "131",
             "CritRate": "5%",
             "CritDamage": "64.4%(+2.4%)*",
             "AliemusRegen": "0",
@@ -531,7 +531,7 @@
             "C3": "[Defend] Card Cost: 1 Gain (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.",
             "C4": "[Dirge of the Fallen] Card Cost: 3 Deal (80/96/112/128/144/160% ATK) DMG to the enemy with the lowest HP. STR has 3 times effectiveness on this card. Gain (10/12/14/16/18/20% ATK) STR.",
             "C5": "[Netherward Path] Card Cost: 1 Lose 10% Current HP. Deal (40/48/56/64/72/80% ATK) DMG to all enemies. Inflict 1 turn of Vulnerable.",
-            "C6": "[Evernight's Revel] Card Cost: 0 Deal (120% ATK) Piercing DMG to all enemies. Exhaust. Retain."
+            "C6": "[Evernight's Revel] Card Cost: 0 Deal (40% ATK) Piercing DMG to all enemies. Exhaust. Retain."
         },
         "exalt": {
             "exalt": "[Necrotic Gala] Devour: The Crit Rate of this Exalt +15%. Gain (12.5/15/17.5/20/22.5/25% ATK) STR. Deal (120/144/168/192/216/240% ATK) DMG to the enemy with the lowest HP. STR has 5 times the effect this DMG. For every 1% of HP the target is missing, Final DMG of this Exalt +3%. If Doresain has 3 stacks of \"Corpse\", consume all stacks to heal (100/120/140/160/180/200% CON) HP and double the Crit DMG multiplier of this Exalt.",
@@ -539,13 +539,14 @@
         },
         "talents": {
             "T1": "Innate: Casket Harvest Talent Max level: 1 Doresain gains 1 stack of \"Corpse\" after killing an enemy or dealing Exalt DMG to a Boss (max 3 stacks). Stacks are retained throughout the exploration.",
-            "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages. Doresain's CON, ATK, and DEF stats increase by (3% per talent level). After the first time using Doresain's Rouse, gain (50 per talent level) Keyflare.All Awakeners in your team gain 4% (+1% per talent level) more STR. When Doresain kills \"Departed\" enemies, he gains 30 (+2 per talent level) Aliemus."
+            "T2": "Innate: Festering Grace Talent Max level: 1 Place 1 [Evernight's Revel] into hand whenever Doresain obtains \"Corpse\".",
+            "T3": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
+            "T4": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages. Doresain's CON, ATK, and DEF stats increase by (3% per talent level). After the first time using Doresain's Rouse, gain (50 per talent level) Keyflare.All Awakeners in your team gain 4% (+1% per talent level) more STR. When Doresain kills \"Departed\" enemies, he gains 30 (+2 per talent level) Aliemus."
         },
         "enlightens": {
             "E1": "[Feast's Overture] Enlighten 1 For every 1% Crit DMG Doresain has, increase his Crit Rate by 0.1%.",
             "E2": "[Hollow Whispers] Enlighten 2 For every 1% HP missing, Doresain's Command Cards, Base DMG, Shield, and Aliemus Gen +1%.",
-            "E3": "[Evernight's Revel] Enlighten 3 Place 1 [Evernight's Revel] into hand whenever Doresain obtains \"Corpse\"."
+            "E3": "[Evernight's Revel] Enlighten 3 The base DMG of [Evernight's Revel] is tripled and, for every time it is used during a turn, it enjoy an additional Temporary x1 STR scaling"
         }
     },
     {
@@ -593,9 +594,9 @@
         "faction": "CARO",
         "type": "DEFENSE",
         "stats": {
-            "CON": "104(1.3)*",
-            "ATK": "80(1)*",
-            "DEF": "124(1.55)*",
+            "CON": "104",
+            "ATK": "80",
+            "DEF": "124",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -606,23 +607,23 @@
             "DeathResistance": "33.6%(+5.6%)*"
         },
         "cards": {
-            "C1": "[Blinding Color] Card Cost: 2 Faint gains (25/30/35/40/45/50) Aliemus.Rouse: Gain (50/60/70/80/90/100% ATK) stacks of Counter.Death Resistance decay rate is reduced from 50% to 45% this battle.When you play a Faint Command Card, steal (4/4.8/5.6/6.4/7.2/8% ATK) Temporary STR from all enemies.At the end of the turn, deal Fixed DMG equal to 50% of Counter. Retain.",
+            "C1": "[Blinding Color] Card Cost: 2 Faint gains (25/30/35/40/45/50) Aliemus.Rouse: Gain (60/72/84/96/108/120%% ATK) stacks of Counter.Death Resistance decay rate is reduced from 50% to 45% this battle.When you play a Faint Command Card, steal (5/6/7/8/9/10% ATK) Temporary STR from all enemies.At the end of the turn, deal Fixed DMG equal to 50% of Counter. Retain.",
             "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.",
             "C3": "[Defend] Card Cost: 1 Gains (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.",
             "C4": "[Nutrient Absorb] Card Cost: 2 Gain (12/14.4/16.8/19.2/21.6/24% ATK) STR. All enemies temporarily lose (8/9.6/11.2/12.8/14.4/16% DEF) STR.",
             "C5": "[Sprouting Bud] Card Cost: 3 Gain (15/18/21/24/27/30% DEF) Shield. Heal (15/18/21/24/27/30% CON) HP.If Death Resistance has been triggered this battle, this card's effects activate twice. Retain."
         },
         "exalt": {
-            "exalt": "[Cradle of Stars] Devour: Put 1 0-cost [Sprouting Bud] to your hand with Exhaust. Inflict 2 Weakness to all enemies.Gain (50/60/70/80/90/100% ATK) stacks of Counter.If Death Resistance is less than (200/220/240/260/280/300)%, gain (100/110/120/130/140/150)% Death Resistance.Dispel Fragile from self.",
+            "exalt": "[Cradle of Stars] Devour: Put 1 0-cost [Sprouting Bud] to your hand with Exhaust. Inflict 2 Weakness to all enemies.Gain (60/72/84/96/108/120% ATK) stacks of Counter.If Death Resistance is less than (200/220/240/260/280/300)%, gain (100/110/120/130/140/150)% Death Resistance.Dispel Fragile from self.",
             "over_exalt": "[Blossom from Cocoon] Temporarily reduces all enemies' STR by (40/48/56/64/72/80)% of DEF. This effect scales with [Cradle of Stars] level."
         },
         "talents": {
-            "T1": "Innate: Secondary Swaddle Talent For every 1% Death Resistance Faint has, increase the Counter gained by [Cradle of Stars] and [Boundless Starlight] by 0.2% and increase the minimum Death Resistance condition of [Cradle of Stars] by 2%.",
+            "T1": "Innate: Secondary Swaddle Talent For every 1% Death Resistance Faint and her equipped WoD & Covenant have, increase the Counter gained by [Cradle of Stars] and [Boundless Starlight] by 0.2% and increase the minimum Death Resistance condition of [Cradle of Stars] by 2%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Faint's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Faint's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Faint's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Faint's Rouse, gain (50 per talent level) Keyflare.Strength Reduction effect applied by Faint is increased by 10%. After playing Faint's Command Cards, temporarily steal 5%(+0.5% per talent level) of Faint's ATK as Strength from Humanoid enemies, up to 3 times per turn."
         },
         "enlightens": {
-            "E1": "[Binary Stars] Enlighten 1 [Strike] deals DMG twice.If Death Resistance has been triggered this battle, gain temporary Counter equal to 50% of the damage dealt.",
+            "E1": "[Binary Stars] Enlighten 1 [Strike] deals DMG twice and gain temporary Counter equal to 50% of the damage dealt.",
             "E2": "[Withering Hymn] Enlighten 2 [Defend] shield gained is increased by 25%.Gain Counter equal to the shield gained.",
             "E3": "[Cradle of Love] Enlighten 3 Each time Death Resistance is triggered, deal Fixed DMG equal to 100% of your Counter to the front row enemy. Each time Death Resistance is triggered in this battle, the Fixed DMG increases by 25% of your Counter."
         }
@@ -711,9 +712,9 @@
         "faction": "CARO",
         "type": "ATTACK",
         "stats": {
-            "CON": "140(1.75)*",
-            "ATK": "136(1.7)*",
-            "DEF": "100(1.25)*",
+            "CON": "158",
+            "ATK": "153",
+            "DEF": "113",
             "CritRate": "10%(+0.8%)*",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -887,17 +888,17 @@
             "C1": "[Vengance Upon Thee] Card Cost: 1 Helot gains (25/30/35/40/45/50) Aliemus.Rouse: Helot's cards gain Retain. At the end of the turn, increase the DMG of [Shattering Strike] and the Base DMG of [Lasting Loathe] is increased by 10%. Retain.",
             "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.",
             "C3": "[Defend] Card Cost: 1 Gains (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.",
-            "C4": "[Shattering Strike] Card Cost: 4 Treated as a \"Strike\" card.Deal (60/72/85/96/108/120% ATK) DMG.For every other \"Strike\" card in your hand, increase the Base DMG of this card by 25% and it gains an additional 1x STR bonus.Discards all \"Strike\" cards from your hand.",
-            "C5": "[Lasting Loathe] Card Cost: 0 Lose 10% current HP.Deal (20/24/28/32/36/40% ATK) DMG to all enemies.Apply Bleed equal to the damage dealt.Add 2 \"Strike\" cards randomly selected from your team's awakeners to your hand with Exhaust. The level of these \"Strike\" cards are equal to the level of this card."
+            "C4": "[Shattering Strike] Card Cost: 4 Treated as a \"Strike\" card.Deal (100/120/140/160/180/200% ATK) DMG.For every other \"Strike\" card in your hand, increase the Base DMG of this card by 15% and it gains an additional 1x STR bonus.Discards all \"Strike\" cards from your hand.",
+            "C5": "[Lasting Loathe] Card Cost: 0 Treated as a \"Strike\" card.Lose 10% current HP.Deal (25/30/35/40/45/50% ATK) DMG to all enemies.Apply Bleed equal to the damage dealt.Add 2 \"Strike\" cards randomly selected from your team's awakeners to your hand with Exhaust. The level of these \"Strike\" cards are equal to the level of this card."
         },
         "exalt": {
             "exalt": "[Surviving Impasse] Devour: Draw 3 \"Strike\" cards. Increase temporary Hand Limit by 2. Helot's Base DMG is increased by 10% for this battle.Dispels Weakness and temporary STR debuffs.For this turn, \"Strike\" card DMG increases by (80/84/88/92/96/100)%. Helot's DMG output +3%.",
             "over_exalt": "[Blood for Blood] Increase temporary Hand Limit by 2. Add 2 [Irregular Form] to your hand.Helot gains 25% critical damage."
         },
         "talents": {
-            "T1": "Innate: Pain Sigil Talent For every 1% of DMG Amplification Helot has, [Surviving Impasse] also increases Helot's damage this turn by 0.3%.",
+            "T1": "Innate: Pain Sigil Talent For every 1% of DMG Amplification Helot and her equipped WoD & Covenant have, [Surviving Impasse] also increases Helot's damage this turn by 0.3%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Helot's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Helot's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Helot's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Helot's Rouse, gain (50 per talent level) Keyflare.Helot's Final DMG against Snowfield enemies increased by 15%(+2% per talent level).If Helot Devoured or consumed an Embryo this turn, its next DMG this turn gains +30%(+2 per talent level) Crit. DMG. This effect don't stack."
         },
         "enlightens": {
             "E1": "[Regent's Heir] Enlighten 1 At the start of the battle, add 1 [Irregular Form] to your hand.",
@@ -1095,7 +1096,7 @@
         "talents": {
             "T1": "Innate: None Talent",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Leigh's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Leigh's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Leigh's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Leigh's Rouse, gain (50 per talent level) Keyflare.Leigh STR Generation effects are amplified by 5%(+1 per talent level).After playing Leigh's Command Cards, gain 1%(+0.1% per talent level) of Leigh's ATK as STR.This effect can increase by up to 200% based on current lost HP, and can activate a maximum of 3 times per turn"
         },
         "enlightens": {
             "E1": "[Newborn Sanguivore] Enlighten 1 \"Pain and Pleasure\" deals Pierce DMG and gains Retain.",
@@ -1504,9 +1505,9 @@
         "faction": "CARO",
         "type": "ASSIST",
         "stats": {
-            "CON": "128",
-            "ATK": "116",
-            "DEF": "128",
+            "CON": "144",
+            "ATK": "131",
+            "DEF": "144",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "4.8(+0.8)*",
@@ -1660,9 +1661,9 @@
         "faction": "CARO",
         "type": "DEFENSE",
         "stats": {
-            "CON": "168",
-            "ATK": "108",
-            "DEF": "168",
+            "CON": "189",
+            "ATK": "122",
+            "DEF": "189",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "0",
@@ -1739,9 +1740,9 @@
         "faction": "CARO",
         "type": "ATTACK",
         "stats": {
-            "CON": "116",
-            "ATK": "164",
-            "DEF": "84",
+            "CON": "131",
+            "ATK": "185",
+            "DEF": "95",
             "CritRate": "15%(+1.6%)*",
             "CritDamage": "58%(+1.2%)*",
             "AliemusRegen": "0",
@@ -1755,17 +1756,17 @@
             "C1": "Rouse: [Host Lady's Privilege] Card Cost: 2 Sorel gains (25/30/35/40/45/50) Aliemus.Rouse: Gain (4.5/5.4/6.3/7.2/8.1/9% ATK) Strength.For each instance of damage dealt by Sorel, gain (1.5/1.8/2.1/2.4/2.7/3% ATK) Strength. Retain.",
             "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.",
             "C3": "[Defend] Card Cost: 1 Gain (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.",
-            "C4": "[Elegance of Rose] Card Cost: 2 Deal (12/14.4/16.8/19.2/21.6/24% ATK) DMG randomly 2 times.Restore (5/6/7/8/9/10% CON) HP at the end of turn.If current HP is below 50%, trigger an additional time.",
+            "C4": "[Elegance of Rose] Card Cost: 2 Deal (12/14.4/16.8/19.2/21.6/24% ATK) DMG randomly 4 times.Restore (10/12/14/16/18/20% CON) HP at the end of turn.",
             "C5": "[Diamond in the Rough] Card Cost: 1 Lose 10% Current HP.Embryo Fusion +(30/32/34/36/38/40)%.For the rest of the turn, recover (1.5/1.8/2.1/2.4/2.7/3% CON) HP at the end of turn for each instance of DMG dealt."
         },
         "exalt": {
-            "exalt": "[Carousel of Ambition] Infinite Devour: This round's Carousel of Ambition DMG instances +3, HP Recovery +(4/4.8/5.6/6.4/7.2/8% CON).Randomy deal (15/18/21/24/27/30% ATK) DMG 5 times to random enemies.Restore (15/18/21/24/27/30% CON) HP at the end of turn.",
+            "exalt": "[Carousel of Ambition] Infinite Devour: This round's Carousel of Ambition DMG instances +3, HP Recovery +(4/4.8/5.6/6.4/7.2/8% CON).Randomy deal (15/18/21/24/27/30% ATK) DMG 6 times to random enemies.Restore (15/18/21/24/27/30% CON) HP at the end of turn.",
             "over_exalt": "[Rose's Infinite Desire] Makes the next 3 Command Cards of Sorel take effect 2 times.Each time this Exalt deals damage, at the end of the turn, heal HP equal to 3% of CON."
         },
         "talents": {
             "T1": "Innate: Guardian of Vanity Talent For every 1% Crit Rate Sorel has, increase the aliemus gained from [Defend] by 0.2",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Sorel's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Sorel's Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Sorel's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Sorel's Rouse, gain (50 per talent level) Keyflare.After Sorel Devours, gain 15%(+1.5% per talent level) of ATK as Temporary STR, triggering up to 5 times per turn"
         },
         "enlightens": {
             "E1": "[Flowing Rill] Enlighten 1 If current HP is below 50%, \"Strike\" deals 2 instances of DMG and Embryo Fusion +10%. \"Defense\" gains 2 instances of Shield, Embryo Fusion +10%.",
@@ -1820,9 +1821,9 @@
         "faction": "CARO",
         "type": "ASSIST",
         "stats": {
-            "CON": "124",
-            "ATK": "120",
-            "DEF": "112",
+            "CON": "140",
+            "ATK": "135",
+            "DEF": "126",
             "CritRate": "5%",
             "CritDamage": "50%",
             "AliemusRegen": "3(+0.4)*",
@@ -1846,7 +1847,7 @@
         "talents": {
             "T1": "Innate: None Talent",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Thais' CON, ATK, and DEF stats increase by (3% per talent level).After using Thais' Rouse, gain (50 per talent level) Keyflare."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Thais' CON, ATK, and DEF stats increase by (3% per talent level).After using Thais' Rouse, gain (50 per talent level) Keyflare.When Thais uses Devour on an Embryo, gains Keyflare equal to 50%(+5% per talent level) of Keyflare Regen. Effect is doubled when devouring the Scion of Purity"
         },
         "enlightens": {
             "E1": "[Forest's Embrace] Enlighten 1 \"Ancient Caress\" Strength gain increases by 50%. The effects of \"Sacred Blood's Instinct\" are doubled.",
