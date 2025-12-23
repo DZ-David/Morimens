@@ -539,7 +539,7 @@
         },
         "talents": {
             "T1": "Innate: Casket Harvest Talent Max level: 1 Doresain gains 1 stack of \"Corpse\" after killing an enemy or dealing Exalt DMG to a Boss (max 3 stacks). Stacks are retained throughout the exploration.",
-            "T2": "Innate: Festering Grace Talent Max level: 1 Place 1 [Evernight's Revel] into hand whenever Doresain obtains \Corpse\.",
+            "T2": "Innate: Festering Grace Talent Max level: 1 Place 1 [Evernight's Revel] into hand whenever Doresain obtains \"Corpse\".",
             "T3": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
             "T4": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages. Doresain's CON, ATK, and DEF stats increase by (3% per talent level). After the first time using Doresain's Rouse, gain (50 per talent level) Keyflare.All Awakeners in your team gain 4% (+1% per talent level) more STR. When Doresain kills \"Departed\" enemies, he gains 30 (+2 per talent level) Aliemus."
         },
@@ -620,7 +620,7 @@
         "talents": {
             "T1": "Innate: Secondary Swaddle Talent For every 1% Death Resistance Faint and her equipped WoD & Covenant have, increase the Counter gained by [Cradle of Stars] and [Boundless Starlight] by 0.2% and increase the minimum Death Resistance condition of [Cradle of Stars] by 2%.",
             "T2": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
-            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Faint's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Faint's Rouse, gain (50 per talent level) Keyflare.he Strength Reduction effect applied by Faint is increased by 10%. After playing Faint's Command Cards, temporarily steal 5%(+0.5% per talent level) of Faint's ATK as Strength from Humanoid enemies, up to 3 times per turn."
+            "T3": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.Faint's CON, ATK, and DEF stats increase by (3% per talent level).After the first time using Faint's Rouse, gain (50 per talent level) Keyflare.Strength Reduction effect applied by Faint is increased by 10%. After playing Faint's Command Cards, temporarily steal 5%(+0.5% per talent level) of Faint's ATK as Strength from Humanoid enemies, up to 3 times per turn."
         },
         "enlightens": {
             "E1": "[Binary Stars] Enlighten 1 [Strike] deals DMG twice and gain temporary Counter equal to 50% of the damage dealt.",
