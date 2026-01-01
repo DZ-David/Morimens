@@ -10,7 +10,7 @@
   <body
     class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-indigo-500 selection:text-white h-screen flex flex-col p-4 md:p-8"
   >
-    <div
+    <main
       id="app"
       class="w-full mx-auto flex flex-col flex-grow overflow-hidden"
     >
@@ -28,23 +28,23 @@
             href="../index.html"
             class="group flex items-center gap-2 text-sm font-semibold text-slate-400 hover:text-indigo-400 transition-colors whitespace-nowrap bg-slate-800 hover:bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-700 hover:border-indigo-500/50 inline-flex"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="text-indigo-500 group-hover:text-indigo-400"
-            >
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-              <polyline points="9 22 9 12 15 12 15 22" />
-            </svg>
-            Morimens Awakeners Database
-          </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-indigo-500 group-hover:text-indigo-400"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Morimens Awakeners Database
+            </a>
           <p class="text-slate-400 mt-1">
             <a href="https://github.com/DZ-David/Morimens"
               >https://github.com/DZ-David/Morimens</a
@@ -52,22 +52,31 @@
           </p>
         </div>
 
-        <div
+        <nav
           class="flex items-center gap-2 border-b border-slate-700 flex-shrink-0"
+          role="tablist"
         >
           <button
+            type="button"
             id="inventory-tab-btn"
             class="tab-btn active px-4 py-2 font-semibold text-indigo-400 border-b-2 border-indigo-500 hover:border-indigo-400 transition-colors"
+            role="tab"
+            aria-selected="true"
+            aria-controls="inventory-panel"
           >
             Inventory
           </button>
           <button
+            type="button"
             id="team-tab-btn"
             class="tab-btn px-4 py-2 font-semibold text-slate-400 border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-500 transition-colors"
+            role="tab"
+            aria-selected="false"
+            aria-controls="team-panel"
           >
             Team Builder
           </button>
-        </div>
+        </nav>
       </header>
 
       <div
@@ -78,19 +87,17 @@
           id="inventory-search-block"
           class="bg-slate-900 p-4 rounded-xl border border-slate-800 shadow-lg flex-shrink-0"
         >
-          <div class="flex items-center gap-3">
-            <label
-              for="inventory-search"
-              class="text-sm font-semibold text-slate-400 whitespace-nowrap"
-              >Search</label
-            >
-            <input
-              type="text"
-              id="inventory-search"
-              placeholder="Search by name or type..."
-              class="flex-grow bg-slate-800 text-slate-200 text-sm rounded border border-slate-700 pl-4 pr-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none placeholder:text-slate-600 shadow-inner"
-            />
-          </div>
+          <label
+            for="inventory-search"
+            class="block text-sm font-semibold text-slate-300 mb-2"
+            >Search Inventory</label
+          >
+          <input
+            type="text"
+            id="inventory-search"
+            placeholder="By name or type..."
+            class="w-full bg-slate-800 text-slate-200 text-sm rounded border border-slate-700 pl-4 pr-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none placeholder:text-slate-600 shadow-inner"
+          />
         </div>
 
         <div
@@ -115,24 +122,28 @@
                   class="flex flex-wrap gap-1 bg-slate-800 p-1 rounded border border-slate-700"
                 >
                   <button
+                    type="button"
                     id="filter-ultra-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-purple-700 text-white hover:bg-purple-600"
                   >
                     ULTRA
                   </button>
                   <button
+                    type="button"
                     id="filter-caro-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-red-700 text-white hover:bg-red-600"
                   >
                     CARO
                   </button>
                   <button
+                    type="button"
                     id="filter-chaos-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-yellow-700 text-white hover:bg-yellow-600"
                   >
                     CHAOS
                   </button>
                   <button
+                    type="button"
                     id="filter-aequor-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-blue-700 text-white hover:bg-blue-600"
                   >
@@ -140,12 +151,14 @@
                   </button>
                 </div>
                 <button
+                  type="button"
                   id="select-all-awakeners-btn"
                   class="px-3 py-1 text-xs font-semibold rounded transition-colors text-slate-400 hover:text-slate-200"
                 >
                   All Owned
                 </button>
                 <button
+                  type="button"
                   id="deselect-all-awakeners-btn"
                   class="px-3 py-1 text-xs font-semibold rounded transition-colors text-slate-400 hover:text-slate-200"
                 >
@@ -187,18 +200,21 @@
                   class="flex flex-wrap gap-1 bg-slate-800 p-1 rounded border border-slate-700"
                 >
                   <button
+                    type="button"
                     id="filter-ssr-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-amber-600 text-white hover:bg-amber-500"
                   >
                     SSR
                   </button>
                   <button
+                    type="button"
                     id="filter-sr-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-slate-400 text-slate-900 hover:bg-slate-300"
                   >
                     SR
                   </button>
                   <button
+                    type="button"
                     id="filter-r-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-amber-700 text-white hover:bg-amber-600"
                   >
@@ -206,12 +222,14 @@
                   </button>
                 </div>
                 <button
+                  type="button"
                   id="select-all-wheels-btn"
                   class="px-3 py-1 text-xs font-semibold rounded transition-colors text-slate-400 hover:text-slate-200"
                 >
                   All Owned
                 </button>
                 <button
+                  type="button"
                   id="deselect-all-wheels-btn"
                   class="px-3 py-1 text-xs font-semibold rounded transition-colors text-slate-400 hover:text-slate-200"
                 >
@@ -239,19 +257,17 @@
             id="team-search-block"
             class="bg-slate-900 p-4 rounded-xl border border-slate-800 shadow-lg flex-shrink-0 mb-4"
           >
-            <div class="flex items-center gap-3">
-              <label
-                for="team-awakener-search"
-                class="text-sm font-semibold text-slate-400 whitespace-nowrap"
-                >Search</label
-              >
-              <input
-                type="text"
-                id="team-awakener-search"
-                placeholder="Search by name..."
-                class="flex-grow bg-slate-800 text-slate-200 text-sm rounded border border-slate-700 pl-4 pr-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none placeholder:text-slate-600 shadow-inner"
-              />
-            </div>
+            <label
+              for="team-awakener-search"
+              class="block text-sm font-semibold text-slate-300 mb-2"
+              >Search Team Roster</label
+            >
+            <input
+              type="text"
+              id="team-awakener-search"
+              placeholder="By name..."
+              class="w-full bg-slate-800 text-slate-200 text-sm rounded border border-slate-700 pl-4 pr-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none placeholder:text-slate-600 shadow-inner"
+            />
           </div>
 
           <div
@@ -275,24 +291,28 @@
                   class="flex flex-wrap gap-1 bg-slate-800 p-1 rounded border border-slate-700"
                 >
                   <button
+                    type="button"
                     id="team-filter-ultra-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-purple-700 text-white hover:bg-purple-600"
                   >
                     ULTRA
                   </button>
                   <button
+                    type="button"
                     id="team-filter-caro-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-red-700 text-white hover:bg-red-600"
                   >
                     CARO
                   </button>
                   <button
+                    type="button"
                     id="team-filter-chaos-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-yellow-700 text-white hover:bg-yellow-600"
                   >
                     CHAOS
                   </button>
                   <button
+                    type="button"
                     id="team-filter-aequor-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-blue-700 text-white hover:bg-blue-600"
                   >
@@ -333,18 +353,21 @@
                   class="flex flex-wrap gap-1 bg-slate-800 p-1 rounded border border-slate-700"
                 >
                   <button
+                    type="button"
                     id="team-filter-ssr-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-amber-600 text-white hover:bg-amber-500"
                   >
                     SSR
                   </button>
                   <button
+                    type="button"
                     id="team-filter-sr-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-slate-400 text-slate-900 hover:bg-slate-300"
                   >
                     SR
                   </button>
                   <button
+                    type="button"
                     id="team-filter-r-btn"
                     class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-amber-700 text-white hover:bg-amber-600"
                   >
@@ -385,18 +408,21 @@
                 class="flex gap-1 bg-slate-800 p-1 rounded-lg border border-slate-700"
               >
                 <button
+                  type="button"
                   id="size-btn-small"
                   class="px-3 py-1.5 text-xs font-semibold rounded transition-colors text-slate-400 hover:text-slate-200"
                 >
                   S
                 </button>
                 <button
+                  type="button"
                   id="size-btn-medium"
                   class="px-3 py-1.5 text-xs font-semibold rounded transition-colors text-slate-400 hover:text-slate-200"
                 >
                   M
                 </button>
                 <button
+                  type="button"
                   id="size-btn-large"
                   class="px-3 py-1.5 text-xs font-semibold rounded transition-colors bg-indigo-600 text-white"
                 >
@@ -404,6 +430,7 @@
                 </button>
               </div>
               <button
+                type="button"
                 id="toggle-images-btn"
                 class="px-3 py-1.5 text-xs font-semibold rounded transition-colors bg-indigo-600 text-white hover:bg-indigo-500 border border-indigo-500"
               >
@@ -418,6 +445,7 @@
           ></div>
 
           <button
+            type="button"
             id="add-row-btn"
             class="mt-4 p-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg border border-indigo-500 transition duration-200 shadow-lg flex-shrink-0"
           >
@@ -425,7 +453,13 @@
           </button>
         </div>
       </div>
-    </div>
+    </main>
+
+    <!-- Toast Notification Container -->
+    <div
+      id="toast-container"
+      class="fixed bottom-4 right-4 z-50 flex flex-col gap-2"
+    ></div>
 
     <script src="main.js"></script>
   </body>

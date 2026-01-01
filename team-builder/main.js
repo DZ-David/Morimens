@@ -9,48 +9,8 @@ const AWAKENERS_SOURCE_PATH = "../awakeners.json";
 const WHEELS_SOURCE_PATH = "../wheels.json";
 const FACTIONS = ["ULTRA", "CARO", "CHAOS", "AEQUOR"];
 
-let rowsState = [
-  {
-    slots: [
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-    ],
-  },
-  {
-    slots: [
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-    ],
-  },
-  {
-    slots: [
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-    ],
-  },
-  {
-    slots: [
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-    ],
-  },
-  {
-    slots: [
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-      { awakener: null, wheel: null },
-    ],
-  },
-];
+// Initialize rowsState with 5 empty rows (will be defined after createEmptyRow function)
+let rowsState = [];
 
 let wheelsState = [];
 let originalWheelsData = []; // Keep original wheels for rarity lookup
@@ -75,6 +35,170 @@ let ownedHeightPercentage = 50;
 const MIN_WIDTH_PERCENT = 20;
 const MIN_PX_HEIGHT = 120;
 
+// --- TOAST NOTIFICATION ---
+
+/**
+ * Shows a toast notification message
+ * @param {string} message - The message to display
+ * @param {string} type - Type of toast: 'info', 'warning', 'error', 'success'
+ * @param {number} duration - How long to show the toast in milliseconds (default: 3000)
+ */
+function showToast(message, type = "info", duration = 3000) {
+  const container = document.getElementById("toast-container");
+  const toast = document.createElement("div");
+
+  // Color classes based on type
+  const typeClasses = {
+    info: "bg-blue-600 border-blue-500",
+    warning: "bg-amber-600 border-amber-500",
+    error: "bg-red-600 border-red-500",
+    success: "bg-emerald-600 border-emerald-500",
+  };
+
+  toast.className = `${
+    typeClasses[type] || typeClasses.info
+  } text-white px-4 py-3 rounded-lg border shadow-lg flex items-center gap-3 animate-slide-in max-w-sm`;
+  toast.innerHTML = `
+    <span class="text-lg">⚠️</span>
+    <span class="flex-grow text-sm font-medium">${message}</span>
+  `;
+
+  container.appendChild(toast);
+
+  // Auto-remove after duration
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.transform = "translateX(100%)";
+    toast.style.transition = "all 0.3s ease-out";
+    setTimeout(() => toast.remove(), 300);
+  }, duration);
+}
+
+// --- HELPER FUNCTIONS ---
+
+/**
+ * Creates an empty row with MAX_ROW_CAPACITY slots
+ */
+function createEmptyRow() {
+  return {
+    slots: Array(MAX_ROW_CAPACITY)
+      .fill(null)
+      .map(() => ({ awakener: null, wheel: null })),
+  };
+}
+
+/**
+ * Safely fetches data files with fallback paths
+ */
+async function fetchDataFile(filename) {
+  try {
+    let response = await fetch(`./${filename}`);
+    if (!response.ok) throw new Error("Not found");
+    return response;
+  } catch (e) {
+    return await fetch(`../${filename}`);
+  }
+}
+
+/**
+ * Extracts wheel data handling both string (legacy) and object (new) formats
+ */
+function getWheelData(wheel) {
+  if (!wheel) return { name: null, rarity: "R" };
+  if (typeof wheel === "string") {
+    return { name: wheel, rarity: "R" };
+  }
+  return { name: wheel.name, rarity: wheel.rarity || "R" };
+}
+
+/**
+ * Finds next available slot for a given property (awakener or wheel)
+ */
+function findNextAvailableSlot(property) {
+  for (let teamIndex = 0; teamIndex < rowsState.length; teamIndex++) {
+    for (
+      let slotIndex = 0;
+      slotIndex < rowsState[teamIndex].slots.length;
+      slotIndex++
+    ) {
+      if (rowsState[teamIndex].slots[slotIndex][property] === null) {
+        return { teamIndex, slotIndex };
+      }
+    }
+  }
+  return null;
+}
+
+/**
+ * Consolidates render updates for team display
+ */
+function updateTeamDisplay() {
+  renderRows();
+  renderTeamAwakeners();
+  renderTeamWheels();
+  updateUrlState();
+}
+
+/**
+ * Sets element classes based on active/inactive state
+ */
+function setElementClasses(element, activeClasses, inactiveClasses, isActive) {
+  if (!element) return;
+  if (isActive) {
+    element.classList.add(...activeClasses);
+    element.classList.remove(...inactiveClasses);
+  } else {
+    element.classList.remove(...activeClasses);
+    element.classList.add(...inactiveClasses);
+  }
+}
+
+/**
+ * Sets element visibility by toggling hidden class
+ */
+function setVisibility(element, isVisible) {
+  if (!element) return;
+  if (isVisible) {
+    element.classList.remove("hidden");
+  } else {
+    element.classList.add("hidden");
+  }
+}
+
+/**
+ * Sets up a drag zone with common event listeners
+ */
+function setupDragZone(element, dropHandler) {
+  if (!element) return;
+  element.addEventListener("dragover", handleDragOver);
+  element.addEventListener("dragenter", (e) => {
+    e.preventDefault();
+    element.classList.add("drag-over");
+  });
+  element.addEventListener("dragleave", (e) => {
+    e.preventDefault();
+    element.classList.remove("drag-over");
+  });
+  element.addEventListener("drop", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    element.classList.remove("drag-over");
+    dropHandler(e);
+  });
+}
+
+/**
+ * Safely parses drag data JSON
+ */
+function parseDragData(e) {
+  try {
+    return JSON.parse(e.dataTransfer.getData("application/json"));
+  } catch (err) {
+    console.error("Failed to parse drag data:", err);
+    return null;
+  }
+}
+
 function generateMockData() {
   console.log("Could not load external data. Using mock data fallback.");
   const mockData = [];
@@ -93,14 +217,7 @@ function generateMockData() {
 
 async function loadAwakenersData() {
   try {
-    // Try ./awakeners.json first, then ../awakeners.json
-    let response;
-    try {
-      response = await fetch("./awakeners.json");
-      if (!response.ok) throw new Error("Not found");
-    } catch (e) {
-      response = await fetch("../awakeners.json");
-    }
+    const response = await fetchDataFile("awakeners.json");
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -129,13 +246,7 @@ async function loadAwakenersData() {
 
 async function loadWheelsData() {
   try {
-    let response;
-    try {
-      response = await fetch("./wheels.json");
-      if (!response.ok) throw new Error("Not found");
-    } catch (e) {
-      response = await fetch("../wheels.json");
-    }
+    const response = await fetchDataFile("wheels.json");
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -183,12 +294,8 @@ function serializeState() {
           const awakenerIndex = slot.awakener
             ? getAwakenerIndexByName(slot.awakener)
             : "";
-          // Handle both string (legacy) and object (new) wheel format
-          const wheelStr = slot.wheel
-            ? typeof slot.wheel === "string"
-              ? slot.wheel
-              : `${slot.wheel.name}:${slot.wheel.rarity}`
-            : "";
+          const { name, rarity } = getWheelData(slot.wheel);
+          const wheelStr = name ? `${name}:${rarity}` : "";
           const wheelName = wheelStr ? encodeURIComponent(wheelStr) : "";
           return `${awakenerIndex}:${wheelName}`;
         })
@@ -369,37 +476,30 @@ function switchTab(tabName) {
 }
 
 function isAwakenerInTeam(name) {
-  return rowsState.some((row) => row.includes(name));
+  return rowsState.some((row) =>
+    row.slots.some((slot) => slot.awakener === name)
+  );
 }
 
+function isWheelInTeam(wheelName) {
+  return rowsState.some((row) =>
+    row.slots.some((slot) => {
+      if (!slot.wheel) return false;
+      const slotWheelName =
+        typeof slot.wheel === "string" ? slot.wheel : slot.wheel.name;
+      return slotWheelName === wheelName;
+    })
+  );
+}
+
+// These functions are now replaced by findNextAvailableSlot()
+// Left as wrappers for backwards compatibility
 function findNextAvailableAwakenerSlot() {
-  for (let teamIndex = 0; teamIndex < rowsState.length; teamIndex++) {
-    for (
-      let slotIndex = 0;
-      slotIndex < rowsState[teamIndex].slots.length;
-      slotIndex++
-    ) {
-      if (rowsState[teamIndex].slots[slotIndex].awakener === null) {
-        return { teamIndex, slotIndex };
-      }
-    }
-  }
-  return null; // No available slot
+  return findNextAvailableSlot("awakener");
 }
 
 function findNextAvailableWheelSlot() {
-  for (let teamIndex = 0; teamIndex < rowsState.length; teamIndex++) {
-    for (
-      let slotIndex = 0;
-      slotIndex < rowsState[teamIndex].slots.length;
-      slotIndex++
-    ) {
-      if (rowsState[teamIndex].slots[slotIndex].wheel === null) {
-        return { teamIndex, slotIndex };
-      }
-    }
-  }
-  return null; // No available slot
+  return findNextAvailableSlot("wheel");
 }
 
 function renderInventoryWheels() {
@@ -434,7 +534,7 @@ function createWheelCardBase(wheel, config = {}) {
 
   const card = document.createElement("div");
   const rarityClasses = getRarityClasses(wheel.rarity);
-  let classes = `flex flex-col items-center ${width} ${height} p-1 rounded-lg border shadow-lg hover:shadow-xl transition duration-200 ${rarityClasses}`;
+  let classes = `relative flex flex-col items-center ${width} ${height} p-1 rounded-lg border shadow-lg hover:shadow-xl transition duration-200 ${rarityClasses}`;
 
   if (clickHandler) {
     classes += " cursor-pointer";
@@ -456,11 +556,18 @@ function createWheelCardBase(wheel, config = {}) {
 
   card.className = classes;
 
+  // Check if wheel is equipped in a team
+  const isEquipped = isWheelInTeam(wheel.name);
+  const equippedIndicator = isEquipped
+    ? `<div class="absolute top-0 right-0 bg-amber-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs" style="pointer-events: none;">★</div>`
+    : "";
+
   const rarityDisplay = showRarity
     ? `<div class="${raritySize} font-semibold uppercase tracking-wider truncate w-full text-center mt-1 opacity-90">${wheel.rarity}</div>`
     : "";
 
   card.innerHTML = `
+            ${equippedIndicator}
             <div class="${titleSize} font-bold uppercase tracking-wider truncate w-full text-center mb-1 opacity-80">${wheel.name}</div>
             <div class="${iconSize} flex items-center justify-center rounded-md border shadow-sm bg-slate-800 text-2xl">
                 ⚙️
@@ -505,16 +612,22 @@ function createTeamWheelCard(wheel, index) {
 function toggleWheelOwnership(wheelIndex) {
   const wheel = wheelsState[wheelIndex];
   if (wheel) {
+    // Check if wheel is equipped before allowing unowned
+    if (wheel.group === "owned" && isWheelInTeam(wheel.name)) {
+      showToast(
+        `${wheel.name} is currently equipped in a team and cannot be marked as unowned.`,
+        "warning",
+        4000
+      );
+      return;
+    }
+
     wheel.group = wheel.group === "owned" ? "unowned" : "owned";
     renderInventoryWheels();
     updateAllOwnedButtonUI();
     updateAllUnownedButtonUI();
     updateUrlState();
   }
-}
-
-function renderWheels() {
-  renderInventoryWheels();
 }
 
 function getFactionClasses(faction) {
@@ -561,7 +674,7 @@ function createAwakenerCardBase(awakener, config = {}) {
   const awakenerName = awakener.name;
   const displayName = awakener.displayName || awakenerName;
 
-  let classes = `flex flex-col items-center ${width} ${height} p-1 rounded-lg border shadow-lg hover:shadow-xl transition duration-200 ${factionClasses}`;
+  let classes = `relative flex flex-col items-center ${width} ${height} p-1 rounded-lg border shadow-lg hover:shadow-xl transition duration-200 ${factionClasses}`;
 
   if (draggable) {
     classes += " drag-source cursor-grab";
@@ -590,12 +703,20 @@ function createAwakenerCardBase(awakener, config = {}) {
     "%20"
   )}`;
 
+  // Check if awakener is equipped in a team
+  const isEquipped = isAwakenerInTeam(awakenerName);
+  const equippedIndicator = isEquipped
+    ? `<div class="absolute top-0 right-0 bg-amber-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs" style="pointer-events: none;">★</div>`
+    : "";
+
   card.innerHTML = `
+            ${equippedIndicator}
             <div class="${textSize} font-bold uppercase tracking-wider truncate w-full text-center mb-1 opacity-90">${displayName}</div>
             <img
                 src="${imageUrl}"
                 alt="${displayName} image"
                 class="${imageSize} object-cover rounded-md border border-slate-600 shadow-sm bg-slate-800"
+                style="pointer-events: none;"
                 onerror="this.onerror=null; this.src='${fallbackImageUrl}';"
             />
         `;
@@ -666,6 +787,12 @@ function toggleAwakenerGroup(name) {
   const awakener = getAwakenerByName(name);
   if (awakener) {
     if (isAwakenerInTeam(name)) {
+      const displayName = awakener.displayName || name;
+      showToast(
+        `${displayName} is currently equipped in a team and cannot be marked as unowned.`,
+        "warning",
+        4000
+      );
       console.warn(
         `Cannot toggle status for ${name}. It is currently in a team row.`
       );
@@ -675,7 +802,7 @@ function toggleAwakenerGroup(name) {
     awakener.group = awakener.group === "owned" ? "unowned" : "owned";
     renderInventoryAwakeners();
     updateAllOwnedButtonUI();
-    updateAllUnownedButtonUI();
+    updateAllUnownButtonUI();
     updateUrlState();
   }
 }
@@ -1010,16 +1137,7 @@ function createTeamSlotCard(slot, teamIndex, slotIndex) {
   }
 
   // Add drag event listeners for awakener zone
-  awakenerZone.addEventListener("dragover", handleDragOver);
-  awakenerZone.addEventListener("dragenter", (e) => {
-    e.preventDefault();
-    awakenerZone.classList.add("drag-over");
-  });
-  awakenerZone.addEventListener("dragleave", (e) => {
-    e.preventDefault();
-    awakenerZone.classList.remove("drag-over");
-  });
-  awakenerZone.addEventListener("drop", (e) =>
+  setupDragZone(awakenerZone, (e) =>
     handleAwakenerSlotDrop(e, teamIndex, slotIndex)
   );
 
@@ -1029,11 +1147,7 @@ function createTeamSlotCard(slot, teamIndex, slotIndex) {
   wheelZone.dataset.teamSlotId = slotId;
 
   if (slot.wheel) {
-    // Handle both string (legacy) and object (new) wheel format
-    const wheelName =
-      typeof slot.wheel === "string" ? slot.wheel : slot.wheel.name;
-    const wheelRarity =
-      typeof slot.wheel === "string" ? "R" : slot.wheel.rarity || "R";
+    const { name: wheelName, rarity: wheelRarity } = getWheelData(slot.wheel);
     const rarityClasses = getRarityClasses(wheelRarity);
 
     const wheelDisplay = document.createElement("div");
@@ -1084,16 +1198,7 @@ function createTeamSlotCard(slot, teamIndex, slotIndex) {
   }
 
   // Add drag event listeners for wheel zone
-  wheelZone.addEventListener("dragover", handleDragOver);
-  wheelZone.addEventListener("dragenter", (e) => {
-    e.preventDefault();
-    wheelZone.classList.add("drag-over");
-  });
-  wheelZone.addEventListener("dragleave", (e) => {
-    e.preventDefault();
-    wheelZone.classList.remove("drag-over");
-  });
-  wheelZone.addEventListener("drop", (e) => handleWheelSlotDrop(e, slotId));
+  setupDragZone(wheelZone, (e) => handleWheelSlotDrop(e, slotId));
 
   slotCard.appendChild(awakenerZone);
   slotCard.appendChild(wheelZone);
@@ -1184,16 +1289,8 @@ function renderRows() {
 
 function addRow() {
   if (rowsState.length < MAX_ROWS) {
-    rowsState.push({
-      slots: [
-        { awakener: null, wheel: null },
-        { awakener: null, wheel: null },
-        { awakener: null, wheel: null },
-        { awakener: null, wheel: null },
-      ],
-    });
-    renderRows();
-    updateUrlState();
+    rowsState.push(createEmptyRow());
+    updateTeamDisplay();
     console.log(`Added new row. Total rows: ${rowsState.length}`);
   } else {
     console.warn(`Cannot add more rows. Maximum limit of ${MAX_ROWS} reached.`);
@@ -1310,7 +1407,8 @@ function handleSlotDrop(e, teamIndex, dropSlotIndex) {
   e.stopPropagation();
 
   try {
-    const dragData = JSON.parse(e.dataTransfer.getData("application/json"));
+    const dragData = parseDragData(e);
+    if (!dragData) return;
 
     // Only handle slot-to-slot reordering within the same team
     if (dragData.type === "slot" && dragData.teamIndex === teamIndex) {
@@ -1340,7 +1438,9 @@ function handleAwakenerSlotDrop(e, teamIndex, slotIndex) {
   if (slot) slot.classList.remove("drag-over");
 
   try {
-    const dragData = JSON.parse(e.dataTransfer.getData("application/json"));
+    const dragData = parseDragData(e);
+    if (!dragData) return;
+
     const awakenerName = dragData.name;
     const sourceTeamIndex =
       dragData.sourceRowId !== null ? parseInt(dragData.sourceRowId) : null;
@@ -1359,10 +1459,7 @@ function handleAwakenerSlotDrop(e, teamIndex, slotIndex) {
       }
     }
 
-    renderRows();
-    renderTeamAwakeners();
-    renderTeamWheels();
-    updateUrlState();
+    updateTeamDisplay();
   } catch (e) {
     console.error("Failed to process awakener drop:", e);
     renderRows();
@@ -1378,7 +1475,9 @@ function handleWheelSlotDrop(e, teamSlotId) {
   if (wheelSlot) wheelSlot.classList.remove("drag-over");
 
   try {
-    const dragData = JSON.parse(e.dataTransfer.getData("application/json"));
+    const dragData = parseDragData(e);
+    if (!dragData) return;
+
     const wheelName = dragData.name;
     const wheelRarity = dragData.rarity;
 
@@ -1391,10 +1490,7 @@ function handleWheelSlotDrop(e, teamSlotId) {
       rarity: wheelRarity,
     };
 
-    renderRows();
-    renderTeamAwakeners();
-    renderTeamWheels();
-    updateUrlState();
+    updateTeamDisplay();
   } catch (e) {
     console.error("Failed to process wheel drop:", e);
     renderRows();
@@ -1409,7 +1505,9 @@ function handleRosterDrop(e) {
   listElement.classList.remove("drag-over");
 
   try {
-    const dragData = JSON.parse(e.dataTransfer.getData("application/json"));
+    const dragData = parseDragData(e);
+    if (!dragData) return;
+
     const awakenerName = dragData.name;
     const sourceRowId = dragData.sourceRowId;
 
@@ -1428,10 +1526,7 @@ function handleRosterDrop(e) {
       }
       awakener.group = targetGroup;
 
-      renderRows();
-      renderTeamAwakeners();
-      renderTeamWheels();
-      updateUrlState();
+      updateTeamDisplay();
     }
   } catch (e) {
     console.error("Failed to process roster drop:", e);
@@ -1660,6 +1755,11 @@ function enrichWheelsWithRarity() {
 }
 
 async function init() {
+  // Initialize empty rows
+  rowsState = Array(5)
+    .fill(null)
+    .map(() => createEmptyRow());
+
   await loadAwakenersData();
   await loadWheelsData();
   initializeFilters();
