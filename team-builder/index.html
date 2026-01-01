@@ -1,767 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Morimens Team Builder</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom scrollbar to match index.html */
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: #0f172a; } /* slate-950 */
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; } /* slate-700 */
-        ::-webkit-scrollbar-thumb:hover { background: #475569; } /* slate-600 */
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body
+    class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-indigo-500 selection:text-white h-screen flex flex-col p-4 md:p-8"
+  >
+    <div
+      id="app"
+      class="w-full mx-auto flex flex-col flex-grow overflow-hidden"
+    >
+      <header
+        class="mb-4 p-4 bg-slate-900 border border-slate-800 rounded-xl shadow-lg flex-shrink-0 flex flex-col md:flex-row justify-between md:items-center gap-4"
+      >
+        <div class="flex-grow">
+          <h1
+            class="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-2"
+          >
+            Morimens Team Builder
+          </h1>
 
-        /* App specific styles */
-        body { font-family: 'Inter', sans-serif; }
-        
-        .drag-source, .drag-clone {
-            transition: all 0.2s ease-in-out;
-            cursor: grab;
-        }
-        .drag-source:active, .drag-clone:active {
-            cursor: grabbing;
-        }
-        .drag-source:hover, .drag-clone:hover {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Darker shadow */
-            transform: translateY(-2px);
-        }
-        .drag-over {
-            border: 2px dashed theme('colors.indigo.500') !important;
-            background-color: theme('colors.slate.800') !important;
-        }
-        
-        /* Classes to apply during resizing to prevent unwanted text selection and change cursor */
-        .no-select-col {
-            user-select: none;
-            cursor: col-resize;
-        }
-        .no-select-row {
-            user-select: none;
-            cursor: row-resize;
-        }
-    </style>
-</head>
-<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-indigo-500 selection:text-white h-screen flex flex-col p-4 md:p-8">
-
-    <div id="app" class="w-full mx-auto flex flex-col flex-grow overflow-hidden">
-        
-        <header class="mb-4 p-4 bg-slate-900 border border-slate-800 rounded-xl shadow-lg flex-shrink-0 flex flex-col md:flex-row justify-between md:items-center gap-4">
-            <div>
-                <h1 class="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-2">Morimens Team Builder</h1>
-                
-                <a href="../index.html" class="group flex items-center gap-2 text-sm font-semibold text-slate-400 hover:text-indigo-400 transition-colors whitespace-nowrap bg-slate-800 hover:bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-700 hover:border-indigo-500/50 inline-flex">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-500 group-hover:text-indigo-400"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                    Morimens Awakeners Database
-                </a>
-                <p className="text-slate-400 mt-1">
-                    <a href="https://github.com/DZ-David/Morimens">https://github.com/DZ-David/Morimens</a>
-                </p>
-
-                <p class="text-slate-400 mt-2 text-sm">Right-click a unit to toggle between Owned/Unowned. Drag units from the roster to move them into the team rows below.</p>
-            </div>
-            
-        </header>
-
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-0 flex-grow min-h-0" id="main-layout">
-
-            <div id="roster-column" class="space-y-4 w-full transition-all duration-100 ease-out flex flex-col lg:flex-grow lg:min-h-0">
-                
-                <div id="search-block" class="bg-slate-900 p-6 rounded-xl border border-slate-800 shadow-lg flex-shrink-0">
-                    <label for="awakener-search" class="block text-sm font-semibold uppercase tracking-wide text-slate-400 mb-2">Filter Roster</label>
-                    <input type="text" id="awakener-search" placeholder="Search by name (e.g., 'Awakener-05') or faction..."
-                            class="w-full bg-slate-800 text-slate-200 text-sm rounded border border-slate-700 pl-4 pr-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none placeholder:text-slate-600 shadow-inner">
-                </div>
-
-                <div id="owned-group" class="bg-slate-900 p-6 rounded-xl border border-slate-800 shadow-xl flex flex-col lg:flex-grow lg:min-h-0">
-                    <div class="flex items-center gap-2 mb-4 border-b border-slate-700 pb-2 flex-shrink-0">
-                        <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
-                        <h2 class="text-xl font-semibold text-slate-200">Owned Roster</h2>
-                    </div>
-                    <div id="owned-list" class="scroll-container overflow-y-auto p-2 flex flex-wrap gap-3 content-start flex-grow">
-                        </div>
-                </div>
-
-                <div id="roster-splitter" 
-                     class="h-2 w-full bg-slate-800 rounded-full cursor-row-resize hover:bg-indigo-500 border border-slate-700 transition-colors duration-200 flex-shrink-0 hidden lg:block"
-                     title="Drag to resize Owned/Unowned panels">
-                </div>
-
-                <div id="unowned-group" class="bg-slate-900 p-6 rounded-xl border border-slate-800 shadow-xl flex flex-col lg:flex-grow lg:min-h-0">
-                    <div class="flex items-center gap-2 mb-4 border-b border-slate-700 pb-2 flex-shrink-0">
-                        <div class="w-2 h-2 rounded-full bg-rose-500"></div>
-                        <h2 class="text-xl font-semibold text-slate-200">Unowned Roster</h2>
-                    </div>
-                    <div id="unowned-list" class="scroll-container overflow-y-auto p-2 flex flex-wrap gap-3 content-start flex-grow">
-                        </div>
-                </div>
-            </div>
-
-            <div id="drag-handle" 
-                 class="hidden lg:block w-3 bg-slate-950 flex items-center justify-center cursor-col-resize flex-shrink-0 group"
-                 title="Drag to resize panels">
-                 <div class="w-1 h-12 bg-slate-700 rounded-full group-hover:bg-indigo-500 transition-colors"></div>
-            </div>
-
-            <div id="team-column" class="bg-slate-900 p-8 rounded-xl border border-slate-800 shadow-2xl flex flex-col lg:flex-grow lg:min-h-0">
-                <div class="flex items-center gap-2 mb-6 border-b border-slate-700 pb-2 flex-shrink-0">
-                    <h2 class="text-xl font-semibold text-slate-200">Team Composition</h2>
-                </div>
-                
-                <div id="rows-container" class="space-y-0 overflow-y-auto pr-2 flex-grow">
-                    </div>
-
-                <button id="add-row-btn" class="mt-4 p-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg border border-indigo-500 transition duration-200 shadow-lg flex-shrink-0">
-                    + Add Team Row (Max 10)
-                </button>
-            </div>
+          <a
+            href="../index.html"
+            class="group flex items-center gap-2 text-sm font-semibold text-slate-400 hover:text-indigo-400 transition-colors whitespace-nowrap bg-slate-800 hover:bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-700 hover:border-indigo-500/50 inline-flex"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-indigo-500 group-hover:text-indigo-400"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            Morimens Awakeners Database
+          </a>
+          <p class="text-slate-400 mt-1">
+            <a href="https://github.com/DZ-David/Morimens"
+              >https://github.com/DZ-David/Morimens</a
+            >
+          </p>
         </div>
 
+        <div
+          class="flex items-center gap-2 border-b border-slate-700 flex-shrink-0"
+        >
+          <button
+            id="inventory-tab-btn"
+            class="tab-btn active px-4 py-2 font-semibold text-indigo-400 border-b-2 border-indigo-500 hover:border-indigo-400 transition-colors"
+          >
+            Inventory
+          </button>
+          <button
+            id="team-tab-btn"
+            class="tab-btn px-4 py-2 font-semibold text-slate-400 border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-500 transition-colors"
+          >
+            Team Builder
+          </button>
+        </div>
+      </header>
+
+      <div
+        id="inventory-panel"
+        class="tab-panel flex flex-col gap-4 flex-grow min-h-0"
+      >
+        <div
+          id="inventory-search-block"
+          class="bg-slate-900 p-4 rounded-xl border border-slate-800 shadow-lg flex-shrink-0"
+        >
+          <div class="flex items-center gap-3">
+            <label
+              for="inventory-search"
+              class="text-sm font-semibold text-slate-400 whitespace-nowrap"
+              >Search</label
+            >
+            <input
+              type="text"
+              id="inventory-search"
+              placeholder="Search by name or type..."
+              class="flex-grow bg-slate-800 text-slate-200 text-sm rounded border border-slate-700 pl-4 pr-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none placeholder:text-slate-600 shadow-inner"
+            />
+          </div>
+        </div>
+
+        <div
+          id="inventory-content"
+          class="flex flex-col lg:flex-row gap-4 flex-grow min-h-0"
+        >
+          <div
+            id="awakeners-panel"
+            class="flex flex-col flex-grow min-h-0 bg-slate-900 p-6 rounded-xl border border-slate-800 shadow-xl lg:basis-2/3"
+          >
+            <div
+              class="flex flex-wrap items-center justify-between gap-2 mb-4 border-b border-slate-700 pb-2 flex-shrink-0"
+            >
+              <div class="flex items-center gap-2">
+                <h2 class="text-lg font-semibold text-slate-200">Awakeners</h2>
+                <span id="awakeners-count" class="text-xs text-slate-400"
+                  >(0 owned)</span
+                >
+              </div>
+              <div class="flex gap-2 flex-wrap">
+                <div
+                  class="flex flex-wrap gap-1 bg-slate-800 p-1 rounded border border-slate-700"
+                >
+                  <button
+                    id="filter-ultra-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-purple-700 text-white hover:bg-purple-600"
+                  >
+                    ULTRA
+                  </button>
+                  <button
+                    id="filter-caro-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-red-700 text-white hover:bg-red-600"
+                  >
+                    CARO
+                  </button>
+                  <button
+                    id="filter-chaos-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-yellow-700 text-white hover:bg-yellow-600"
+                  >
+                    CHAOS
+                  </button>
+                  <button
+                    id="filter-aequor-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-blue-700 text-white hover:bg-blue-600"
+                  >
+                    AEQUOR
+                  </button>
+                </div>
+                <button
+                  id="select-all-awakeners-btn"
+                  class="px-3 py-1 text-xs font-semibold rounded transition-colors text-slate-400 hover:text-slate-200"
+                >
+                  All Owned
+                </button>
+                <button
+                  id="deselect-all-awakeners-btn"
+                  class="px-3 py-1 text-xs font-semibold rounded transition-colors text-slate-400 hover:text-slate-200"
+                >
+                  All Unowned
+                </button>
+              </div>
+            </div>
+            <div
+              id="inventory-awakeners-list"
+              class="scroll-container overflow-y-auto p-2 flex flex-wrap gap-3 content-start flex-grow"
+            ></div>
+          </div>
+
+          <div
+            id="inventory-resize-handle"
+            class="hidden lg:block w-3 bg-slate-950 flex items-center justify-center cursor-col-resize flex-shrink-0 group"
+            title="Drag to resize Awakeners/Wheels"
+          >
+            <div
+              class="w-1 h-12 bg-slate-700 rounded-full group-hover:bg-indigo-500 transition-colors"
+            ></div>
+          </div>
+
+          <div
+            id="wheels-panel"
+            class="flex flex-col flex-grow min-h-0 bg-slate-900 p-6 rounded-xl border border-slate-800 shadow-xl lg:basis-1/3"
+          >
+            <div
+              class="flex flex-wrap items-center justify-between gap-2 mb-4 border-b border-slate-700 pb-2 flex-shrink-0"
+            >
+              <div class="flex items-center gap-2">
+                <h2 class="text-lg font-semibold text-slate-200">Wheels</h2>
+                <span id="wheels-count" class="text-xs text-slate-400"
+                  >(0 owned)</span
+                >
+              </div>
+              <div class="flex gap-2 flex-wrap">
+                <div
+                  class="flex flex-wrap gap-1 bg-slate-800 p-1 rounded border border-slate-700"
+                >
+                  <button
+                    id="filter-ssr-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-amber-600 text-white hover:bg-amber-500"
+                  >
+                    SSR
+                  </button>
+                  <button
+                    id="filter-sr-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-slate-400 text-slate-900 hover:bg-slate-300"
+                  >
+                    SR
+                  </button>
+                  <button
+                    id="filter-r-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-amber-700 text-white hover:bg-amber-600"
+                  >
+                    R
+                  </button>
+                </div>
+                <button
+                  id="select-all-wheels-btn"
+                  class="px-3 py-1 text-xs font-semibold rounded transition-colors text-slate-400 hover:text-slate-200"
+                >
+                  All Owned
+                </button>
+                <button
+                  id="deselect-all-wheels-btn"
+                  class="px-3 py-1 text-xs font-semibold rounded transition-colors text-slate-400 hover:text-slate-200"
+                >
+                  All Unowned
+                </button>
+              </div>
+            </div>
+            <div
+              id="inventory-wheels-list"
+              class="scroll-container overflow-y-auto p-2 flex flex-wrap gap-3 content-start flex-grow"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="team-panel"
+        class="tab-panel hidden flex flex-col lg:flex-row gap-8 lg:gap-0 flex-grow min-h-0"
+      >
+        <div
+          id="team-roster-column"
+          class="flex flex-col lg:flex-grow lg:min-h-0"
+        >
+          <div
+            id="team-search-block"
+            class="bg-slate-900 p-4 rounded-xl border border-slate-800 shadow-lg flex-shrink-0 mb-4"
+          >
+            <div class="flex items-center gap-3">
+              <label
+                for="team-awakener-search"
+                class="text-sm font-semibold text-slate-400 whitespace-nowrap"
+                >Search</label
+              >
+              <input
+                type="text"
+                id="team-awakener-search"
+                placeholder="Search by name..."
+                class="flex-grow bg-slate-800 text-slate-200 text-sm rounded border border-slate-700 pl-4 pr-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none placeholder:text-slate-600 shadow-inner"
+              />
+            </div>
+          </div>
+
+          <div
+            id="team-roster-content"
+            class="flex flex-col lg:flex-row gap-4 flex-grow min-h-0"
+          >
+            <div
+              id="team-awakeners-panel"
+              class="bg-slate-900 p-6 rounded-xl border border-slate-800 shadow-xl flex flex-col lg:flex-grow lg:min-h-0 lg:basis-1/2"
+            >
+              <div
+                class="flex flex-wrap items-center justify-between gap-2 mb-4 border-b border-slate-700 pb-2 flex-shrink-0"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+                  <h2 class="text-xl font-semibold text-slate-200">
+                    Owned Awakeners
+                  </h2>
+                </div>
+                <div
+                  class="flex flex-wrap gap-1 bg-slate-800 p-1 rounded border border-slate-700"
+                >
+                  <button
+                    id="team-filter-ultra-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-purple-700 text-white hover:bg-purple-600"
+                  >
+                    ULTRA
+                  </button>
+                  <button
+                    id="team-filter-caro-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-red-700 text-white hover:bg-red-600"
+                  >
+                    CARO
+                  </button>
+                  <button
+                    id="team-filter-chaos-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-yellow-700 text-white hover:bg-yellow-600"
+                  >
+                    CHAOS
+                  </button>
+                  <button
+                    id="team-filter-aequor-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-blue-700 text-white hover:bg-blue-600"
+                  >
+                    AEQUOR
+                  </button>
+                </div>
+              </div>
+              <div
+                id="team-roster-list"
+                class="scroll-container overflow-y-auto p-2 flex flex-wrap gap-3 content-start flex-grow"
+              ></div>
+            </div>
+
+            <div
+              id="team-roster-resize-handle"
+              class="hidden lg:block w-3 bg-slate-950 flex items-center justify-center cursor-col-resize flex-shrink-0 group"
+              title="Drag to resize Awakeners/Wheels"
+            >
+              <div
+                class="w-1 h-12 bg-slate-700 rounded-full group-hover:bg-indigo-500 transition-colors"
+              ></div>
+            </div>
+
+            <div
+              id="team-wheels-panel"
+              class="bg-slate-900 p-6 rounded-xl border border-slate-800 shadow-xl flex flex-col lg:flex-grow lg:min-h-0 lg:basis-1/2"
+            >
+              <div
+                class="flex flex-wrap items-center justify-between gap-2 mb-4 border-b border-slate-700 pb-2 flex-shrink-0"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                  <h2 class="text-xl font-semibold text-slate-200">
+                    Owned Wheels
+                  </h2>
+                </div>
+                <div
+                  class="flex flex-wrap gap-1 bg-slate-800 p-1 rounded border border-slate-700"
+                >
+                  <button
+                    id="team-filter-ssr-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-amber-600 text-white hover:bg-amber-500"
+                  >
+                    SSR
+                  </button>
+                  <button
+                    id="team-filter-sr-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-slate-400 text-slate-900 hover:bg-slate-300"
+                  >
+                    SR
+                  </button>
+                  <button
+                    id="team-filter-r-btn"
+                    class="px-2 py-1 text-xs font-semibold rounded transition-colors bg-amber-700 text-white hover:bg-amber-600"
+                  >
+                    R
+                  </button>
+                </div>
+              </div>
+              <div
+                id="team-wheels-list"
+                class="scroll-container overflow-y-auto p-2 flex flex-wrap gap-3 content-start flex-grow"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="team-drag-handle"
+          class="hidden lg:block w-3 bg-slate-950 flex items-center justify-center cursor-col-resize flex-shrink-0 group"
+          title="Drag to resize panels"
+        >
+          <div
+            class="w-1 h-12 bg-slate-700 rounded-full group-hover:bg-indigo-500 transition-colors"
+          ></div>
+        </div>
+
+        <div
+          id="team-builder-column"
+          class="bg-slate-900 p-8 rounded-xl border border-slate-800 shadow-2xl flex flex-col lg:flex-grow lg:min-h-0"
+        >
+          <div
+            class="flex items-center justify-between gap-4 mb-6 border-b border-slate-700 pb-2 flex-shrink-0"
+          >
+            <h2 class="text-xl font-semibold text-slate-200">
+              Team Composition
+            </h2>
+            <div class="flex items-center gap-3">
+              <div
+                class="flex gap-1 bg-slate-800 p-1 rounded-lg border border-slate-700"
+              >
+                <button
+                  id="size-btn-small"
+                  class="px-3 py-1.5 text-xs font-semibold rounded transition-colors text-slate-400 hover:text-slate-200"
+                >
+                  S
+                </button>
+                <button
+                  id="size-btn-medium"
+                  class="px-3 py-1.5 text-xs font-semibold rounded transition-colors text-slate-400 hover:text-slate-200"
+                >
+                  M
+                </button>
+                <button
+                  id="size-btn-large"
+                  class="px-3 py-1.5 text-xs font-semibold rounded transition-colors bg-indigo-600 text-white"
+                >
+                  L
+                </button>
+              </div>
+              <button
+                id="toggle-images-btn"
+                class="px-3 py-1.5 text-xs font-semibold rounded transition-colors bg-indigo-600 text-white hover:bg-indigo-500 border border-indigo-500"
+              >
+                Hide Images
+              </button>
+            </div>
+          </div>
+
+          <div
+            id="rows-container"
+            class="space-y-0 overflow-y-auto pr-2 flex-grow"
+          ></div>
+
+          <button
+            id="add-row-btn"
+            class="mt-4 p-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg border border-indigo-500 transition duration-200 shadow-lg flex-shrink-0"
+          >
+            + Add Team Row (Max 10)
+          </button>
+        </div>
+      </div>
     </div>
 
-    <script>
-        // --- DATA AND STATE MANAGEMENT ---
-        
-        let awakenersData = [];
-        const TOTAL_UNITS = 52; 
-        const MAX_ROWS = 10;
-        const MAX_ROW_CAPACITY = 4; 
-        const DATA_SOURCE_PATH = '../awakeners.json'; 
-        const FACTIONS = ["ULTRA", "CARO", "CHAOS", "AEQUOR"]; 
-
-        let rowsState = [
-            [], [], [], [], []
-        ];
-        
-        let searchQuery = '';
-        
-        // --- RESIZING STATE ---
-        let isResizing = false; 
-        let isVerticalResizing = false; 
-        let rosterColumn;
-        let ownedGroup; 
-        let unownedGroup; 
-        let ownedHeightPercentage = 50; 
-        const MIN_WIDTH_PERCENT = 20; 
-        const MIN_PX_HEIGHT = 120; 
-
-        function generateMockData() {
-            console.log("Could not load external data. Using mock data fallback.");
-            const mockData = [];
-            for (let i = 0; i < TOTAL_UNITS; i++) {
-                const name = `Awakener-${i.toString().padStart(2, '0')}`;
-                const faction = FACTIONS[i % FACTIONS.length]; 
-                mockData.push({ 
-                    name: name, 
-                    faction: faction, 
-                    group: 'owned', 
-                    displayName: name 
-                });
-            }
-            awakenersData = mockData;
-        }
-
-        async function loadAwakenersData() {
-            try {
-                // Try ./awakeners.json first, then ../awakeners.json
-                let response;
-                try {
-                     response = await fetch('./awakeners.json');
-                     if(!response.ok) throw new Error("Not found");
-                } catch (e) {
-                     response = await fetch('../awakeners.json');
-                }
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                
-                const externalData = await response.json();
-                
-                if (!Array.isArray(externalData) || externalData.length === 0) {
-                    throw new Error("External data is empty or invalid.");
-                }
-
-                const processedData = externalData.slice(0, TOTAL_UNITS).map((item, i) => ({
-                    name: `Awakener-${i.toString().padStart(2, '0')}`, 
-                    faction: FACTIONS.includes(item.faction) ? item.faction : "AEQUOR", 
-                    displayName: item.name || `Awakener-${i.toString().padStart(2, '0')}`,
-                    group: 'owned' 
-                }));
-                
-                awakenersData = processedData;
-                console.log(`Successfully loaded ${awakenersData.length} units.`);
-
-            } catch (e) {
-                console.error(`Error loading data:`, e);
-                generateMockData();
-            }
-        }
-
-        function getAwakenerByName(name) {
-            return awakenersData.find(a => a.name === name);
-        }
-
-        function getAwakenerIndexByName(name) {
-            return name.split('-')[1];
-        }
-        
-        function getAwakenerNameByIndex(indexString) {
-            return `Awakener-${indexString}`;
-        }
-
-        function serializeState() {
-            const rowsString = rowsState.map(row => 
-                row.map(name => getAwakenerIndexByName(name)).join(',')
-            ).join(';');
-
-            const unownedIndices = awakenersData
-                .filter(a => a.group === 'unowned')
-                .map(a => getAwakenerIndexByName(a.name));
-            const unownedString = unownedIndices.join(',');
-
-            // CHANGE: Replaced '&' with '|' as the main separator
-            const rawState = `${rowsString}|${unownedString}`;
-            return rawState;
-        }
-
-        function deserializeState(rawState) {
-            if (!rawState) return;
-            try {
-                // CHANGE: Replaced '&' with '|' in the split
-                const parts = rawState.split('|');
-                const rowsPart = parts[0]; 
-                const unownedPart = parts[1] || ''; 
-
-                const newRowsState = rowsPart.split(';').map(rowString => {
-                    const indices = rowString.split(',').filter(index => index.length > 0);
-                    return indices.map(index => getAwakenerNameByIndex(index)).filter(name => getAwakenerByName(name));
-                }).filter(row => row.length > 0 || newRowsState.length === 0); 
-
-                rowsState = newRowsState.length > 0 ? newRowsState : [[]];
-                
-                awakenersData.forEach(a => a.group = 'owned'); 
-
-                if (unownedPart.length > 0) {
-                    const unownedIndices = unownedPart.split(',').filter(index => index.length > 0);
-                    unownedIndices.forEach(index => {
-                        const name = getAwakenerNameByIndex(index);
-                        const awakener = getAwakenerByName(name);
-                        if (awakener) {
-                            awakener.group = 'unowned';
-                        }
-                    });
-                }
-            } catch (e) {
-                console.error("Failed to load state from URL:", e);
-            }
-        }
-
-        function updateUrlState() {
-            const rawState = serializeState();
-            let encodedState = encodeURIComponent(rawState);
-            
-            // FIX: Explicitly replace the encoded delimiters (%2C and %3B) 
-            // back to the unencoded characters (',' and ';') as requested.
-            encodedState = encodedState.replace(/%2C/g, ','); 
-            encodedState = encodedState.replace(/%3B/g, ';'); 
-
-            const newUrl = `${window.location.pathname}?state=${encodedState}`;
-            history.replaceState(null, '', newUrl); 
-        }
-
-        function loadStateFromUrl() {
-            const params = new URLSearchParams(window.location.search);
-            const rawState = params.get('state');
-            if (rawState) {
-                const decodedState = decodeURIComponent(rawState);
-                deserializeState(decodedState);
-                console.log("State loaded from URL.");
-            }
-        }
-
-        // --- UTILITY FUNCTIONS ---
-
-        function isAwakenerInTeam(name) {
-            return rowsState.some(row => row.includes(name));
-        }
-
-        function getFactionClasses(faction) {
-            switch (faction) {
-                case "ULTRA": return 'border-purple-700 text-purple-200 bg-purple-900/20';
-                case "CARO": return 'border-red-700 text-red-200 bg-red-900/20';
-                case "CHAOS": return 'border-yellow-600 text-yellow-200 bg-yellow-900/20';
-                case "AEQUOR":
-                default: return 'border-blue-700 text-blue-200 bg-blue-900/20';
-            }
-        }
-
-        function createAwakenerCard(awakener, isClone = false, rowId = null) {
-            const card = document.createElement('div');
-            const factionClasses = getFactionClasses(awakener.faction); 
-
-            let classes = `flex flex-col items-center w-28 h-32 p-1 rounded-lg border shadow-lg hover:shadow-xl transition duration-200`;
-            
-            const awakenerName = awakener.name; 
-            const displayName = awakener.displayName || awakenerName; 
-
-            if (!isClone) {
-                classes += ` drag-source cursor-pointer ${factionClasses}`;
-                card.draggable = true;
-                card.ondragstart = (e) => handleDragStart(e, awakenerName, null); 
-                card.oncontextmenu = (e) => {
-                    e.preventDefault(); 
-                    toggleAwakenerGroup(awakenerName); 
-                };
-            } else {
-                classes += ` drag-clone cursor-pointer ${factionClasses}`;
-                card.draggable = true;
-                card.ondragstart = (e) => handleDragStart(e, awakenerName, rowId); 
-            }
-            
-            if (awakener.group === 'unowned') {
-                classes += ' filter grayscale opacity-40 hover:opacity-80'; 
-            }
-
-            card.className = classes;
-            card.dataset.name = awakenerName; 
-
-            const imageUrl = `../images/awakeners/${displayName}.png`;
-            const fallbackImageUrl = `https://placehold.co/100x100/1e293b/94a3b8?text=${displayName.replace(/[-\s]/g, '%20')}`;
-
-            card.innerHTML = `
-                <div class="text-[10px] font-bold uppercase tracking-wider truncate w-full text-center mb-1 opacity-90">${displayName}</div>
-                <img 
-                    src="${imageUrl}" 
-                    alt="${displayName} image" 
-                    class="w-20 h-20 object-cover rounded-md border border-slate-600 shadow-sm bg-slate-800"
-                    onerror="this.onerror=null; this.src='${fallbackImageUrl}';"
-                />
-            `;
-            return card;
-        }
-
-        function toggleAwakenerGroup(name) {
-            const awakener = getAwakenerByName(name);
-            if (awakener) {
-                if (isAwakenerInTeam(name)) {
-                    console.warn(`Cannot toggle status for ${name}. It is currently in a team row.`);
-                    return;
-                }
-                
-                awakener.group = awakener.group === 'owned' ? 'unowned' : 'owned';
-                renderAwakeners();
-                updateUrlState();
-            }
-        }
-
-        function renderAwakeners() {
-            const ownedList = document.getElementById('owned-list');
-            const unownedList = document.getElementById('unowned-list');
-
-            ownedList.innerHTML = '';
-            unownedList.innerHTML = '';
-
-            const query = searchQuery.toLowerCase().trim();
-
-            const filteredAwakeners = awakenersData.filter(awakener => {
-                if (isAwakenerInTeam(awakener.name)) {
-                    return false;
-                }
-
-                if (query === '') {
-                    return true;
-                }
-
-                return awakener.displayName.toLowerCase().includes(query) ||
-                        awakener.name.toLowerCase().includes(query) ||
-                        awakener.faction.toLowerCase().includes(query);
-            });
-
-            filteredAwakeners.forEach(awakener => {
-                const card = createAwakenerCard(awakener);
-                if (awakener.group === 'owned') {
-                    ownedList.appendChild(card);
-                } else {
-                    unownedList.appendChild(card);
-                }
-            });
-        }
-        
-        function handleSearchInput(e) {
-            searchQuery = e.target.value;
-            renderAwakeners(); 
-        }
-
-        function renderRows() {
-            const rowsContainer = document.getElementById('rows-container');
-            rowsContainer.innerHTML = ''; 
-
-            rowsState.forEach((rowNames, index) => { 
-                const rowElement = document.createElement('div');
-                rowElement.id = `row-${index}`;
-                
-                rowElement.className = 'team-row p-2 bg-slate-800/50 border border-slate-700 rounded-lg shadow-inner flex flex-nowrap gap-2 overflow-x-auto transition duration-300 mb-2 items-center';
-                
-                const labelContainer = document.createElement('div');
-                labelContainer.className = 'flex flex-col items-center justify-center w-full sm:w-auto flex-shrink-0 min-w-[70px] px-2 border-r border-slate-700 mr-2';
-                
-                const label = document.createElement('p');
-                label.className = 'row-label text-indigo-400 font-bold text-sm uppercase tracking-wide';
-                label.textContent = `Row ${index + 1}`;
-                labelContainer.appendChild(label);
-
-                const deleteBtn = document.createElement('button');
-                deleteBtn.className = 'text-slate-600 hover:text-red-400 font-bold p-1 leading-none text-xl mt-1 transition-colors';
-                deleteBtn.innerHTML = '&times;'; 
-                deleteBtn.title = `Delete Row ${index + 1}`;
-
-                if (rowsState.length > 1) {
-                    deleteBtn.onclick = (e) => {
-                        e.stopPropagation(); 
-                        deleteRow(index);
-                    };
-                } else {
-                    deleteBtn.disabled = true;
-                    deleteBtn.classList.add('opacity-0', 'cursor-not-allowed');
-                }
-                
-                labelContainer.appendChild(deleteBtn);
-                rowElement.appendChild(labelContainer); 
-                
-                rowElement.addEventListener('dragover', handleDragOver);
-                rowElement.addEventListener('dragenter', handleDragEnter);
-                rowElement.addEventListener('dragleave', handleDragLeave);
-                rowElement.addEventListener('drop', handleDrop);
-
-                rowNames.forEach(name => {
-                    const awakener = getAwakenerByName(name);
-                    if (awakener) {
-                        const cardClone = createAwakenerCard(awakener, true, index); 
-                        rowElement.appendChild(cardClone);
-                    }
-                });
-                
-                rowsContainer.appendChild(rowElement);
-            });
-            
-            updateAddRowButtonStatus();
-        }
-
-        function addRow() {
-            if (rowsState.length < MAX_ROWS) {
-                rowsState.push([]);
-                renderRows(); 
-                updateUrlState(); 
-                console.log(`Added new row. Total rows: ${rowsState.length}`);
-            } else {
-                console.warn(`Cannot add more rows. Maximum limit of ${MAX_ROWS} reached.`);
-            }
-        }
-        
-        function deleteRow(rowIndex) {
-            if (rowsState.length <= 1) {
-                console.warn("Cannot delete the last remaining row.");
-                return;
-            }
-
-            const unitsInDeletedRow = rowsState[rowIndex];
-
-            rowsState.splice(rowIndex, 1);
-            
-            renderRows();
-            renderAwakeners();
-            updateUrlState(); 
-
-            console.log(`Deleted Row ${rowIndex + 1}.`);
-        }
-
-        function updateAddRowButtonStatus() {
-            const btn = document.getElementById('add-row-btn');
-            if (btn) {
-                if (rowsState.length >= MAX_ROWS) {
-                    btn.disabled = true;
-                    btn.textContent = `Max Rows (${MAX_ROWS}) Reached`;
-                    btn.className = "mt-4 p-3 bg-slate-800 text-slate-500 font-bold rounded-lg border border-slate-700 cursor-not-allowed flex-shrink-0";
-                } else {
-                    btn.disabled = false;
-                    btn.textContent = `+ Add Team Row (Max ${MAX_ROWS})`;
-                    btn.className = "mt-4 p-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg border border-indigo-500 transition duration-200 shadow-lg flex-shrink-0";
-                }
-            }
-        }
-
-        // --- EVENT HANDLERS (Drag & Drop) ---
-
-        function handleDragStart(e, awakenerName, sourceRowId) {
-            const dragData = {
-                name: awakenerName, 
-                sourceRowId: sourceRowId 
-            };
-            e.dataTransfer.setData('application/json', JSON.stringify(dragData));
-            e.dataTransfer.effectAllowed = 'move';
-        }
-
-        function handleDragEnter(e) {
-            e.target.closest('.team-row, #owned-list, #unowned-list')?.classList.add('drag-over');
-        }
-
-        function handleDragLeave(e) {
-            e.target.closest('.team-row, #owned-list, #unowned-list')?.classList.remove('drag-over');
-        }
-        
-        // MODIFIED: Simplified to not rely on visual cues on the row itself for reordering
-        function handleDragOver(e) {
-            e.preventDefault(); 
-            e.dataTransfer.dropEffect = 'move';
-        }
-
-        // NEW HELPER FUNCTION for reordering logic
-        function getDropIndex(e, rowElement) {
-            const children = Array.from(rowElement.children);
-            // Skip the first child (the label container)
-            const cards = children.slice(1).filter(el => el.classList.contains('drag-clone'));
-            
-            const dropX = e.clientX;
-
-            if (cards.length === 0) return 0;
-
-            let insertIndex = 0;
-
-            for (let i = 0; i < cards.length; i++) {
-                const cardRect = cards[i].getBoundingClientRect();
-                const cardMidX = cardRect.left + cardRect.width / 2;
-                
-                // If drop is before the middle of a card, insert before this card.
-                if (dropX < cardMidX) {
-                    insertIndex = i;
-                    return insertIndex;
-                }
-            }
-
-            // If drop is after the middle of the last card, insert after the last card.
-            return cards.length;
-        }
-
-
-        // MODIFIED: Implementation of reordering logic
-        function handleDrop(e) {
-            e.preventDefault();
-            const rowElement = e.target.closest('.team-row');
-            if (!rowElement) return;
-
-            rowElement.classList.remove('drag-over');
-
-            try {
-                const dragData = JSON.parse(e.dataTransfer.getData('application/json'));
-                const awakenerName = dragData.name; 
-                const sourceRowId = dragData.sourceRowId; 
-                const targetRowId = parseInt(rowElement.id.split('-')[1]);
-                
-                let dropIndex = getDropIndex(e, rowElement);
-                let existingIndex = rowsState[targetRowId].indexOf(awakenerName);
-
-                const isMoveBetweenRows = (sourceRowId !== null && parseInt(sourceRowId) !== targetRowId);
-                const isDragFromRoster = (sourceRowId === null);
-                
-                // 1. CAPACITY CHECK & REJECTION
-                // Check capacity only if the unit is not already in the row 
-                // AND it's a drag from the roster or another row.
-                if (existingIndex === -1 && (isMoveBetweenRows || isDragFromRoster)) {
-                    if (rowsState[targetRowId].length >= MAX_ROW_CAPACITY) { 
-                        console.log(`Row ${targetRowId + 1} is full. Drop rejected.`);
-                        // Ensure UI consistency (no state changes occurred yet)
-                        renderRows();
-                        return; // REJECT DROP
-                    }
-                }
-                
-                // 2. REMOVAL FROM SOURCE ROW (if dragging from a row)
-                if (sourceRowId !== null) {
-                    const rowId = parseInt(sourceRowId);
-                    
-                    // Remove from source row
-                    rowsState[rowId] = rowsState[rowId].filter(name => name !== awakenerName);
-                    
-                    // Adjust dropIndex for reorder within the same row, as the array length decreased.
-                    if (rowId === targetRowId) {
-                        if (existingIndex !== -1 && existingIndex < dropIndex) {
-                            dropIndex--;
-                        }
-                    }
-                }
-
-                // 3. REORDER CLEANUP (Remove existing instance if dragged from roster)
-                // If the unit was dragged from the roster (sourceRowId === null) but was already present in the target row,
-                // remove the existing instance before re-inserting it.
-                if (existingIndex !== -1 && sourceRowId === null) {
-                    rowsState[targetRowId].splice(existingIndex, 1);
-                    if (existingIndex < dropIndex) {
-                        dropIndex--;
-                    }
-                }
-
-                // 4. INSERTION 
-                rowsState[targetRowId].splice(dropIndex, 0, awakenerName);
-
-                renderRows();
-                renderAwakeners(); 
-                updateUrlState();
-
-            } catch (e) {
-                console.error("Failed to process drop:", e);
-                // Fallback render in case of error
-                renderRows(); 
-            }
-        }
-
-        function handleRosterDrop(e) {
-            e.preventDefault();
-            const listElement = e.target.closest('#owned-list, #unowned-list');
-            if (!listElement) return;
-
-            listElement.classList.remove('drag-over');
-
-            try {
-                const dragData = JSON.parse(e.dataTransfer.getData('application/json'));
-                const awakenerName = dragData.name;
-                const sourceRowId = dragData.sourceRowId;
-
-                if (sourceRowId !== null) {
-                    const rowId = parseInt(sourceRowId);
-                    rowsState[rowId] = rowsState[rowId].filter(name => name !== awakenerName);
-                }
-
-                const awakener = getAwakenerByName(awakenerName);
-                if (awakener) {
-                    const targetGroup = listElement.id === 'owned-list' ? 'owned' : 'unowned';
-                    if (sourceRowId === null && awakener.group === targetGroup) {
-                        return; 
-                    }
-                    awakener.group = targetGroup;
-
-                    renderRows();
-                    renderAwakeners();
-                    updateUrlState();
-                }
-
-            } catch (e) {
-                console.error("Failed to process roster drop:", e);
-            }
-        }
-
-        // --- RESIZE LOGIC ---
-
-        function setupResizers() {
-            rosterColumn = document.getElementById('roster-column');
-            ownedGroup = document.getElementById('owned-group');
-            unownedGroup = document.getElementById('unowned-group');
-            const dragHandle = document.getElementById('drag-handle');
-            const rosterSplitter = document.getElementById('roster-splitter');
-            const mainLayout = document.getElementById('main-layout');
-
-            // --- HORIZONTAL RESIZE (Roster vs Team) ---
-            dragHandle.addEventListener('mousedown', (e) => {
-                isResizing = true;
-                mainLayout.classList.add('no-select-col');
-            });
-
-            document.addEventListener('mousemove', (e) => {
-                if (!isResizing) return;
-                
-                const rect = mainLayout.getBoundingClientRect();
-                let newWidth = e.clientX - rect.left;
-                
-                const minPxWidth = rect.width * (MIN_WIDTH_PERCENT / 100);
-                const maxPxWidth = rect.width * (1 - MIN_WIDTH_PERCENT / 100);
-
-                if (newWidth < minPxWidth) newWidth = minPxWidth;
-                if (newWidth > maxPxWidth) newWidth = maxPxWidth;
-
-                rosterColumn.style.flexBasis = `${newWidth}px`;
-                rosterColumn.style.flexGrow = '0'; 
-                rosterColumn.style.flexShrink = '0';
-            });
-
-            document.addEventListener('mouseup', () => {
-                if (isResizing) {
-                    isResizing = false;
-                    mainLayout.classList.remove('no-select-col');
-                }
-                if (isVerticalResizing) {
-                    isVerticalResizing = false;
-                    mainLayout.classList.remove('no-select-row');
-                }
-            });
-
-            // --- VERTICAL RESIZE (Owned vs Unowned) ---
-            rosterSplitter.addEventListener('mousedown', (e) => {
-                isVerticalResizing = true;
-                mainLayout.classList.add('no-select-row');
-                e.preventDefault();
-            });
-
-            document.addEventListener('mousemove', (e) => {
-                if (!isVerticalResizing) return;
-
-                const rect = rosterColumn.getBoundingClientRect();
-                const ownedRect = ownedGroup.getBoundingClientRect();
-
-                let newHeight = e.clientY - ownedRect.top;
-
-                const maxNewHeight = rect.height - MIN_PX_HEIGHT - rosterSplitter.offsetHeight - 20; 
-                
-                if (newHeight < MIN_PX_HEIGHT) newHeight = MIN_PX_HEIGHT;
-                if (newHeight > maxNewHeight) newHeight = maxNewHeight;
-
-                ownedHeightPercentage = (newHeight / rect.height) * 100;
-
-                ownedGroup.style.flexBasis = `${newHeight}px`;
-                ownedGroup.style.flexGrow = '0';
-                unownedGroup.style.flexGrow = '1';
-                unownedGroup.style.minHeight = `${MIN_PX_HEIGHT}px`; 
-            });
-
-            const applyInitialSplit = () => {
-                const rect = rosterColumn.getBoundingClientRect();
-                if (rect.height > 0) {
-                    const initialHeight = (rect.height * ownedHeightPercentage / 100);
-                    ownedGroup.style.flexBasis = `${initialHeight}px`;
-                    ownedGroup.style.flexGrow = '0';
-                    unownedGroup.style.flexGrow = '1';
-                }
-            };
-            setTimeout(applyInitialSplit, 50); 
-            window.addEventListener('resize', applyInitialSplit);
-        }
-
-        function setupEventListeners() {
-            document.getElementById('awakener-search').addEventListener('input', handleSearchInput);
-            document.getElementById('add-row-btn').addEventListener('click', addRow);
-            
-            const ownedList = document.getElementById('owned-list');
-            const unownedList = document.getElementById('unowned-list');
-            
-            [ownedList, unownedList].forEach(list => {
-                list.addEventListener('dragover', handleDragOver);
-                list.addEventListener('dragenter', handleDragEnter);
-                list.addEventListener('dragleave', handleDragLeave);
-                list.addEventListener('drop', handleRosterDrop);
-            });
-        }
-
-        async function init() {
-            await loadAwakenersData();
-            loadStateFromUrl();
-            renderRows();
-            renderAwakeners();
-            setupEventListeners();
-            setupResizers();
-            updateUrlState(); 
-            console.log("App initialized.");
-        }
-
-        window.onload = init;
-    </script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>

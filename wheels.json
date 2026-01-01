@@ -1,0 +1,1744 @@
+[
+  {
+    "name": "Power of the Pious",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun",
+    "mainStat": {
+      "type": "Crit Damage",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "The Aliemus gained by the wielder is increased by 7/8/9/10%, and the Poison inflicted by the wielder is increased by 9/11/13/15%.",
+      "After the wielder deals DMG, all Awakeners gain 9/11/13/15% of the wielder's Crit DMG as Crit DMG this turn. This effect can activate once per turn.",
+      "If the current realm is \"Aequor\", at the start of battle, increase the Tentacle Limit and Tentacle Count by 1."
+    ],
+    "relatedAwakener": "Miryam"
+  },
+  {
+    "name": "Rewinding Time",
+    "rarity": "SSR",
+    "acquiredFrom": "Mythag Shog - Lightless Exchange - 5000 Black Offering",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "The following effect can only trigger once per turn. After playing the wielder's Comand Card, there is a 30/40/50/60% chance to return it to your hand from the Discard Pile."
+    ],
+    "relatedAwakener": "Ramona"
+  },
+  {
+    "name": "Hymn of the Sovereign",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun OR randomly acquired from Awaken - Aspect of Rotation (can not be selected).",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "At the start of battle, the wielder gains 25/30/35/40 Aliemus.",
+      "When another Awakener uses their Exalt, the wielder gains 3/4/5/6 Aliemus.",
+      "If the current realm is \"Aequor\", after using Exalt, gain Tentacle DMG equal to 2/3/4/5% of the wielder's ATK."
+    ],
+    "relatedAwakener": "Tulu"
+  },
+  {
+    "name": "Kiss of Repose",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken - Oath of the Hollowed",
+    "mainStat": {
+      "type": "Crit Damage",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "The wielder's Base DMG +10/15/20/25%.",
+      "During this exploration, every time the wielder kills an enemy, their Crit Rate +2% and Exalt Base DMG +2/3/4/5%, up to 10 times.",
+      "If the current Realm is Caro, the wielder gains an extra 15/20/25/30 Aliemus when they directly consume Embryo (cooldown 3 turns)."
+    ],
+    "relatedAwakener": "Doresain"
+  },
+  {
+    "name": "Heart of Silver",
+    "rarity": "SSR",
+    "acquiredFrom": "Mythag Shop - Sediment Exchange - 400 Radix Sediment",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "After using Posse, gain 1.5/2/2.5/3% of the wielder's ATK as STR and gain a shield equal to 6/7/12/15% of the wielder's DEF.",
+      "Using Emergency Gnosis gives all Awakeners 15 Aliemus at the end of the turn."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Dusk and Dawn",
+    "rarity": "SSR",
+    "acquiredFrom": "Mythag Shop - Sediment Exchange - 400 Radix Sediment",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 50.4,
+      "increment": 4.2
+    },
+    "effects": [
+      "Gain 125/150/175/200 Keyflare at the end of the turn.",
+      "Gain 700/800/900/1000 Keyflare after triggering Death Resistance.",
+      "Using Emergency Gnosis increases your Arithmetica cap by 3 and you draw 3 more cards at the start of each turn."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Drifting in Desire",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "The wielder gains 13/17/21/25% more stacks of Counter.",
+      "Gain 5/6/7/8% of the wielder's ATK as Temporary STR when attacked.",
+      "Gain 9/11/13/15% of the wielder's ATK as stacks of Counter after using the wielder's Exalt."
+    ],
+    "relatedAwakener": "Pandia"
+  },
+  {
+    "name": "Gift of Decay",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "The wielder inflicts 13/17/21/25% more Poison.",
+      "When the wielder uses their exalt, before the effect activates, inflict 15/20/25/30% of the wielder's ATK as stacks of Poison to all enemies.",
+      "After using Posse, the wielder gains 5/6/7/8 Aliemus."
+    ],
+    "relatedAwakener": "Nymphaea"
+  },
+  {
+    "name": "Hand of Oblivion",
+    "rarity": "SSR",
+    "acquiredFrom": null,
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "At the start of exploration, add one copy of the wielder's [Strike] Command Card to the deck.",
+      "The Base DMG of the wielder's [Strike] Command Cards is increased by 22/28/34/40%."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Unbearable Freedom",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "Increase your Hand Limit by 2. This effect cannot stack with similar effects from other Wheels of Destiny.",
+      "Increase the wielder's Base DMG and Shield gain by 9/11/13/15%.",
+      "If the current realm is \"Ultra\": After activating Annihilation, all Awakeners gain 13/17/21/25% Crit DMG this turn. This effect has a 3 turn cooldown.",
+      "When entering the Ultra Turn, the wielder gains 35/50/65/80 Aliemus."
+    ],
+    "relatedAwakener": "Castor"
+  },
+  {
+    "name": "Dream of the Sea",
+    "rarity": "SSR",
+    "acquiredFrom": "Mythag Shop - Deep Dive Exchange - 5000 D-Jewel",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "After playing one of the wielder's Command Cards, the wielder gains 1 Aliemus.",
+      "This effect activates at the start of battle. Gain 6/7/8/9% of the wielder's ATK as STR. If the current realm is Aequor, also gain 3/4/5/6% of the wielder's ATK as Tentacle DMG.",
+      "This effect activates on your second turn in battle, and continues to activate every turn thereafter. Gain 2.1/2.4/2.7/3% of the wielder's ATK as STR. If the current realm is Aequor, also gain 1.1/1.4/1.7/2% of the wielder's ATK as Tentacle DMG."
+    ],
+    "relatedAwakener": "Aurita"
+  },
+  {
+    "name": "Pale Descendant",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Sigil Yield",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "The shields provided by the wielder are increased by 4/6/8/10%.",
+      "Playing the wielder's [Defend] Command Card triggers 12/16/20/24% Poison stacks on the enemy with the highest HP.",
+      "The following effect can trigger up to 3 times per turn. If the current realm is Caro, gain 6/8/10/12% Embryo Fusion when inflicting Poison."
+    ],
+    "relatedAwakener": "Agrippa"
+  },
+  {
+    "name": "Annihilated Rebirth",
+    "rarity": "SSR",
+    "acquiredFrom": "1.5 Anniversary - Currently unavailable, presumably will be added to the Mythag Shop soon",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "After the wielder uses their exalt, increase the base DMG of Exalt by 7/8/9/10% and the shield and healing provided by Exalt increases by 2/3/4/5%. This stacks up to 5 times.",
+      "After completing the exploration, increase the Affinity gained by the weilder by 10/15/20/25%."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Amidst the Downpour",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "The following effect can only activate once per turn. The wielder's [Strike] has a 55/70/85/100% chance to gain 1 Arithmetica and trigger 10% of all enemies Poison stacks. If the current realm is Aequor, triggering this effect commands 1 Tentacle to attack once."
+    ],
+    "relatedAwakener": "Faros"
+  },
+  {
+    "name": "Blade of the Titan",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "The wielder gains 30/40/50/60% Crit DMG after using their Exalt.",
+      "After using the wielder's exalt, all of the wielder's Command Cards in hand have a 20/25/30/35% chance to have their Arithmetica Cost reduced by 1 this turn."
+    ],
+    "relatedAwakener": "Goliath"
+  },
+  {
+    "name": "Uteri Somnia",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "Hand Limit +2 (does not stack).",
+      "Wielder's Keyflare Regen and Exalt Final DMG + Shield Gen +11/14/17/20%.",
+      "Switching to \"Tranquil Sea\" stance increase the wielder's Aliemus by 15/20/25/30. 3 turn cooldown.",
+      "Switching to \"Raging Waves\" stance inflicts 6 stacks of \"Birth Ritual\" on all enemies. 3 turn cooldown."
+    ],
+    "relatedAwakener": "Murphy: Fauxborn"
+  },
+  {
+    "name": "Lullaby Devoured",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 50.4,
+      "increment": 4.2
+    },
+    "effects": [
+      "At the start of battle, gain Counter equal to 26/34/42/50% of the wielder's DEF.",
+      "After triggering Death Resistance, gain 2 stacks of \"Cradle\". Cradle: Increase healing and shielding provided by all Awakeners by 15/20/25/30%. Lose 1 stack at the end of the turn.",
+      "If the current realm is \"Caro\", gain 13/17/21/25% Embryo Fusion."
+    ],
+    "relatedAwakener": "Faint"
+  },
+  {
+    "name": "Eternal Requiem",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "At the start of exploration, add 1 [Silver Key Dawn] to the Draw Pile with Destroy.",
+      "After using Posse, increase the wielder's Crit DMG by 2/3/4/5%.",
+      "When the wielder deals DMG, gain Keyflare equal to 50/60/70/80% of the wielder's Keyflare Regen and 5/6/7/8% Crit Rate this turn. This effect can activate up to 5 times per turn."
+    ],
+    "relatedAwakener": "Hameln"
+  },
+  {
+    "name": "Wheel Unseen",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "Increase your maximum Keyflare by 100%.",
+      "Increase your Hand Limit by 2. This effect cannot stack with similar effects from other Wheels of Destiny.",
+      "Increase the wielder's Keyflare Regen by 13/17/21/25%.",
+      "After playing one of the wielder's Command Cards, the Crit Rate, Crit DMG, Shield gain, Aliemus gain, and STR gain of the wielder's Comand Cards is increased by 3/4/5/6% this turn. This effect can stack up to 5 times."
+    ],
+    "relatedAwakener": "Tawil"
+  },
+  {
+    "name": "The Last Verse",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 50.4,
+      "increment": 4.2
+    },
+    "effects": [
+      "Increase the Crit Rate, Crit DMG, Shield gain, HP heal, Aliemus gain, and STR gain of the wielder's Command Cards by 11/14/17/20%.",
+      "If the current realm is \"Ultra\": Activating Annihilation grants 110/140/17/200 Keyflare.",
+      "The first Posse activated during the Ultra Turn has its effect occur twice."
+    ],
+    "relatedAwakener": "Horla"
+  },
+  {
+    "name": "Celestial Beast",
+    "rarity": "SSR",
+    "acquiredFrom": "Mythag Shog - Lightless Exchange - 5000 Black Offering",
+    "mainStat": {
+      "type": "Crit Damage",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "The Base DMG of the wielder's [Strike] Command Cards and Exalt is increased by 26/34/42/50%.",
+      "After the wielder uses a [Strike] Command Card, they gain 5% Crit Rate this turn. This effect can stack up to 3 times. Upon reaching 3 stacks, they additionally gain 15% Crit DMG this turn."
+    ],
+    "relatedAwakener": "Lotan"
+  },
+  {
+    "name": "By Rose Alone",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun OR randomly acquired from Awaken - Aspect of Rotation (can not be selected).",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "Each time the wielder deals an instance of DMG, there is a 40/60/80/100% chance to increase their Critical DMG by 2% this turn.",
+      "After the wielder uses their Exalt, deal 15/20/25/30% of the wielder's ATK 3 times randomly.",
+      "If the current realm is \"Caro\", for every Embryo the user devours, increase Embryo Fusion by 16/19/22/25%."
+    ],
+    "relatedAwakener": "Sorel"
+  },
+  {
+    "name": "Sail of Providence",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Realm Mastery",
+      "baseValue": 36,
+      "increment": 3
+    },
+    "effects": [
+      "Increases the wielder's healing by 4/6/8/10%.",
+      "After using Exalt, heal 4/6/8/10% of missing HP at the start of the next turn."
+    ],
+    "relatedAwakener": "Celeste"
+  },
+  {
+    "name": "Spring in Acushnet",
+    "rarity": "SSR",
+    "acquiredFrom": "Mythag Shop - Sediment Exchange - 400 Radix Sediment",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "At the end of the turn, the wielder gains 9/11/13/15 Aliemus and gain Keyflare equal to the wielder's Keyflare Regen."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Fin of Sorrow",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Sigil Yield",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "The shielding and healing provided by the wielder are increased by 2.5/3/3.5/4% of the wielder's CON. The wielder's Counter gain increases by 9/11/13/15%.",
+      "Gain 11/14/17/20% of the wielder's DEF as stacks of Counter after playing [Defend].",
+      "At the start of battle, gain STR equal to 6/8/10/12% of the wielder's CON. If the current realm is Aequor, also gain the same amount as Tentacle DMG."
+    ],
+    "relatedAwakener": "Caecus"
+  },
+  {
+    "name": "The Glutton's Tale",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Realm Mastery",
+      "baseValue": 36,
+      "increment": 3
+    },
+    "effects": [
+      "The healing provided by the wielder is increased by 9/11/13/15%.",
+      "At the start of the turn gain Temporary STR and Shield equal to 9/11/13/15% of HP lost last turn."
+    ],
+    "relatedAwakener": "Leigh"
+  },
+  {
+    "name": "Memory Spiral",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Realm Mastery",
+      "baseValue": 36,
+      "increment": 3
+    },
+    "effects": [
+      "The wielder's Shield generation increases by 11/14/17/20%.",
+      "At the start of your turn, retain 35/40/45/50% of your remaining Shield from the previous turn. The retained shield can not exceed 11/14/17/20% of your team's max HP."
+    ],
+    "relatedAwakener": "Nautila"
+  },
+  {
+    "name": "Paradoxical Realism",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Wheel Awaken/Limited Wheel Awaken Rerun",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "Increase the wielder's Aliemus gain and STR gain by 6/8/10/12%. After the wielder uses Exalt, increase the Final DMG, Shield, and Healing from other Awakeners Exalts this turn by 9/11/13/15%. If the wielder's Exalt triggered Devour, the wielder gains 9/11/13/15 Aliemus."
+    ],
+    "relatedAwakener": "Pickman"
+  },
+  {
+    "name": "Mannikin of Oblivion",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "The wielder's Aliemus gained, Poison inflicted, and HP healed are increased by 4/6/8/10%.",
+      "After the wielder uses their Exalt, they gain Aliemus equal to 11/14/17/20% of the Aliemus consumed."
+    ],
+    "relatedAwakener": "Doll: Inferno"
+  },
+  {
+    "name": "Flamebound Navigator",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 50.4,
+      "increment": 4.2
+    },
+    "effects": [
+      "The Shield gain from the wielder's Exalt is increased by 15/20/25/30%.",
+      "After using the wielder's Exalt, all Awakeners gain 11/14/17/20% Crit DMG this turn. This amount increases by 1% for each Tentacle.",
+      "After triggering Death Resistance for the first time in the exploration, heal 13/17/21/25% of max HP at the start of the next turn."
+    ],
+    "relatedAwakener": "Corposant"
+  },
+  {
+    "name": "Deathless Ascent",
+    "rarity": "SSR",
+    "acquiredFrom": "Mythag Shog - Lightless Exchange - 5000 Black Offering",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "The healing provided by the wielder's Command Cards is increased by 13/17/21/25%.",
+      "All Awakeners gain 5/6/7/8 Aliemus when the wielder uses Exalt. If the Vulnerable debuff is active on your team, this effect is doubled."
+    ],
+    "relatedAwakener": "Doll"
+  },
+  {
+    "name": "Twisted Knight Ballad",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "The wielder's cards gain +20/25/30/35% Base DMG and Crit DMG.",
+      "At the start of your turn, and after using the wielder's Exalt, gain 1 stack of Alight. When the wielder's Command Card is played, consume 1 stack of Alight to increase its Final DMG and Shield gained by 9/11/13/15%.",
+      "During the Ultra Round, gain Ablaze instead (consuming Ablaze provides double the effect IE 18/22/26/30%)."
+    ],
+    "relatedAwakener": "Pollux"
+  },
+  {
+    "name": "Queen's Edict",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "The Counter gained by the wielder is increased by 13/17/21/25%.",
+      "After playing the wielder's Command Card, gain Counter stacks equal to 5/6/7/8% of the wielder's DEF. This effect can activate 2 times per turn.",
+      "If the realm is \"Ultra\", the wielder gains 6/8/10/12 Aliemus when their Command Cards enter Ultra Space.",
+      "After using the wielder's Exalt, all enemies lose STR equal to 9/11/13/15% of the wielder's DEF."
+    ],
+    "relatedAwakener": "Wanda"
+  },
+  {
+    "name": "Sunfall",
+    "rarity": "SSR",
+    "acquiredFrom": "Mythag Shop - Sediment Exchange - 400 Radix Sediment",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "The wielder's Base DMG, Crit Rate, Crit DMG, Poison inflicted, and Counter gained are increased by 11/14/17/20%."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Happy Magic Show",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Realm Mastery",
+      "baseValue": 36,
+      "increment": 3
+    },
+    "effects": [
+      "After the wielder uses an Exalt, they gain 3/4/5/6 Aliemus and 35/40/45/50 Keyflare. This effect repeats an additional time for every 4 cards in hand.",
+      "The following effect can trigger up to 2 times per turn. If the current realm is \"Ultra\", after the wielder's Command Cards enter Ultra Space, gain Temporary STR equal to 6/8/10/12% of the wielder's ATK."
+    ],
+    "relatedAwakener": "Casiah"
+  },
+  {
+    "name": "Death of Ms. Coral",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 50.4,
+      "increment": 4.2
+    },
+    "effects": [
+      "The following effect can only trigger once per turn. After playing one of the wielder's Command Cards, gain a Shield equal to 6/8/10/12% of the wielder's Defense. For each Tentacle, this amount increases by an additional 1.5/2/2.5/3% of the wielder's Defense."
+    ],
+    "relatedAwakener": "Sanga"
+  },
+  {
+    "name": "Birth of a Soul",
+    "rarity": "SSR",
+    "acquiredFrom": "Mythag Shop - Sediment Exchange - 400 Radix Sediment",
+    "mainStat": {
+      "type": "Realm Mastery",
+      "baseValue": 36,
+      "increment": 3
+    },
+    "effects": [
+      "Increase the team's Max HP by 10%.",
+      "The healing and shielding provided by the wielder increases by 4/6/8/10%.",
+      "The following effects can only trigger one time per turn. After using the wielder's [Strike] card, heal 3/4/5/6% missing HP.",
+      "After using the wielder's [Defend], gain a shield equal to 3/4/5/6% current HP."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Veiled Anguish",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "The wielder's Exalt Base DMG is increased by 35/40/45/50%.",
+      "The wielder's Keyflare Regen is increased by 15/20/25/30%.",
+      "If the current realm is \"Ultra\": After using Annihilation, the wielder gains 11/14/17/20 Aliemus.",
+      "When entering the Ultra Turn, all Awakeners gain 11/14/17/20 Aliemus."
+    ],
+    "relatedAwakener": "Clementine"
+  },
+  {
+    "name": "Heart of a Knight",
+    "rarity": "SSR",
+    "acquiredFrom": "Mythag Shog - Lightless Exchange - 5000 Black Offering",
+    "mainStat": {
+      "type": "Sigil Yield",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "The shielding provided by the wielder's Exalt is increased by 13/17/21/25%.",
+      "After the wielder uses Exalt, gain Temporary STR equal to 13/17/21/25% of the wielder's DEF. If the Fragile debuff is active on your team, this effect is doubled."
+    ],
+    "relatedAwakener": "Ogier"
+  },
+  {
+    "name": "Drowning in Crimson",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "The wielder's Base DMG is increased by 22/28/34/40%.",
+      "After the wielder uses Exalt, increase Hand Size Limit by 1 until the end of the turn. Draw 1 card.",
+      "If the current realm is \"Caro\", triggering Devour increases the wielder's Crit DMG by 22/28/34/40% until the end of the turn."
+    ],
+    "relatedAwakener": "Helot: Catena"
+  },
+  {
+    "name": "Chains Unbound",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "The wielder's Command Cards have 22/28/34/40% increased Base DMG.",
+      "At the start of the turn, there is a 15/20/25/30% chance to add to your hand a copy of a random Command Card of the wielder to hand with Exhaust.",
+      "If the current realm is Caro, using an [Embryo] on the wielder increases the Crit Rate of the wielder's next [Strike] Command Card played this turn by 20/25/30/35%."
+    ],
+    "relatedAwakener": "Helot"
+  },
+  {
+    "name": "Merciful Nurturing",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "Increase your maximum Hand Size Limit by 2.",
+      "At the end of the turn, gain 150/200/250/300% of the wielder's Keyflare Regen as Keyflare.",
+      "Each time Posse is used, all Awakeners gain 3/4/5/6 Aliemus. If the current realm is \"Caro\", also gain 13/17/21/25% Embryo Fusion."
+    ],
+    "relatedAwakener": "Thais"
+  },
+  {
+    "name": "Hour of Fortune",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun",
+    "mainStat": {
+      "type": "Sigil Yield",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "At the start of battle, the wielder's Command Cards gain 3% increased Crit Rate for every Relic owned.",
+      "After using Exalt, roll a 4-sided die; gain Aliemus and Temporary Crit DMG equal to 3/4/5/6 times the roll result. If the result is 4 or higher, all Awakeners gain half of the effect."
+    ],
+    "relatedAwakener": "Ryker"
+  },
+  {
+    "name": "Winter's Reqiuem",
+    "rarity": "SSR",
+    "acquiredFrom": "Mythag Shop - Deep Dive Exchange - 5000 D-Jewel",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "At the start of the battle, inflict 2 stacks of Vulnerable to the front-row enemy.",
+      "At the start of the turn, enemies inflicted with Vulnerable lose Temporary STR equal to 6/8/10/12% of the wielder's ATK.",
+      "If the current realm is \"Caro\", after the wielder uses Exalt, gain 9/11/13/15% Embryo Fusion."
+    ],
+    "relatedAwakener": "Aigis"
+  },
+  {
+    "name": "School Day",
+    "rarity": "SSR",
+    "acquiredFrom": "Special Limited Pass",
+    "mainStat": {
+      "type": "Sigil Yield",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "After resetting stock at \"D-Mark\" (Arc 1 shop) or \"Ashen Ruins\" (Arc 2 shop), the wielder gains 35/40/45/50 Aliemus."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Silent Banquet",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "The wielder inflicts 9/11/13/15% more Poison.",
+      "Heal 11/14/17/20% of the wielder's CON HP after using the wielder's Exalt. Heal an additional 2/3/4/5% of the wielder's CON for each remaining point of Arithmetica."
+    ],
+    "relatedAwakener": "Karen"
+  },
+  {
+    "name": "Amber-Tinted Death",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Wheel Awaken/Limited Wheel Awaken Rerun",
+    "mainStat": {
+      "type": "Crit Damage",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "The wielder's Base DMG is increased by 20/25/30/35%.",
+      "The wielder's STR gained is increased by 6/8/10/12%.",
+      "After playing one of the wielder's Command Cards, gain Temporary STR equal to 11/14/17/20% of the wielder's ATK. This effect can trigger up to 5 times per turn."
+    ],
+    "relatedAwakener": "Kathigu-Ra"
+  },
+  {
+    "name": "Bloody Feast",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Crit Damage",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "The Crit Rate and Crit DMG of the wielder's Exalt are increased by 9/11/13/15%.",
+      "After the wielder uses Exalt, gain STR equal to 3/4/5/6% of their CON. If this Exalt triggers the Devour effect, the STR gained from this effect activates twice."
+    ],
+    "relatedAwakener": "Uvhash"
+  },
+  {
+    "name": "Song of the Bound",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Sigil Yield",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "At the start of the exploration, add one [Insight] and the wielder's [Strike] Command Cards to the deck.",
+      "Increase the Base DMG of the wielder's [Strike] Command Cards by 15/20/25/30%.",
+      "The following effects can only trigger once per turn. After playing the wielder's [Strike] Command Card, there is a 55/70/85/100% chance to draw 1 card.",
+      "If the current Realm is \"Ultra\", during the Ultra Turn, playing the wielder's [Strike] Command Card will add 1 [Insight] card to your hand."
+    ],
+    "relatedAwakener": "Tinct"
+  },
+  {
+    "name": "Special Training",
+    "rarity": "SSR",
+    "acquiredFrom": "Special Limited Pass",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "After using Posse, the wielder's Crit Rate increases by 20/25/30/35% this turn."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Will Unyielding",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 50.4,
+      "increment": 4.2
+    },
+    "effects": [
+      "The wielder's Base DMG and Shield generation increase by 9/11/13/15%.",
+      "At the start of exploration, add one copy of the wielder's [Strike] and [Defend] Command Cards to the deck.",
+      "The following effect can stack up to 3 times. After the wielder plays [Defend], the next [Strike] Card's Crit Rate and Crit DMG increase by 15%. After the wielder plays [Strike], the next [Defend] Card's Shield increases by 15%."
+    ],
+    "relatedAwakener": "Alva"
+  },
+  {
+    "name": "Treasured Rarity",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun OR randomly acquired from Awaken - Aspect of Rotation (can not be selected).",
+    "mainStat": {
+      "type": "Crit Damage",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "Gain 2 Black Sigil when an enemy dies.",
+      "When the wielder lands the killing blow on an enemy, they gain 4/6/8/10% Critical DMG for the rest of the exploration.",
+      "Whenever the wielder's Command Cards trigger a Leap effect, increase the wielder's Final DMG by 2/3/4/5% for the rest of the turn. This effect can stack up to 3 times."
+    ],
+    "relatedAwakener": "Daffodil"
+  },
+  {
+    "name": "Core Meltdown",
+    "rarity": "SSR",
+    "acquiredFrom": "Mythag Shop - Deep Dive Exchange - 5000 D-Jewel",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "The Base DMG dealt and shielding provided by the wielder's [Strike] and [Defend] cards is increased by 25%.",
+      "When playing the wielder's [Strike] cards, gain Temporary STR equal to 6/9/12/15% of the wielder's ATK.",
+      "When playing the wielder's [Defend] cards, gain Temporary Alert equal to 2/3/4/5% of the wielder's DEF.",
+      "If the current realm is \"Ultra\", gain STR and Alert equal to the previously listed values when entering the Ultra Round."
+    ],
+    "relatedAwakener": "Erica"
+  },
+  {
+    "name": "Aberrant Devour",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun OR randomly acquired from Awaken - Aspect of Rotation (can not be selected).",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "The wielder's Exalt Base DMG is increased by 60%.",
+      "At the start of exploration, the wielder enters the \"Scholar\" Persona. Using the wielder's Exalt switches the wielder between \"Scholar\" and \"Clown\" personas.",
+      "Scholar: Gain 11/14/17/20 Aliemus at the end of the turn.",
+      "Clown: Gain 4/5/6/7% Crit Rate and Crit DMG at the end of the turn."
+    ],
+    "relatedAwakener": "24"
+  },
+  {
+    "name": "Tablet of Scriptures",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun OR randomly acquired from Awaken - Aspect of Rotation (can not be selected).",
+    "mainStat": {
+      "type": "Sigil Yield",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "The Shield gained and HP healed by the wielder is increased by 9/11/13/15%.",
+      "At the end of odd turns, increase the wielder's Crit Rate by 3/4/5/6%. The wielder gains 5/6/7/8 Aliemus.",
+      "At the end of even turns, increase the wielder's Crit DMG by 3/4/5/6%. Gain 60/80/100/120 Keyflare.",
+      "If the current realm is \"Caro\", increase the maximum accumulation the Crimson Furnace can store by 22/28/34/40%."
+    ],
+    "relatedAwakener": "Salvador"
+  },
+  {
+    "name": "Shrouded Birth",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun OR randomly acquired from Awaken - Aspect of Rotation (can not be selected).",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 21.6,
+      "increment": 1.8
+    },
+    "effects": [
+      "The Shield gain of the wielder is increased by 9/11/13/15%.",
+      "When the wielder provides a shield, all Awakeners gain 5/6/7/8% Crit Rate this turn and gain Keyflare equal to 90/110/130/15% of the wielder's Keyflare Regen. This effect can occur 2 times per turn.",
+      "If the current realm is \"Aequor\", each time a Tentacle attacks, the wielder gains 1 Aliemus. This effect can occur up to 4/6/8/10 times per turn."
+    ],
+    "relatedAwakener": "Murphy"
+  },
+  {
+    "name": "Incalculable Factor",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "The wielder gains 9/11/13/15% more Aliemus.",
+      "Gain 140/160/180/200 Keyflare after the wielder uses Exalt."
+    ],
+    "relatedAwakener": "Winkle"
+  },
+  {
+    "name": "Path Forsaken",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "The following effect can only trigger once per turn. After the wielder deals DMG, there is a 15/20/25/30% chance to draw 1 of their Command Cards and reduce its Arithmetica Cost by 1."
+    ],
+    "relatedAwakener": "Jenkins"
+  },
+  {
+    "name": "Fouetté",
+    "rarity": "SSR",
+    "acquiredFrom": "Awaken - Aspect of Rotation",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 14.4,
+      "increment": 1.2
+    },
+    "effects": [
+      "The wielder's Active DMG is increased by 11/14/17/20% of the wielder's ATK.",
+      "After playing or discarding 1 of the wielder's Command Cards, inflict 7.5/9/10.5/12% of the wielder's ATK as Poison to a random enemy.",
+      "After the Ultra Round ends, there is a 55/70/85/100% chance to trigger all enemies Poison once."
+    ],
+    "relatedAwakener": "Liz"
+  },
+  {
+    "name": "Grace Through Pain",
+    "rarity": "SSR",
+    "acquiredFrom": "Limited Awaken Rerun OR randomly acquired from Awaken - Aspect of Rotation (can not be selected).",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 50.4,
+      "increment": 4.2
+    },
+    "effects": [
+      "The wielder's Poison inflicted and Shield provided by the wielder are increased by 9/11/13/15%.",
+      "The wielder's [Strike] cards have 20/25/30/35% increased Crit Rate and Crit DMG.",
+      "Playing the wielder's [Strike] card grants a Shield equal to 4/5/6/7% of Max HP. This effect can only activate once per turn."
+    ],
+    "relatedAwakener": "Lily"
+  },
+  {
+    "name": "Fate Roulette",
+    "rarity": "SR",
+    "acquiredFrom": "Ryker's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Sigil Yield",
+      "baseValue": 5.4,
+      "increment": 0.45
+    },
+    "effects": [
+      "Increase the wielder's Crit Rate by 5/6/7/8%.",
+      "Gain 3/4/5/6 Black Sigils when the wielder lands a killing blow on an enemy. This effect can occur 3 times per exploration. After this effect triggers 3 times, the wielder's Crit Rate is permanently increased by 3/4/5/6% for the rest of the exploration."
+    ],
+    "relatedAwakener": "Ryker"
+  },
+  {
+    "name": "35mm Magic",
+    "rarity": "SR",
+    "acquiredFrom": "Lily's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 25.2,
+      "increment": 2.1
+    },
+    "effects": [
+      "The wielder's Shield provided and Poison inflicted are increased by 4/6/8/10%.",
+      "When Death Resistance is triggered, all Awakeners gain 9/11/13/15% Crit Rate and Crit DMG this turn."
+    ],
+    "relatedAwakener": "Lily"
+  },
+  {
+    "name": "Poetic Bygone Days",
+    "rarity": "SR",
+    "acquiredFrom": "Horla's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 25.2,
+      "increment": 2.1
+    },
+    "effects": [
+      "At the start of battle, draw one of the wielder's Command Cards and have a 40/60/80/100% chance to reduce its Arithmetica Cost by 1. When Death Resistance is triggered, activate this effect again."
+    ],
+    "relatedAwakener": "Horla"
+  },
+  {
+    "name": "Nobleman's Staff",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 3.6,
+      "increment": 0.3
+    },
+    "effects": [
+      "Increase the Base DMG of the wielder's Exalt by 15/20/25/35%.",
+      "Increase the Shielding/Healing provided by the wielder's Exalt by 9/11/13/15%."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Elevated Focus",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": ["After using Posse, the wielder gains 9/11/13/15 Aliemus."],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Isarau's Gaze",
+    "rarity": "SR",
+    "acquiredFrom": "Wanda's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "Increase the Shield and stacks of Counter the wielder's provides by 4/6/8/10%.",
+      "When the team takes DMG, there is a 70/80/90/100% chance for all Awakeners to gain 1 Aliemus."
+    ],
+    "relatedAwakener": "Wanda"
+  },
+  {
+    "name": "To My Dearest Friend",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Crit Damage",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "After the wielder uses Exalt, all Awakeners gain 13/17/21/25% Crit Rate this turn."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Blue-Ringed Toxin",
+    "rarity": "SR",
+    "acquiredFrom": "Murphy: Fauxborn Event - Achievement Reward",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "The wielder's Keyflare Regen, Exalt Final DMG + Shield Gen are increased by 5/6/7/8%."
+    ],
+    "relatedAwakener": "Murphy: Fauxborn"
+  },
+  {
+    "name": "Navigator at Sea",
+    "rarity": "SR",
+    "acquiredFrom": "Corposant's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 25.2,
+      "increment": 2.1
+    },
+    "effects": [
+      "At the start of the battle, gain a Shield equal to 15/20/25/30% of the wielder's DEF. After triggering Death Resistance, repeat this effect at the start of the next turn."
+    ],
+    "relatedAwakener": "Corposant"
+  },
+  {
+    "name": "Data is Flesh",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Realm Mastery",
+      "baseValue": 18,
+      "increment": 1.5
+    },
+    "effects": [
+      "Increase the Base DMG of the wielder's Command Cards by 15/20/25/30%.",
+      "Increase the Shielding/Healing provided by the wielder's Command Cards by 9/11/13/15%."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Deep Sea's Call",
+    "rarity": "SR",
+    "acquiredFrom": "Miryam's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Crit Damage",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "At the start of battle, gain STR equal to 5/6/7/8% of the wielder's ATK.",
+      "If the current realm is \"Aequor\", also increase Tentacle DMG by 5/6/7/8% of the wielder's ATK."
+    ],
+    "relatedAwakener": "Miryam"
+  },
+  {
+    "name": "Witch's Wide-Brimmed Hat",
+    "rarity": "SR",
+    "acquiredFrom": "Daffodil's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "Increase the Base DMG of the wielder's first Command Card played each turn by 30/40/50/60%.",
+      "If the current realm is \"Ultra\", the wielder gains 5/6/7/8 Aliemus if this card enters Ultra Space."
+    ],
+    "relatedAwakener": "Daffodil"
+  },
+  {
+    "name": "The Land of Nonexistence",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Sigil Yield",
+      "baseValue": 5.4,
+      "increment": 0.45
+    },
+    "effects": [
+      "At the start of exploration, add one copy of the wielder's [Defend] Command Card to the deck.",
+      "The Shield provided by the wielder's [Defend] Command Cards is increased by 22/28/34/40%."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Hypnotic Pendulum",
+    "rarity": "SR",
+    "acquiredFrom": "Clementine's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "Increases the wielder's Keyflare Regen by 4/6/8/10%. At the start of the first battle, inflict 1 stack of Weakness and Vulnerability to all enemies."
+    ],
+    "relatedAwakener": "Clementine"
+  },
+  {
+    "name": "Thirsting Brush",
+    "rarity": "SR",
+    "acquiredFrom": "Pickman's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 3.6,
+      "increment": 0.3
+    },
+    "effects": [
+      "After the wielder uses their Exalt, gain 1 stack of Collaboration. The next Exalt used this turn will consume Collaboration to gain 13/17/21/25% Crit Rate. The Awakener that consumed Collaboration gains Aliemus equal to 13/17/21/25% of the wielder's Aliemus Regen."
+    ],
+    "relatedAwakener": "Pickman"
+  },
+  {
+    "name": "Til the Snow Melts",
+    "rarity": "SR",
+    "acquiredFrom": "Helot: Catena's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "The wielder's Base DMG is increased by 9/11/13/15%.",
+      "At the start of battle, the wielder gains 25 stacks of \"Snow\". Playing the wielder's Command Cards grants 2 Aliemus and removes 1 stack. When all stacks of \"Snow\" are removed, the wielder gains 11/14/17/20% Crit Rate."
+    ],
+    "relatedAwakener": "Helot: Catena"
+  },
+  {
+    "name": "Memory Syndrome",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 25.2,
+      "increment": 2.1
+    },
+    "effects": [
+      "After playing a Symptom Card, the wielder gains 9/10/11/12 ALiemus. This effect can trigger 2 times per turn.",
+      "After playing one of the wielder's Command Cards, they gain 1 Aliemus."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Gateway of Truth",
+    "rarity": "SR",
+    "acquiredFrom": "Tawil's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "At the start of battle, or after the first time using Posse each battle, gain Keyflare equal to 350/400/450/500% of the wielder's Keyflare Regen."
+    ],
+    "relatedAwakener": "Tawil"
+  },
+  {
+    "name": "Duty's Gravitas",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Realm Mastery",
+      "baseValue": 18,
+      "increment": 1.5
+    },
+    "effects": [
+      "After the wielder uses Exalt, all Awakeners gain 2/3/4/5 Aliemus."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Shepherd's Staff",
+    "rarity": "SR",
+    "acquiredFrom": "Doll: Inferno's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 3.6,
+      "increment": 0.3
+    },
+    "effects": [
+      "At the start of battle, or after the wielder uses Exalt for the first time each battle, the wielder gains Aliemus equal to 70/80/90/100% of the wielder's Aliemus Regen."
+    ],
+    "relatedAwakener": "Doll: Inferno"
+  },
+  {
+    "name": "Man in the Mirror",
+    "rarity": "SR",
+    "acquiredFrom": "Salvador's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Sigil Yield",
+      "baseValue": 5.4,
+      "increment": 0.45
+    },
+    "effects": [
+      "At the end of the turn, the wielder gains 5 Aliemus.",
+      "When taking DMG, gain a Shield next turn equal to 1.5/2/2.5/3% of the DMG taken. If the current realm is Caro, accumulate Crimson Furnace Healing equal to 1.5/2/2.5/3% of the DMG taken instead."
+    ],
+    "relatedAwakener": "Salvador"
+  },
+  {
+    "name": "Sever and Scar",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "The wielder's [Strike] Command Cards reduce the damaged target's STR this turn by 6/8/10/12% of the wielder's ATK. This effect can trigger 3 times per turn."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Cloaked in the Night",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 25.2,
+      "increment": 2.1
+    },
+    "effects": [
+      "The wielder grants 6/8/10/12% more stacks of Counter.",
+      "The wielder's [Defend] Command Cards grants Counter this turn equal to 15/20/25/30% of the wielder's DEF. In Boss Battles, the counter gained is tripled.",
+      "When Death Resistance is triggered, deal Fixed DMG to all enemies equal to 40/60/80/100% of current Counter stacks."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Silver Cod's Determination",
+    "rarity": "SR",
+    "acquiredFrom": "24's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "At the start of exploration, the wielder enters the \"Silver Cod\" Persona. Using the wielder's Exalt switches the wielder between \"Silver Cod\" and \"Cat\" personas.",
+      "The following effects share their trigger count, and can trigger 5 times per turn. Silver Cod: Gain 25/30/35/40 Keyflare after dealing DMG.",
+      "Cat: Gain 1/2/3/4% Crit DMG this turn after dealing DMG."
+    ],
+    "relatedAwakener": "24"
+  },
+  {
+    "name": "The Divus' Visage",
+    "rarity": "SR",
+    "acquiredFrom": "Pollux Event - Achievement Reward",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "At the start of the Ultra Round, gain 3 stacks of Alight. When the wielder's Command Card is played, consume 1 stack to increase its Final DMG and Shield generation by 9/11/13/15%."
+    ],
+    "relatedAwakener": "Pollux"
+  },
+  {
+    "name": "Moment of Reunion",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "When the wielder's Command Card is played, gain 20/30/40/50 Keyflare. This effect can trigger 3 times per turn."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Impending Sun",
+    "rarity": "SR",
+    "acquiredFrom": "Cathuga-Ra's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Crit Damage",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "Increase the wielder's Base DMG by 9/11/13/15%.",
+      "After playing 5 of the wielder's Command Cards, the wielder gains 11/14/17/20% Crit Rate. This effect can only trigger once per turn."
+    ],
+    "relatedAwakener": "Kathigu-Ra"
+  },
+  {
+    "name": "Lone Feather",
+    "rarity": "SR",
+    "acquiredFrom": "Castor's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "Increase the Shield provided by the wielder by 6/8/10/12%.",
+      "At the end of the turn, gain Shield equal to 4/6/8/10% of the wielder's DEF. This effect increases by 2% each turn."
+    ],
+    "relatedAwakener": "Castor"
+  },
+  {
+    "name": "Analysis of Death",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "Killing an enemy grants the wielder 11/14/17/20 Aliemus and 1% Crit DMG. This effect lasts for the entire exploration."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Blue Stone Throne",
+    "rarity": "SR",
+    "acquiredFrom": "Tulu's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 3.6,
+      "increment": 0.3
+    },
+    "effects": [
+      "At the start of the battle, the wielder's Command Cards with an Arithmetica cost of 3 or higher gain the \"Immortal Dominion\" effect. Command Cards with this effect gain Retain.",
+      "When a Command Card with \"Immortal Dominion\" is played, all Awakeners gain 4/6/8/10% Crit Rate this turn, then remove the \"Immortal Dominion\" effect from that Command Card.",
+      "If the current realm is \"Aequor\", gain 1 Arithmetica when a Command Card loses its \"Immortal Dominion\" effect."
+    ],
+    "relatedAwakener": "Tulu"
+  },
+  {
+    "name": "Adventurer's Pack",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Sigil Yield",
+      "baseValue": 5.4,
+      "increment": 0.45
+    },
+    "effects": [
+      "After playing the wielder's [Defend] Command Card, gain STR this turn equal to 9/12/15/18% of the wielder's ATK."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Critical Point",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Crit Damage",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "After the wielder deals DMG, increase the wielder's Crit Rate by 4/6/8/10%. When the wielder deals a Critical Hit, the Crit Rate gained from this effect is reset"
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Kiss of Farewell",
+    "rarity": "SR",
+    "acquiredFrom": "Thais' Event - Achivement Reward",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 3.6,
+      "increment": 0.3
+    },
+    "effects": [
+      "After the wielder uses Exalt, gain STR equal to 1.5/2/2.5/3% of the wielder's ATK.",
+      "If the current realm is \"Caro\", after releasing Exalt, gain 4/6/8/10% Embryo Fusion."
+    ],
+    "relatedAwakener": "Thais"
+  },
+  {
+    "name": "Never-Ending Performance",
+    "rarity": "SR",
+    "acquiredFrom": "Hameln's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "At the end of the turn, the wielder gains 5 Aliemus.",
+      "After the wielder uses Exalt, the wielder's next Command Card has its Crit Rate, Crit DMG, Shield provided, and HP healed increased by 11/14/17/20%."
+    ],
+    "relatedAwakener": "Hameln"
+  },
+  {
+    "name": "Cursed Binding",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "The wielder inflicts 6/8/10/12% more Poison.",
+      "The wielder's [Strike] Comand Cards inflict Poison equal to 9/11/13/15% of the wielder's ATK. This effect can activate 3 times per turn."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Slumber Beneath the Glacier",
+    "rarity": "SR",
+    "acquiredFrom": "Murphy's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 10.8,
+      "increment": 0.9
+    },
+    "effects": [
+      "The Shield provided by the wielder is increased by 4/6/8/10%.",
+      "After using Posse, all Awakeners gain 4/6/8/10% Crit Rate and Crit DMG this turn, but gain Sacrifice equal to 3% of Max HP.",
+      "If the current realm is \"Aequor\", using Posse will also increase Tentacle DMG by 1.5/2/2.5/3% of the wielder's ATK."
+    ],
+    "relatedAwakener": "Murphy"
+  },
+  {
+    "name": "Mind Barrier",
+    "rarity": "SR",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 3.6,
+      "increment": 0.3
+    },
+    "effects": [
+      "After using the wielder's Exalt, gain a shield equal to 16/19/22/25% of the wielder's DEF."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Million Loving Gaze",
+    "rarity": "SR",
+    "acquiredFrom": "Sorel's Event - Achivement Reward",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 7.2,
+      "increment": 0.6
+    },
+    "effects": [
+      "Increases the wielder's DMG dealt by 6/8/10/12% of their ATK.",
+      "If the current realm is \"Caro\", each time the wielder's Exalt triggers the Devour effect, further increase the DMG dealt by the wielder by an additional 3% of the wielder's ATK."
+    ],
+    "relatedAwakener": "Sorel"
+  },
+  {
+    "name": "Hope",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 2.4,
+      "increment": 0.4
+    },
+    "effects": [
+      "Heal 2/3/4/5% of missing HP whenever you walk onto an unexplored tile.",
+      "After using Emergency Gnosis, all Awakener's gain 100% Crit Rate and Crit DMG.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Epiphany",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Realm Mastery",
+      "baseValue": 6,
+      "increment": 1
+    },
+    "effects": [
+      "At the start of exploration, gain 400/600/800/1000 Keyflare.",
+      "At the start of a Boss Battle, gain 2 Arithmetica.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Insight",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Sigil Yield",
+      "baseValue": 1.8,
+      "increment": 0.3
+    },
+    "effects": [
+      "Increase your Exploration Vision Radius by 1.",
+      "Gain 15/20/25/30 Black Sigils when the Exploration Stage is fully revealed.",
+      "At the start of a Boss Battle, inflict 1 stack of Weakness and Vulnerable to all enemies.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Emerge",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Sigil Yield",
+      "baseValue": 1.8,
+      "increment": 0.3
+    },
+    "effects": [
+      "D-Mark Stores have an additional refresh available.",
+      "Reduce the cost of refreshing in shops by 2/3/4/5 Black Sigils.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Frenzy",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 3.6,
+      "increment": 0.6
+    },
+    "effects": [
+      "Increase the number of Relics available in the shop to 3. The third Relic is a Cursed Relic.",
+      "Purchasing a Cursed Relic grants 9/11/13/15 Black Sigils.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Punishment",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 8.4,
+      "increment": 1.4
+    },
+    "effects": [
+      "At the start of a Boss Battle, consume up to 50 Black Sigils to gain 2/3/4/5% Death Resistance for every Black Sigil consumed.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Delirium",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 2.4,
+      "increment": 0.4
+    },
+    "effects": [
+      "The cost of purchasing Rouse Cards in D-Mark Store is reduced by 9/11/13/15 Black Sigils.",
+      "The wielder's Rouse card gains Innate.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Whisper",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Death Resistance",
+      "baseValue": 8.4,
+      "increment": 1.4
+    },
+    "effects": [
+      "At the end of battle, the Awakener with the lowest Aliemus gains 35/40/45/50 Aliemus.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Suction",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Crit Damage",
+      "baseValue": 3.6,
+      "increment": 0.6
+    },
+    "effects": [
+      "Increase the HP healed at Rest Areas by 22/28/34/40%.",
+      "After choosing to heal HP, add 2 [Inspire] cards to your Deck.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Blessing",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Damage Amplification",
+      "baseValue": 2.4,
+      "increment": 0.4
+    },
+    "effects": [
+      "Increase the number of available Orisons after a normal battle to 4.",
+      "Acquired Orisons have a 15/20/25/30% chance to be upgraded.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Aged",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Crit Damage",
+      "baseValue": 3.6,
+      "increment": 0.6
+    },
+    "effects": [
+      "Gain 400/600/800/1000 Keyflare at the end of battle.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Gluttony",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 1.8,
+      "increment": 0.2
+    },
+    "effects": [
+      "After a normal battle, you can choose to forgo an Orison and increase your Max HP by 11/14/17/20%. This effect can activate up to 2 times per exploration.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Exile",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Realm Mastery",
+      "baseValue": 6,
+      "increment": 1
+    },
+    "effects": [
+      "Symptom Cards can now be sold at Black Tide Shops for 13/17/21/25 Black Sigils.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Favor",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Crit Rate",
+      "baseValue": 2.4,
+      "increment": 0.4
+    },
+    "effects": [
+      "At the start of exploration, all Awakeners gain 11/14/17/20 Aliemus.",
+      "At the start of a Boss Battle, draw 2 additional cards.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Vitality",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Keyflare Regen",
+      "baseValue": 3.6,
+      "increment": 0.6
+    },
+    "effects": [
+      "Junction Areas gain a new option: Remove up to 3 Symptom cards and gain 11/14/17/20 Black Sigils.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  },
+  {
+    "name": "Greed",
+    "rarity": "R",
+    "acquiredFrom": "Awaken - Any",
+    "mainStat": {
+      "type": "Aliemus Regen",
+      "baseValue": 1.2,
+      "increment": 0.2
+    },
+    "effects": [
+      "At the start of exploration, gain 15/20/25/30 Black Sigils.",
+      "Increase your maximum Relic Limit by 2.",
+      "In \"Astral Reign\" stages, this effect changes to \"100% chance for wielder's Dimensional Image Relic to appear\"."
+    ],
+    "relatedAwakener": null
+  }
+]

@@ -1,0 +1,56 @@
+/* Custom scrollbar to match index.html */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+} /* slate-950 */
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+} /* slate-700 */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+} /* slate-600 */
+
+/* App specific styles */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.drag-source,
+.drag-clone {
+  transition: all 0.2s ease-in-out;
+  cursor: grab;
+}
+
+.drag-source:active,
+.drag-clone:active {
+  cursor: grabbing;
+}
+
+.drag-source:hover,
+.drag-clone:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Darker shadow */
+  transform: translateY(-2px);
+}
+
+.drag-over {
+  border: 2px dashed #6366f1 !important;
+  background-color: #1e293b !important;
+}
+
+/* Classes to apply during resizing to prevent unwanted text selection and change cursor */
+.no-select-col {
+  user-select: none;
+  cursor: col-resize;
+}
+
+.no-select-row {
+  user-select: none;
+  cursor: row-resize;
+}
