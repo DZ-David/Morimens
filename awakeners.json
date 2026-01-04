@@ -2049,5 +2049,44 @@
             "E2": "[Forsaken Homeland] Enlighten 2 \"Psyche Reforged\" grants Shield equal to 5-10% of DEF for each card discarded (the effect increases with the level of \"Psyche Reforged\").Draw 1 card immediately if Leap is triggered.",
             "E3": "[Rebirth Through Death] Enlighten 3 \"Formless Shifting\" increases Shield Generation and Counter by 25%.The selected Awaker will release Exalt twice this turn before entering cooldown."
         }
+    },
+    {
+        "name": "mouchette",
+        "faction": "CHAOS",
+        "type": "ATTACK",
+        "stats": {
+            "CON": "126",
+            "ATK": "149",
+            "DEF": "126",
+            "CritRate": "5%",
+            "CritDamage": "50%",
+            "AliemusRegen": "2.4",
+            "KeyflareRegen": "15",
+            "RealmMastery": "0",
+            "SigilYield": "0%",
+            "DamageAmplification": "0%",
+            "DeathResistance": "33.6%"
+        },
+        "cards": {
+            "C1": "Rouse: [Mist Realm Vestige] Card Cost: 2 Mouchette gains (25/30/35/40/45/50) Aliemus.Rouse: \"Dramatic Encounter\" hits count +2.Each time \"Dramatic Encounter\" triggers, Mouchette's \"Strike\" Temporary Final DMG +25%.Retain.",
+            "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.",
+            "C3": "[Defence] Card Cost: 1 Gain (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.",
+            "C4": "[Mortal Blast] Card Cost: 1 Counts as \"Strike\".Deal (15/18/21/24/27/30% ATK) DMG to all enemies 2 times, (E2) generate 1 temporary copy of a \"Strike\" other than the last played \"Strike\" and reduce its Arithmetica Cost by 1.Retain.",
+            "C5": "[Shining Crush] Card Cost: 3 Counts as \"Strike\". Deal (30/36/42/48/54/60% ATK) DMG to a random enemy 5 times, gain (20/22/24/26/28/30) Aliemus."
+        },
+        "exalt": {
+            "exalt": "[Shining Tornado] Deal (250/300/350/400/450/500% ATK) DMG to all enemies.This turn, (E3) Mouchette's hit count +1, and all Awakeners' \"Strike\" DMG +(125/150/175/200/225/250% ATK).",
+            "over_exalt": "[Tornado of Annihilation] Hits count +1; for each \"Death Resistance\" triggered this battle, +1 additional hit. Set the Arithmetica Cost of the next \"Shining Crush\" to 0. First release each battle additionally inflicts \"Fainted\" on all enemies."
+        },
+        "talents": {
+            "T1": "Innate: Dramatic Encounter Talent For every 2 \"Strike\" cards played, Mouchette performs a Pursuit, randomly dealing 1 instance of DMG equal to 30% of Mouchette's ATK (counts as \"Strike\"). This effect can trigger up to 4 times per turn.",
+            "T2": "Madness Omen Talent Max level: 12 Obtain (5 per talent level) Aliemus after the start of exploration.",
+            "T3": "Soul Shaping Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages.This Awakener's CON, ATK, and DEF are increased by (3% per talent level), and they gain (50 per talent level) Keyflare upon their first Rouse.Mouchette's Final DMG against \"Dominator\" enemies +(17+3 per talent level)%. All Awakeners' \"Strike\" Base DMG +(13+2 per talent level)%. After triggering Death Resistance, Mouchette gains (17+3 per talent level) Aliemus."
+        },
+        "enlightens": {
+            "E1": "[Mist Realm Traveler] For every 1% Death Resistance Mouchette and her equipped WOD & Covenant have, her Crit. Rate and Crit. DMG + 0.15%. Each time Death Resistance is triggered, the Crit. DMG provided by \"Mist Realm Traveler\" +100% for this battle.",
+            "E2": "[Irretrievable Past] \"Mortal Blast\" generates 1 temporary copy of the last played other \"Strike\" and makes its Arithmetica Cost -1.",
+            "E3": "[Cleave Out a Future] \"Shining Tornado\" grants Mouchette +1 hits count this turn."
+        }
     }
 ]
