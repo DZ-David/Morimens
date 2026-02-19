@@ -125,7 +125,7 @@
                         <img 
                         src={`./images/awakeners/${data.name}.png`}
                         alt={data.name} 
-                        className="w-24 h-24 rounded-lg border-2 border-indigo-500/30 object-cover shadow-lg bg-slate-800"
+                        className="w-24 h-24 rounded-lg border-2 border-indigo-500/30 object-cover object-left shadow-lg bg-slate-800"
                         />
                         <div>
                         <h2 className="text-2xl font-bold text-slate-100">{data.name}</h2>
@@ -276,7 +276,7 @@
                     <img 
                         src={`./images/awakeners/${char.name}.png`}
                         alt={char.name} 
-                        className="w-20 h-20 rounded-full border border-slate-600 object-cover bg-slate-800"
+                        className="w-20 h-20 rounded-full border border-slate-600 object-cover object-left bg-slate-800"
                     />
                     
                     {char.name}
@@ -327,7 +327,7 @@
 
             // Fetch data on mount
             useEffect(() => {
-                fetch('./awakeners.json?v=20251224-2130')
+                fetch('./awakeners.json?v=20260219-0354')
                     .then(response => {
                         if (!response.ok) throw new Error('Failed to load data');
                         return response.json();

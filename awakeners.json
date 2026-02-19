@@ -2088,5 +2088,43 @@
             "E2": "[Irretrievable Past] \"Mortal Blast\" generates 1 temporary copy of the last played other \"Strike\" and makes its Arithmetica Cost -1.",
             "E3": "[Cleave Out a Future] \"Shining Tornado\" grants Mouchette +1 hits count this turn."
         }
+    },
+    {
+        "name": "xu",
+        "faction": "CARO",
+        "type": "ASSIST",
+        "stats": {
+            "CON": "203",
+            "ATK": "122",
+            "DEF": "113",
+            "CritRate": "5",
+            "CritDamage": "50%",
+            "AliemusRegen": "0",
+            "KeyflareRegen": "15",
+            "RealmMastery": "0",
+            "SigilYield": "0%",
+            "DamageAmplification": "9.6%(+1.6%)*",
+            "DeathResistance": "16.8%(+2.8%)"
+        },
+        "cards": {
+            "C1": "[Lady of Dreamless Land] Card Cost: 3 Xu gains (25/30/35/40/45/50) Aliemus.Rouse: Once per turn, when a Xu Command Card activates the Resonance condition, reduce its Arithmetica cost to 0. Retain. Exhaust.",
+            "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG. Gain (5/6/7/8/9/10) Aliemus.",
+            "C3": "[Defend] Card Cost: 1 Gain (10/12/14/16/18/20% DEF) Shield. Gain (5/6/7/8/9/10) Aliemus.",
+            "C4": "[Bonesick Longing] Card Cost: 3 Deal (150/180/210/240/270/300% ATK) DMG to all enemies (Guranteed Crit) and trigger 80% of their Poison. Resonance 3: Embryo Fusion +50%. Retain.",
+            "C5": "[Fan-Sealed Kiss] Card Cost: 2 Inflict (40/48/56/64/72/80% ATK) stacks of Poison to all enemies, temporarily reduce their STR by (15/18/21/24/27/30% DEF). Resonance 3: Inflict 1 stack of spellbound to them."
+        },
+        "exalt": {
+            "exalt": "[Mist-Bound Vow] Devour: Temporarily reduce their STR by (20/24/28/32/36/40% DEF). Gain 3 Arithmetica and Inflict (80/96/112/128/144/160% ATK) stacks of Poison on all enemies. Choose between Betroth or Enthrall. Betroth: Inflict 2 stacks of Spellbound to all enemies. Enthrall: Remove all stacks of Spellbound from all enemies; For each stack removed, deal 1% of their max HP as damage and trigger 40% of their Poison.",
+            "over_exalt": "[Karmic Grave] Embryo Fusion +100%. When choosing Betroth, the Poison and Spellbound inflicted are tripled; When choosing Enthrall, accumulate Crimson Furnace equal to 15% of CON per stack of Spellbound removed."
+        },
+        "talents": {
+            "T1": "Madness Omen Talent Max level: 12 Gain (5 per talent level) Aliemus at the start of exploration.",
+            "T2": "Soulforge Aptitude Talent Max level: 10 This talent is only effective in \"Astral Reign\" stages. Xu’s CON, ATK, and DEF stats increase by (3% per talent level). After using Xu’s Rouse, gain (50 per talent level) Keyflare. All awakeners’ Poison trigger effects are amplified by 5%(+2% per talent level). Each Spellbound stack reduces the damage dealt by Humanoid enemies by an additional 1%, and when the stacks are removed, deal an additional 1% of their max HP for each."
+        },
+        "enlightens": {
+            "E1": "[Enmity of the Heart] Enlighten 1 [Bonesick Longing]: Embryo Fusion +15% (not from Resonance). For every 1% of Damage AMP that Xu, her Covenants, and Wheels of Destiny have, the Embryo Fusion gained is increased by +0.2%.",
+            "E2": "[Fan and Scythe] Enlighten 2 [Strike] and [Defend]: Gain Resonance 3: Additionally gain 15 Aliemus.",
+            "E3": "[Nirvana’s Kiss] Enlighten 3 Max Spellbound stacks increase from 5 to 10. [Mist-Bound Vow] doubles the Resonance effect for Xu’s next card."
+        }
     }
 ]

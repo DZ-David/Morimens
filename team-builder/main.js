@@ -1,7 +1,7 @@
 // --- DATA AND STATE MANAGEMENT ---
 
 let awakenersData = [];
-const TOTAL_UNITS = 52;
+const TOTAL_UNITS = 54;
 const MAX_ROWS = 10;
 const MAX_ROW_CAPACITY = 4;
 const DATA_SOURCE_PATH = '../awakeners.json';
@@ -212,7 +212,7 @@ function createAwakenerCard(awakener, isClone = false, rowId = null) {
         <img
             src="${imageUrl}"
             alt="${displayName} image"
-            class="w-20 h-20 object-cover rounded-md border border-slate-600 shadow-sm bg-slate-800"
+            class="w-20 h-20 object-cover rounded-md border border-slate-600 shadow-sm bg-slate-800 object-left"
             onerror="this.onerror=null; this.src='${fallbackImageUrl}';"
         />
     `;
