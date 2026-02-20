@@ -1561,7 +1561,8 @@
             "C2": "[Strike] Card Cost: 1 Deal (10/12/14/16/18/20% ATK) DMG.Gain (5/6/7/8/9/10) Aliemus.",
             "C3": "[Defense] Card Cost: 1 Gain (10/12/14/16/18/20% DEF) Shield.Gain (5/6/7/8/9/10) Aliemus.",
             "C4": "[Soulsearing Light] Card Cost: 2 Deal (40/48/56/64/72/80% ATK) DMG to all enemies. Draw 2 Command Cards with the lowest Arithmetica Cost (if more than 2 cards share the same lowest cost, select randomly from available options). Retain.",
-            "C5": "[Cleansing Judgment] Card Cost: 3 Deal (70/84/98/112/126/140% ATK) DMG 2 times. When entering Ultra Round, add this card to your hand (from Deck/Discard). Retain."
+            "C5": "[Cleansing Judgment] Card Cost: 3 Deal (70/84/98/112/126/140% ATK) DMG 2 times. When entering Ultra Round, add this card to your hand (from Deck/Discard). Retain.",
+            "C6": "[Sacred Heart] Card Cost: 1 Deal (70% ATK) DMG. Get 3 Sin Mark stacks. Return to the top of the draw pile after playing, after the 3th use, exhaust it, the next card played this turn will have the [Atonement by Pain] effect. Retain, Prepare 1."
         },
         "exalt": {
             "exalt": "[Sinless Virdict] Deal (150/180/210/240/270/300% ATK) DMG to all enemies. Pollux's next played Command Card this turn activates his [Atonement by Pain] passive effect. Create 1 [Sacred Heart] and add it to your hand.",
